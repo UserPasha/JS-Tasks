@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(69, 24, 128);
+}
+.task{
+        color: rgb(236, 223, 203);
+        width: 100%;
+        height: 200px;
+        border: 2px solid black;
+        margin-top: 20px;
+        padding: 10px 30px;
+        letter-spacing: 2px;
+}
+.question{
+    font-weight: bold;
+    border-bottom: chartreuse 1px solid;
+    
+}
+.solution{
+    padding-top: 15px;
+}
