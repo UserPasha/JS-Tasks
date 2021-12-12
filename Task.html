@@ -19,11 +19,11 @@
                 function remainder(a, b){
                    if (a>b) { return a%b}; return b%a;
                   }
-
+                  <br>
                   function remainder(a, b){
                     return a > b ? a % b : b % a;
                   }
-
+                  <br>
                   function remainder(a, b){
                     
                     if(b>a)
@@ -31,7 +31,7 @@
                     else
                       return a%b;
                   }
-
+                  <br>
                   function remainder(a, b){ return Math.max(a,b) % Math.min(a,b); }
             </div>
         </div>
@@ -39,25 +39,26 @@
           <div class="question">
             Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
 
-            Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+            Your task is to calculate how many blank pages do you need. If n &lt; 0 or m &lt; 0 return 0.
           </div>
           <div class="solution">
             function paperwork(n, m) {
               let multPly = n*m;
-              if(n<0 || m < 0) {return 0}; return multPly;
+              if(n<0 || m &lt; 0) {return 0}; return multPly;
                }
-
+               <br>
                 function paperwork(n, m) {
-                  return n > 0 && m > 0 ? n * m : 0
+                  return n &gt; 0 && m &gt; 0 ? n * m : 0
                 }
+                <br>
                 function paperwork(n, m) {
-                  if (n <= 0 || m <= 0) {
+                  if (n &lt;= 0 || m &lt;= 0) {
                   var pages = 0;
                   } else pages = n * m;
                   return pages;
                 }
-
-                const paperwork = (n, m) => Math.max(0, n) * Math.max(0, m);
+                <br>
+                const paperwork = (n, m) =&gt; Math.max(0, n) * Math.max(0, m);
           </div>
       </div>
     </div>
