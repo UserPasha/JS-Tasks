@@ -13,7 +13,7 @@ body{
     
     margin: 0 auto;
 }
-.task{
+.wrapper .task{
         color: rgb(236, 223, 203);
         width: 100%;
         height: 200px;
@@ -23,11 +23,17 @@ body{
         letter-spacing: 2px;
         background-color: rgb(69, 24, 128);
 }
-.question{
+.wrapper .task .question{
     font-weight: bold;
     border-bottom: chartreuse 1px solid;
     
 }
-.solution{
+.wrapper .task .solution{
     padding-top: 15px;
 }
+.wrapper .task .solution span{
+    font-weight: bold;
+    background-color: rgb(174, 216, 132);
+    color:rgb(69, 24, 128);
+}
+

@@ -2,66 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Tasks</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Tasks</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="task">
-            <div class="question">
-                Write a function that accepts two integers and returns the remainder of dividing the larger value by the smaller value.
-            </div>
-            <div class="solution">
-                function remainder(a, b){
-                   if (a>b) { return a%b}; return b%a;
-                  }
-                  <br>
-                  function remainder(a, b){
-                    return a > b ? a % b : b % a;
-                  }
-                  <br>
-                  function remainder(a, b){
-                    
-                    if(b>a)
-                      return b%a;
-                    else
-                      return a%b;
-                  }
-                  <br>
-                  function remainder(a, b){ return Math.max(a,b) % Math.min(a,b); }
-            </div>
-        </div>
-        <div class="task">
-          <div class="question">
-            Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+  <div class="wrapper">
+    <div class="task">
+      <div class="question">
+        Write a function that accepts two integers and returns the remainder of dividing the larger value by the smaller
+        value.
+      </div>
+      <div class="solution">
+        <span>
+        function remainder(a, b){
+        if (a>b) { return a%b}; return b%a;
+        }
+      </span>
+        <br>
+        function remainder(a, b){
+        return a > b ? a % b : b % a;
+        }
+        <br>
+        function remainder(a, b){
 
-            Your task is to calculate how many blank pages do you need. If n &lt; 0 or m &lt; 0 return 0.
-          </div>
-          <div class="solution">
-            function paperwork(n, m) {
-              let multPly = n*m;
-              if(n<0 || m &lt; 0) {return 0}; return multPly;
-               }
-               <br>
-                function paperwork(n, m) {
-                  return n &gt; 0 && m &gt; 0 ? n * m : 0
-                }
-                <br>
-                function paperwork(n, m) {
-                  if (n &lt;= 0 || m &lt;= 0) {
-                  var pages = 0;
-                  } else pages = n * m;
-                  return pages;
-                }
-                <br>
-                const paperwork = (n, m) =&gt; Math.max(0, n) * Math.max(0, m);
-          </div>
+        if(b>a)
+        return b%a;
+        else
+        return a%b;
+        }
+        <br>
+        function remainder(a, b){ return Math.max(a,b) % Math.min(a,b); }
       </div>
     </div>
+    <div class="task">
+      <div class="question">
+        Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the
+        paperwork has 'm' pages.
+
+        Your task is to calculate how many blank pages do you need. If n &lt; 0 or m &lt; 0 return 0.
+      </div>
+      <div class="solution">
+        <span>
+          function paperwork(n, m) {
+          let multPly = n*m;
+          if(n&lt;0 || m &lt; 0) {return 0}; return multPly; } </span>
+            <br>
+            function paperwork(n, m) {
+            return n &gt; 0 && m &gt; 0 ? n * m : 0
+            }
+            <br>
+            function paperwork(n, m) {
+            if (n &lt;= 0 || m &lt;= 0) {
+            var pages = 0;
+            } else pages = n * m;
+            return pages;
+            }
+            <br>
+            const paperwork = (n, m) =&gt; Math.max(0, n) * Math.max(0, m);
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
