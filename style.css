@@ -42,6 +42,7 @@ background-color: #fff;
     width: 1000px;
 background-color: #303133;
 margin-left: 20px;
+padding: 10px 20px;
 }
 .wrapper .code-wars .task{
     color: #eaf0ec;
@@ -57,13 +58,13 @@ margin-left: 20px;
 }
 .wrapper .task{
         
-        width: 800px;
-        height: 300px;
-        border: 2px solid black;
-        margin-top: 20px;
-        padding: 10px 30px;
-        letter-spacing: 2px;
-        
+    width: 800px;
+    height: 300px;
+    border: 2px solid black;
+    margin-top: 20px;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    
 }
 .wrapper .task .question{
     font-weight: bold;
