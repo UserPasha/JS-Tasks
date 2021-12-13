@@ -14,6 +14,22 @@ body{
     justify-content: center;
     margin: 0 auto;
 }
+.wrapper .logo img{
+    max-width: 500px;
+    margin-left: 150px;;
+
+}
+.wrapper .camp{
+background-color: #0a0a22;
+}
+.wrapper .wars{
+    background-color: #a93d29;
+    
+}
+.wrapper .wars .wars-img{
+    border-radius: 20px;
+  
+}
 .wrapper .free-code{
     width: 1000px;
 background-color: #fff;
@@ -31,7 +47,14 @@ margin-left: 20px;
     color: #eaf0ec;
     background-color: #262729;
 }
-
+.wrapper .camp-block{
+    width: 800px;
+    height: 2300px;
+    
+    margin-top: 20px;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+}
 .wrapper .task{
         
         width: 800px;
