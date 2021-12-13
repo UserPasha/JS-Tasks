@@ -19,7 +19,7 @@ body{
 background-color: #fff;
 }
 .wrapper .free-code .task{
-    color: #2a2a40;
+    color: black;
     background-color: #f5f6f7;
 }
 .wrapper .code-wars{
@@ -54,5 +54,29 @@ margin-left: 20px;
     font-weight: bold;
     background-color: rgb(174, 216, 132);
     color:rgb(69, 24, 128);
+}
+ul{
+    width: 100%;
+    list-style-image: url(images/gal.png);
+    font-family: Roboto Mono, monospace;
+    font-size: 1.3em;
+    text-align: center;
+    
+   
+}
+ul li{
+    width: 100%;
+    background-color: #d0d0d4;
+    border: #1b1b32 3px solid;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+ul li:hover{
+    cursor: pointer;
+    background-color: #1b1b32;
+    color: #d0d0d4;
+}
+ul li.new{
+    list-style: none;
 }
 
