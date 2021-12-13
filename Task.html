@@ -15,7 +15,7 @@
       <div class="logo camp">
         <img src="images/FreeCodeCamp_logo.png" alt="FreeCodeCamp_logo">
       </div>
-      
+
       <div class="camp-block">
         <ul class="free-tasks">
           <li>Comment Your JavaScript Code</li>
@@ -94,8 +94,33 @@
           const paperwork = (n, m) =&gt; Math.max(0, n) * Math.max(0, m);
         </div>
       </div>
+      <div class="task">
+        <div class="question">
+          Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+        </div>
+        <div class="solution">
+          <span>
+            function boolToWord(bool) {
+              if(bool === true){
+                return "Yes"
+              }
+              else{
+                  return "No"
+              }
+            } </span>
+          <br>
+          function boolToWord( bool ){
+            return bool ? 'Yes':'No';
+          }
+          <br>
+          let boolToWord = bool => bool ? 'Yes' : 'No';
+         
+        </div>
+      </div>
+
     </div>
   </div>
+  
 </body>
 
 </html>
