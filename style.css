@@ -60,7 +60,8 @@ padding: 10px 20px;
         
     width: 800px;
     height: 300px;
-    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #262729;
     margin-top: 20px;
     padding: 10px 30px;
     letter-spacing: 2px;
