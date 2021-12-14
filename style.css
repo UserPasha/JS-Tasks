@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(55, 55, 83);
+    background-color: #656464;
 }
 .wrapper{
     width: 1200px;
@@ -61,7 +61,7 @@ background-color: #fff;
 .wrapper .task{
         
     width: 800px;
-    height: 300px;
+    height:250px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px #262729;
     margin-top: 20px;
