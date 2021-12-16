@@ -32,7 +32,7 @@ background-color: #0a0a22;
 }
 .wrapper .free-code{
     width: 1000px;
-    height: 1930px;
+    height: 2350px;
 background-color: #fff;
 }
 /*.wrapper .free-code .task{
@@ -41,7 +41,7 @@ background-color: #fff;
 } */
 .wrapper .code-wars{
     width: 1000px;
-    height: 1930px;
+    height: 2350px;
     background-color: #303133;
     margin-left: 20px;
     padding: 10px 20px;
@@ -74,6 +74,9 @@ background-color: #fff;
     height:350px;
    
 }
+.wrapper .dogs{
+    height:450px;
+}
 .wrapper .task .question{
     font-weight: bold;
     border-bottom: chartreuse 1px solid;
@@ -81,6 +84,7 @@ background-color: #fff;
 }
 .wrapper .task .solution{
     padding-top: 15px;
+    background-color: #262729;
 }
 .wrapper .task .solution span{
     font-weight: bold;
