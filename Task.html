@@ -39,6 +39,14 @@
           <li>Finding a Remainder in JavaScript</li>
           <li>Compound Assignment With Augmented Addition</li>
           <li>Compound Assignment With Augmented Subtraction</li>
+          <li>Compound Assignment With Augmented Multiplication</li>
+          <li>Compound Assignment With Augmented Division</li>
+          <li>Escaping Literal Quotes in Strings</li>
+          <li>Quoting Strings with Single Quotes</li>
+          <li>Escape Sequences in Strings</li>
+          <li>Concatenating Strings with Plus Operator</li>
+          <li>Concatenating Strings with the Plus Equals Operator</li>
+          <li>Constructing Strings with Variables</li>
           <li class="new">New Taska</li>
           <li class="new">Another New Taska</li>
         </ul>
@@ -150,10 +158,61 @@
 
         </div>
       </div>
+      <div class="task timmy">
+        <div class="question ">
+          Description:
+          Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower
+          each. If one of the flowers has an even number of petals and the other has an odd number of petals it means
+          they are in love.
 
+          Write a function that will take the number of petals of each flower and return true if they are in love and
+          false if they aren't.
+        </div>
+        <div class="solution">
+          <span>
+            function lovefunc(flower1, flower2){
+            let f1=flower1%2;
+            let f2=flower2%2;
+            if(f1>0 && f2==0 || f1==0 && f2>0){return true ;}
+            return false ;
+            } </span>
+          <br>
+          function lovefunc(flower1, flower2){
+          return flower1 % 2 !== flower2 % 2;
+          }
+          <br>
+          let lovefunc = (f1, f2) => !!((f1+f2)%2)
+          <br>
+          function lovefunc(flower1, flower2){
+          return flower1%2!=flower2%2
+          }
+          <br>
+        </div>
+      </div>
+      <div class="task">
+        <div class="question">
+          This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+        </div>
+        <div class="solution">
+          <span>
+            function simpleMultiplication(number) {
+            if (number %2>0){return number *9;}
+            return number*8;
+            }
+          </span>
+          <br>
+          function simpleMultiplication(n){
+          return n % 2 == 0 ? n * 8 : n * 9
+          }
+          <br>
+          function simpleMultiplication(number){
+          return number%2 ? number*9 : number*8
+          }
 
+          <br>
+        </div>
+      </div>
     </div>
-  </div>
 
   </div>
   </div>

@@ -32,7 +32,7 @@ background-color: #0a0a22;
 }
 .wrapper .free-code{
     width: 1000px;
-    height: 1430px;
+    height: 1930px;
 background-color: #fff;
 }
 /*.wrapper .free-code .task{
@@ -41,7 +41,7 @@ background-color: #fff;
 } */
 .wrapper .code-wars{
     width: 1000px;
-    height: 1430px;
+    height: 1930px;
     background-color: #303133;
     margin-left: 20px;
     padding: 10px 20px;
@@ -68,6 +68,11 @@ background-color: #fff;
     padding: 10px 30px;
     letter-spacing: 2px;
     
+}
+.wrapper .timmy{
+    
+    height:350px;
+   
 }
 .wrapper .task .question{
     font-weight: bold;
