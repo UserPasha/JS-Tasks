@@ -40,6 +40,7 @@ background-color: #fff;
     background-color: #f5f6f7;
 } */
 .wrapper .code-wars{
+    font-family: 'Lato', sans-serif;
     width: 1000px;
     height: 2650px;
     background-color: #303133;
