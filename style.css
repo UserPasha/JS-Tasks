@@ -79,6 +79,7 @@ background-color: #fff;
     height:450px;
 }
 .wrapper .task .question{
+    padding-left: 20px;
     font-weight: bold;
     border-bottom: chartreuse 1px solid;
     
