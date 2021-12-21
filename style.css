@@ -14,9 +14,10 @@ body{
     justify-content: center;
     margin: 0 auto;
 }
+
 .wrapper .logo img{
     max-width: 500px;
-    margin-left: 150px;;
+    margin-left: 50px;;
 
 }
 .wrapper .camp{
@@ -147,12 +148,18 @@ ul li.new{
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 90px;
+    margin: auto;
     }
     .wrapper .free-code,
     .wrapper .code-wars{
     height: 3950px;
+    margin: 0 auto;
     }
+    .wrapper .free-code{
+       
+        margin-top: 3570px;
+        }
+    
 
 
 
