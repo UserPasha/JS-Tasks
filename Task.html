@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="images/js-logo.jpg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="images/js-logo.jpg">
   <title>JS Tasks</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -80,14 +80,15 @@
       <div class="logo wars">
         <img class="wars-img" src="images/codewars_logo.png" alt="codewars_logo">
       </div>
-      <div class="task">
-        <div class="question">
-          Write a function that accepts two integers and returns the remainder of dividing the larger value by the
-          smaller
-          value.
-        </div>
-        <div class="solution">
-          <pre>
+      <div class="wars-task">
+        <div class="task">
+          <div class="question">
+            Write a function that accepts two integers and returns the remainder of dividing the larger value by the
+            smaller
+            value.
+          </div>
+          <div class="solution">
+            <pre>
           <span>
             function remainder(a, b){
             if (a>b) { return a%b}; return b%a;
@@ -109,223 +110,230 @@
           
           function remainder(a, b){ return Math.max(a,b) % Math.min(a,b); }
         </pre>
+          </div>
         </div>
-      </div>
-      <div class="task">
-        <div class="question">
-          Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the
-          paperwork has 'm' pages.
+        <div class="task">
+          <div class="question">
+            Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the
+            paperwork has 'm' pages.
 
-          Your task is to calculate how many blank pages do you need. If n &lt; 0 or m &lt; 0 return 0.
-        </div>
-        <div class="solution">
-          <span>
+            Your task is to calculate how many blank pages do you need. If n &lt; 0 or m &lt; 0 return 0.
+          </div>
+          <div class="solution">
+            <span>
+              function paperwork(n, m) {
+              let multPly = n*m;
+              if(n&lt;0 || m &lt; 0) {return 0}; return multPly; } </span>
+            <br>
             function paperwork(n, m) {
-            let multPly = n*m;
-            if(n&lt;0 || m &lt; 0) {return 0}; return multPly; } </span>
-          <br>
-          function paperwork(n, m) {
-          return n &gt; 0 && m &gt; 0 ? n * m : 0
-          }
-          <br>
-          function paperwork(n, m) {
-          if (n &lt;= 0 || m &lt;= 0) {
-          var pages = 0;
-          } else pages = n * m;
-          return pages;
-          }
-          <br>
-          const paperwork = (n, m) =&gt; Math.max(0, n) * Math.max(0, m);
-        </div>
-      </div>
-      <div class="task">
-        <div class="question">
-          Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
-        </div>
-        <div class="solution">
-          <span>
-            function boolToWord(bool) {
-            if(bool === true){
-            return "Yes"
+            return n &gt; 0 && m &gt; 0 ? n * m : 0
             }
-            else{
-            return "No"
+            <br>
+            function paperwork(n, m) {
+            if (n &lt;= 0 || m &lt;= 0) {
+            var pages = 0;
+            } else pages = n * m;
+            return pages;
             }
-            } </span>
-          <br>
-          function boolToWord( bool ){
-          return bool ? 'Yes':'No';
-          }
-          <br>
-          let boolToWord = bool => bool ? 'Yes' : 'No';
+            <br>
+            const paperwork = (n, m) =&gt; Math.max(0, n) * Math.max(0, m);
+          </div>
+        </div>
+        <div class="task">
+          <div class="question">
+            Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for
+            false.
+          </div>
+          <div class="solution">
+            <span>
+              function boolToWord(bool) {
+              if(bool === true){
+              return "Yes"
+              }
+              else{
+              return "No"
+              }
+              } </span>
+            <br>
+            function boolToWord( bool ){
+            return bool ? 'Yes':'No';
+            }
+            <br>
+            let boolToWord = bool => bool ? 'Yes' : 'No';
 
+          </div>
         </div>
-      </div>
-      <div class="task">
-        <div class="question">
-          Your task is to create the functionisDivideBy (or is_divide_by) to check if an integer number is divisible by
-          both integers a and b.
-        </div>
-        <div class="solution">
-          <span>
+        <div class="task">
+          <div class="question">
+            Your task is to create the functionisDivideBy (or is_divide_by) to check if an integer number is divisible
+            by
+            both integers a and b.
+          </div>
+          <div class="solution">
+            <span>
+              function isDivideBy(number, a, b) {
+              if (number%a || number%b !== 0){
+              return false;} return true;
+              } </span>
+            <br>
             function isDivideBy(number, a, b) {
-            if (number%a || number%b !== 0){
-            return false;} return true;
-            } </span>
-          <br>
-          function isDivideBy(number, a, b) {
-          return [a, b].every(i => number % i === 0)
-          }
-          <br>
-          function isDivideBy(number, a, b) {
-          return (number%a + number%b) === 0
-          }
-          <br>
-
-
-        </div>
-      </div>
-      <div class="task timmy">
-        <div class="question ">
-          Description:
-          Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower
-          each. If one of the flowers has an even number of petals and the other has an odd number of petals it means
-          they are in love.
-
-          Write a function that will take the number of petals of each flower and return true if they are in love and
-          false if they aren't.
-        </div>
-        <div class="solution">
-          <span>
-            function lovefunc(flower1, flower2){
-            let f1=flower1%2;
-            let f2=flower2%2;
-            if(f1>0 && f2==0 || f1==0 && f2>0){return true ;}
-            return false ;
-            } </span>
-          <br>
-          function lovefunc(flower1, flower2){
-          return flower1 % 2 !== flower2 % 2;
-          }
-          <br>
-          let lovefunc = (f1, f2) => !!((f1+f2)%2)
-          <br>
-          function lovefunc(flower1, flower2){
-          return flower1%2!=flower2%2
-          }
-          <br>
-        </div>
-      </div>
-      <div class="task">
-        <div class="question">
-          This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
-        </div>
-        <div class="solution">
-          <span>
-            function simpleMultiplication(number) {
-            if (number %2>0){return number *9;}
-            return number*8;
+            return [a, b].every(i => number % i === 0)
             }
-          </span>
-          <br>
-          function simpleMultiplication(n){
-          return n % 2 == 0 ? n * 8 : n * 9
-          }
-          <br>
-          function simpleMultiplication(number){
-          return number%2 ? number*9 : number*8
-          }
+            <br>
+            function isDivideBy(number, a, b) {
+            return (number%a + number%b) === 0
+            }
+            <br>
 
-          <br>
+
+          </div>
         </div>
-      </div>
-      <div class="task dogs">
-        <div class="question">
-          I have a cat and a dog.
+        <div class="task timmy">
+          <div class="question ">
+            Description:
+            Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a
+            flower
+            each. If one of the flowers has an even number of petals and the other has an odd number of petals it means
+            they are in love.
 
-          I got them at the same time as kitten/puppy. That was humanYears years ago.
-
-          Return their respective ages now as [humanYears,catYears,dogYears]
-          <br>
-          humanYears >= 1
-          humanYears are whole numbers only
-          <br>
-          Cat Years
-          15 cat years for first year
-          +9 cat years for second year
-          +4 cat years for each year after that
-          Dog Years
-          15 dog years for first year
-          +9 dog years for second year
-          +5 dog years for each year after that
+            Write a function that will take the number of petals of each flower and return true if they are in love and
+            false if they aren't.
+          </div>
+          <div class="solution">
+            <span>
+              function lovefunc(flower1, flower2){
+              let f1=flower1%2;
+              let f2=flower2%2;
+              if(f1>0 && f2==0 || f1==0 && f2>0){return true ;}
+              return false ;
+              } </span>
+            <br>
+            function lovefunc(flower1, flower2){
+            return flower1 % 2 !== flower2 % 2;
+            }
+            <br>
+            let lovefunc = (f1, f2) => !!((f1+f2)%2)
+            <br>
+            function lovefunc(flower1, flower2){
+            return flower1%2!=flower2%2
+            }
+            <br>
+          </div>
         </div>
-        <div class="solution">
-          <span>
-            var humanYearsCatYearsDogYears = function(humanYears) {
-            let catAfter;
-            let dogAfter;
+        <div class="task">
+          <div class="question">
+            This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+          </div>
+          <div class="solution">
+            <span>
+              function simpleMultiplication(number) {
+              if (number %2>0){return number *9;}
+              return number*8;
+              }
+            </span>
+            <br>
+            function simpleMultiplication(n){
+            return n % 2 == 0 ? n * 8 : n * 9
+            }
+            <br>
+            function simpleMultiplication(number){
+            return number%2 ? number*9 : number*8
+            }
 
-            if(humanYears == 1){catAfter =15, dogAfter =15;}
-            if(humanYears == 2){catAfter=24, dogAfter =24;}
-            if(humanYears == 3){catAfter =28, dogAfter =29;}
-            if (humanYears > 3){dogAfter = (humanYears-3)*5+29; catAfter = (humanYears-3)*4+28;}
-            return [humanYears,catAfter,dogAfter];
-
-            } </span>
-          <br>
-          const humanYearsCatYearsDogYears = humanYears => [
-          humanYears,
-          ( humanYears - 1 ? 16 : 11 ) + 4 * humanYears,
-          ( humanYears - 1 ? 14 : 10 ) + 5 * humanYears,
-          ];
-          <br>
-          var humanYearsCatYearsDogYears = function(y) {
-          if (y == 1) return [1, 15, 15]
-          if (y == 2) return [2, 24, 24]
-          return [y, (y-2) * 4 + 24, (y-2) * 5 + 24]
-          }
-          <br>
-
-
+            <br>
+          </div>
         </div>
-      </div>
-      <div class="task timmy">
-        <div class="question">
-          Description:
-Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
+        <div class="task dogs">
+          <div class="question">
+            I have a cat and a dog.
 
-Write a function that given a floor in the american system returns the floor in the european system.
+            I got them at the same time as kitten/puppy. That was humanYears years ago.
 
-With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. In case of above 13, they move down by two because there are two omitted numbers below them.
+            Return their respective ages now as [humanYears,catYears,dogYears]
+            <br>
+            humanYears >= 1
+            humanYears are whole numbers only
+            <br>
+            Cat Years
+            15 cat years for first year
+            +9 cat years for second year
+            +4 cat years for each year after that
+            Dog Years
+            15 dog years for first year
+            +9 dog years for second year
+            +5 dog years for each year after that
+          </div>
+          <div class="solution">
+            <span>
+              var humanYearsCatYearsDogYears = function(humanYears) {
+              let catAfter;
+              let dogAfter;
 
-Basements (negatives) stay the same as the universal level.
+              if(humanYears == 1){catAfter =15, dogAfter =15;}
+              if(humanYears == 2){catAfter=24, dogAfter =24;}
+              if(humanYears == 3){catAfter =28, dogAfter =29;}
+              if (humanYears > 3){dogAfter = (humanYears-3)*5+29; catAfter = (humanYears-3)*4+28;}
+              return [humanYears,catAfter,dogAfter];
+
+              } </span>
+            <br>
+            const humanYearsCatYearsDogYears = humanYears => [
+            humanYears,
+            ( humanYears - 1 ? 16 : 11 ) + 4 * humanYears,
+            ( humanYears - 1 ? 14 : 10 ) + 5 * humanYears,
+            ];
+            <br>
+            var humanYearsCatYearsDogYears = function(y) {
+            if (y == 1) return [1, 15, 15]
+            if (y == 2) return [2, 24, 24]
+            return [y, (y-2) * 4 + 24, (y-2) * 5 + 24]
+            }
+            <br>
+
+
+          </div>
         </div>
-        <div class="solution">
-          <span>
-            function getRealFloor(n) {
+        <div class="task timmy">
+          <div class="question">
+            Description:
+            Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no
+            13th floor (due to superstition).
+
+            Write a function that given a floor in the american system returns the floor in the european system.
+
+            With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move
+            down to take their place. In case of above 13, they move down by two because there are two omitted numbers
+            below them.
+
+            Basements (negatives) stay the same as the universal level.
+          </div>
+          <div class="solution">
+            <span>
+              function getRealFloor(n) {
               let eu;
               if(n &lt;=0 ){eu=n;}
-            
+
               else if(n==1){eu = 0;}
               else if(n>1&&n&lt;=13){eu=n-1;}
               else if(n>=14){eu=n-2;}
               return eu;
-            }
-          </span>
-          <br>
-          function getRealFloor(n) {
+              }
+            </span>
+            <br>
+            function getRealFloor(n) {
             // Less than 1, return n
             if (n &lt;= 0) return n;
-            
-            return n - (n >= 13 ? 2 : 1);
-          }
-          <br>
-          function getRealFloor(n) {
-            return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
-          }
-          }
 
-          <br>
+            return n - (n >= 13 ? 2 : 1);
+            }
+            <br>
+            function getRealFloor(n) {
+            return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+            }
+            }
+
+            <br>
+          </div>
         </div>
       </div>
     </div>
