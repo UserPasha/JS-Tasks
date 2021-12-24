@@ -71,6 +71,16 @@
                     <li>Shopping List</li>
                     <li>Write Reusable JavaScript with Functions</li>
                     <li>Passing Values to Functions with Arguments</li>
+                    <li>Return a Value from a Function with Return</li>
+                    <li>Global Scope and Functions</li>
+                    <li>Local Scope and Functions</li>
+                    <li>Global vs. Local Scope in Functions</li>
+                    <li>Understanding Undefined Value returned from a Function</li>
+                    <li>Assignment with a Returned Value</li>
+                    <li>Understanding Boolean Values</li>
+                    <li>Use Conditional Logic with If Statements</li>
+                    <li>Comparison with the Equality Operator</li>
+                    <li>Comparison with the Strict Equality Operator</li>
                     <li class="new">New Taska</li>
                     <li class="new">Another New Taska</li>
                 </ul>
@@ -401,6 +411,37 @@ Example:
                             if (n	&lt;2) return [n]
                             return [n].concat(reverseSeq(n-1));
                           };
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for your help.
+
+P.S. Each array includes only integer numbers. Output is a number too.
+                    </div>
+                    <div class="solution">
+                        <span>
+                            function arrayPlusArray(arr1, arr2) {
+                                let res1=0;
+                                let res2=0;
+                                for(let i= 0;i&lt;arr1.length;i++){
+                                  res1+=arr1[i];}
+                                for (let i=0;i&lt;arr2.length;i++){
+                                  res2+=arr2[i];}
+                                return res1 + res2; //something went wrong
+                              }
+                        </span>
+                        <br>
+                        function arrayPlusArray(arr1, arr2) {
+                            return arr1.concat(arr2).reduce((acc, cur) =	&gt; acc + cur);
+                          }
+                        <br>
+                        function arrayPlusArray(arr1, arr2) {
+                            let arr = [...arr1, ...arr2];
+                            return arr.reduce((a, b) =	&gt; a + b);
+                          }
 
                         <br>
                     </div>
