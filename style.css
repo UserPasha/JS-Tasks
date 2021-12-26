@@ -123,27 +123,7 @@ ul li.new{
 }
 @media (max-width: 1080px)
 {
-    /*.wrapper {
-        width: 900px;
-        height: 100vh;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        display: flex;
-        flex-direction: column;
-        margin-left: 90px;
-    }
-    .wrapper .free-code{
-        width: 600px;
-        height: 2950px;
-    background-color: #fff;
-    }
-    .wrapper .code-wars {
-        font-family: 'Lato', sans-serif;
-        width: 600px;
-        height: 2950px;
-        background-color: #303133;
-        margin-left: 0; 
-        padding: 30px 100px;
-    }*/
+   
     .wrapper {
     
     width: 100%;
@@ -158,7 +138,7 @@ ul li.new{
     }
     .wrapper .free-code {
        
-        margin-top: 3100px;
+        margin-top: 4690px;
         }
     
     .wrapper .free-code .camp-block,
