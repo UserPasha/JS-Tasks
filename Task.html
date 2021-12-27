@@ -427,31 +427,52 @@ Example:
                 </div>
                 <div class="task">
                     <div class="question">
-                        I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for your help.
-
-P.S. Each array includes only integer numbers. Output is a number too.
+                        I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for your help. P.S. Each array includes only integer numbers. Output is a number too.
                     </div>
                     <div class="solution">
                         <span>
-                            function arrayPlusArray(arr1, arr2) {
-                                let res1=0;
-                                let res2=0;
-                                for(let i= 0;i&lt;arr1.length;i++){
-                                  res1+=arr1[i];}
-                                for (let i=0;i&lt;arr2.length;i++){
-                                  res2+=arr2[i];}
-                                return res1 + res2; //something went wrong
+                            function arrayPlusArray(arr1, arr2) { let res1=0; let res2=0; for(let i= 0;i&lt;arr1.length;i++){ res1+=arr1[i];} for (let i=0;i&lt;arr2.length;i++){ res2+=arr2[i];} return res1 + res2; //something went wrong }
+                        </span>
+                        <br>
+                        function arrayPlusArray(arr1, arr2) { return arr1.concat(arr2).reduce((acc, cur) = &gt; acc + cur); }
+                        <br>
+                        function arrayPlusArray(arr1, arr2) { let arr = [...arr1, ...arr2]; return arr.reduce((a, b) = &gt; a + b); }
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+
+                        Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+                        
+                        For example, update_light('green') should return 'yellow'.
+                        
+                        Note: Use "" instead of '' in C++.
+                    </div>
+                    <div class="solution">
+                        <span>
+                            function updateLight(current) {
+                                if(current=="green"){return "yellow";}
+                                else if(current=="yellow"){return "red";}
+                                else if(current=="red"){return "green";}
+                                else return undefined;
+                              
+                              
                               }
                         </span>
                         <br>
-                        function arrayPlusArray(arr1, arr2) {
-                            return arr1.concat(arr2).reduce((acc, cur) =	&gt; acc + cur);
+                        function updateLight(current) {
+  
+                            return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
+                          
                           }
                         <br>
-                        function arrayPlusArray(arr1, arr2) {
-                            let arr = [...arr1, ...arr2];
-                            return arr.reduce((a, b) =	&gt; a + b);
-                          }
+                        const updateLight = current => ({
+                            green: 'yellow',
+                            yellow: 'red',
+                            red: 'green',
+                          })[current]
 
                         <br>
                     </div>
