@@ -20,11 +20,13 @@ body{
     margin-left: 50px;;
 
 }
+
 .wrapper .camp{
 background-color: #0a0a22;
 }
 .wrapper .wars{
     background-color: #a93d29;
+    border-radius: 10px;
     
 }
 .wrapper .wars .wars-img{
