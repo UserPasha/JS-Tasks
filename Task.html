@@ -440,7 +440,7 @@ Example:
                         <br>
                     </div>
                 </div>
-                <div class="task">
+                <div class="task timmy">
                     <div class="question">
                         You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
 
@@ -497,7 +497,7 @@ Example:
                         <br>
                     </div>
                 </div>
-                <div class="task">
+                <div class="task timmy">
                     <div class="question">
                         Story:
 You are going to make toast fast, you think that you should make multiple pieces of toasts and once. So, you try to make 6 pieces of toast.
@@ -531,6 +531,32 @@ six_toast(12) == 6
                           }
                         <br>
                         const sixToast = n =&gt; Math.abs(6 - n);
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Description:
+                        Say hello!
+                        
+                        Write a function to greet a person. Function will take name as input and greet the person by saying hello. Return null/nil/None if input is empty string or null/nil/None.
+                    </div>
+                    <div class="solution">
+                        <span>
+                            function greet(name) {
+                                if (name===""|| name===null){return null}
+                                 else return "hello "+name+"!"
+                                }
+                        </span>
+                        <br>
+                        function greet(name) {
+                            return name ? 'hello ' + name + '!' : null;
+                          }
+                        <br>
+                        function greet(name) {
+                            return name === null || name === "" ? null : "hello " + name + "!";
+                          }
 
                         <br>
                     </div>
