@@ -561,6 +561,69 @@ six_toast(12) == 6
                         <br>
                     </div>
                 </div>
+                <div class="task timmy">
+                    <div class="question">
+                        There was a test in your class and you passed it. Congratulations!
+But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+Return True if you're better, else False!
+
+Note:
+Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+                    </div>
+                    <div class="solution">
+                        <span>
+                            function betterThanAverage(classPoints, yourPoints) {
+                                let med = classPoints.reduce(function( a,b ) {return a+b;})
+                                let gt= med/classPoints.length;
+                                if (gt>yourPoints){return false;}
+                                return true;
+                              }
+                        </span>
+                        <br>
+                        function betterThanAverage(classPoints, yourPoints) {
+                            return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+                          }
+                        <br>
+                        function betterThanAverage(classPoints, yourPoints) {
+                            return yourPoints > classPoints.reduce(function(sum, x){return sum + x},yourPoints)/(classPoints.length+1)
+                          }
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task timmy"> 
+                    <div class="question">
+                        For every good kata idea there seem to be quite a few bad ones!
+
+In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'.
+                    </div>
+                    <div class="solution">
+                        <span>
+                            function well(x){
+                                let sk= x.filter(el=> el === 'good')
+                                if (sk.length&lt;1){return 'Fail!';}
+                                  else if (sk.length==1 ||sk.length==2){return 'Publish!';}
+                                  else return 'I smell a series!';
+                                }
+                        </span>
+                        <br>
+                        const well = x => {
+                            const good_count = x.filter(x => x == 'good').length;
+                            return good_count &lt; 1 ? 'Fail!' : 
+                                   good_count &lt; 3 ? 'Publish!' : 'I smell a series!';
+                          }
+                        <br>
+                        function well(x) {
+                            const count = x.reduce((s, v) => s + (v == 'good'), 0);
+                            return count ? count &lt; 2 ? 'I smell a series!' : 'Publish!' : 'Fail!';
+                          }
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
