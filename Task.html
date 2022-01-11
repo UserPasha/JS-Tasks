@@ -110,7 +110,7 @@
                     </div>
                     <div class="solution">
 
-                        <span>
+                        <span class="mine">
                             function remainder(a, b){
                             if (a&gt;b) { return a%b}; return b%a;
                             }
@@ -121,13 +121,16 @@
                         return a &gt; b ? a % b : b % a;
                         }
                         <br>
-                        function remainder(a, b){
+                        <span class="other">
 
-                        if(b&gt;a)
-                        return b%a;
-                        else
-                        return a%b;
-                        }
+                            function remainder(a, b){
+
+                            if(b&gt;a)
+                            return b%a;
+                            else
+                            return a%b;
+                            }
+                        </span>
                         <br>
                         function remainder(a, b){ return Math.max(a,b) % Math.min(a,b); }
 
@@ -142,7 +145,7 @@
                         Your task is to calculate how many blank pages do you need. If n &lt; 0 or m &lt; 0 return 0.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function paperwork(n, m) {
                             let multPly = n*m;
                             if(n&lt;0 || m &lt; 0) {return 0}; return multPly; } </span>
@@ -150,13 +153,15 @@
                         function paperwork(n, m) {
                         return n &gt; 0 && m &gt; 0 ? n * m : 0
                         }
-                        <br>
-                        function paperwork(n, m) {
-                        if (n &lt;= 0 || m &lt;= 0) {
-                        var pages = 0;
-                        } else pages = n * m;
-                        return pages;
-                        }
+                        <span class="other">
+                            <br>
+                            function paperwork(n, m) {
+                            if (n &lt;= 0 || m &lt;= 0) {
+                            var pages = 0;
+                            } else pages = n * m;
+                            return pages;
+                            }
+                        </span>
                         <br>
                         const paperwork = (n, m) =&gt; Math.max(0, n) * Math.max(0, m);
                     </div>
@@ -168,7 +173,7 @@
                         false.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function boolToWord(bool) {
                             if(bool === true){
                             return "Yes"
@@ -181,9 +186,9 @@
                         function boolToWord( bool ){
                         return bool ? 'Yes':'No';
                         }
-                        <br>
+                        <br><span class="other">
                         let boolToWord = bool =&gt; bool ? 'Yes' : 'No';
-
+                    </span>
                     </div>
                 </div>
                 <div class="task">
@@ -194,7 +199,7 @@
                         both integers a and b.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function isDivideBy(number, a, b) {
                             if (number%a || number%b !== 0){
                             return false;} return true;
@@ -203,11 +208,11 @@
                         function isDivideBy(number, a, b) {
                         return [a, b].every(i =&gt; number % i === 0)
                         }
-                        <br>
+                        <br><span class="other">
                         function isDivideBy(number, a, b) {
                         return (number%a + number%b) === 0
                         }
-                        <br>
+                        <br></span>
 
 
                     </div>
@@ -227,20 +232,20 @@
                         false if they aren't.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function lovefunc(flower1, flower2){
                             let f1=flower1%2;
                             let f2=flower2%2;
-                            if(f1	&lt;0 && f2==0 || f1==0 && f2	&lt;0){return true ;}
+                            if(f1 &lt;0 && f2==0 || f1==0 && f2 &lt;0){return true ;}
                             return false ;
                             } </span>
                         <br>
                         function lovefunc(flower1, flower2){
                         return flower1 % 2 !== flower2 % 2;
                         }
-                        <br>
+                        <br><span class="other">
                         let lovefunc = (f1, f2) =&gt; !!((f1+f2)%2)
-                        <br>
+                        <br></span>
                         function lovefunc(flower1, flower2){
                         return flower1%2!=flower2%2
                         }
@@ -253,9 +258,9 @@
                         otherwise.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function simpleMultiplication(number) {
-                            if (number %2	&gt;0){return number *9;}
+                            if (number %2 &gt;0){return number *9;}
                             return number*8;
                             }
                         </span>
@@ -263,11 +268,11 @@
                         function simpleMultiplication(n){
                         return n % 2 == 0 ? n * 8 : n * 9
                         }
-                        <br>
+                        <br><span class="other">
                         function simpleMultiplication(number){
                         return number%2 ? number*9 : number*8
                         }
-
+                    </span>
                         <br>
                     </div>
                 </div>
@@ -279,7 +284,7 @@
 
                         Return their respective ages now as [humanYears,catYears,dogYears]
                         <br>
-                        humanYears 	&gt;= 1
+                        humanYears &gt;= 1
                         humanYears are whole numbers only
                         <br>
                         Cat Years
@@ -292,7 +297,7 @@
                         +5 dog years for each year after that
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             var humanYearsCatYearsDogYears = function(humanYears) {
                             let catAfter;
                             let dogAfter;
@@ -300,23 +305,23 @@
                             if(humanYears == 1){catAfter =15, dogAfter =15;}
                             if(humanYears == 2){catAfter=24, dogAfter =24;}
                             if(humanYears == 3){catAfter =28, dogAfter =29;}
-                            if (humanYears 	&gt; 3){dogAfter = (humanYears-3)*5+29; catAfter = (humanYears-3)*4+28;}
+                            if (humanYears &gt; 3){dogAfter = (humanYears-3)*5+29; catAfter = (humanYears-3)*4+28;}
                             return [humanYears,catAfter,dogAfter];
 
                             } </span>
                         <br>
-                        const humanYearsCatYearsDogYears = humanYears =	&gt; [
+                        const humanYearsCatYearsDogYears = humanYears = &gt; [
                         humanYears,
                         ( humanYears - 1 ? 16 : 11 ) + 4 * humanYears,
                         ( humanYears - 1 ? 14 : 10 ) + 5 * humanYears,
                         ];
-                        <br>
+                        <br><span class="other">
                         var humanYearsCatYearsDogYears = function(y) {
                         if (y == 1) return [1, 15, 15]
                         if (y == 2) return [2, 24, 24]
                         return [y, (y-2) * 4 + 24, (y-2) * 5 + 24]
                         }
-                        <br>
+                        <br></span>
 
 
                     </div>
@@ -340,14 +345,14 @@
                         Basements (negatives) stay the same as the universal level.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function getRealFloor(n) {
                             let eu;
                             if(n &lt;=0 ){eu=n;}
 
                             else if(n==1){eu = 0;}
-                            else if(n	&gt;1&&n&lt;=13){eu=n-1;}
-                            else if(n	&gt;=14){eu=n-2;}
+                            else if(n &gt;1&&n&lt;=13){eu=n-1;}
+                            else if(n &gt;=14){eu=n-2;}
                             return eu;
                             }
                         </span>
@@ -356,14 +361,14 @@
                         // Less than 1, return n
                         if (n &lt;= 0) return n;
 
-                        return n - (n 	&gt;= 13 ? 2 : 1);
+                        return n - (n &gt;= 13 ? 2 : 1);
                         }
-                        <br>
+                        <br><span class="other">
                         function getRealFloor(n) {
-                        return n 	&gt; 13 ? n - 2 : n 	&gt; 0 ? n - 1 : n;
+                        return n &gt; 13 ? n - 2 : n &gt; 0 ? n - 1 : n;
                         }
                         }
-
+                    </span>
                         <br>
                     </div>
                 </div>
@@ -371,29 +376,30 @@
                     <div class="question">
                         Complete the solution so that it reverses all of the words within the string passed in.
 
-Example:
+                        Example:
 
-"The greatest victory is that which requires no battle" --	&gt; "battle no requires which that is victory greatest The"
+                        "The greatest victory is that which requires no battle" -- &gt; "battle no requires which that
+                        is victory greatest The"
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function reverseWords(str){
-                                return str.split(' ').reverse().join(' ');
-                              }
+                            return str.split(' ').reverse().join(' ');
+                            }
                         </span>
                         <br>
-                        const reverseWords = (str) =	&gt; str.split(" ").reverse().join(" ");
-                        <br>
+                        const reverseWords = (str) = &gt; str.split(" ").reverse().join(" ");
+                        <br><span class="other">
                         function reverseWords(str){
-                            var reverse = [];
-                            var words = str.split(" ");
-                            for(let i=words.length-1; i	&gt;=0; i--){
-                              reverse.push(words[i]);
-                              
-                            }
-                            return reverse.join(" ")
-                          }
+                        var reverse = [];
+                        var words = str.split(" ");
+                        for(let i=words.length-1; i &gt;=0; i--){
+                        reverse.push(words[i]);
 
+                        }
+                        return reverse.join(" ")
+                        }
+                    </span>
                         <br>
                     </div>
                 </div>
@@ -404,134 +410,147 @@ Example:
                         Example : n=5 --&gt; [5,4,3,2,1]
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function reverseSeq(n){
-                                let arr=[];
-                                for(i=n; i&gt;0; i--){
-                                  arr.push(i);}
-                                return arr;
-                              };
+                            let arr=[];
+                            for(i=n; i&gt;0; i--){
+                            arr.push(i);}
+                            return arr;
+                            };
                         </span>
                         <br>
                         const reverseSeq = n =&gt; {
-                            return Array(n).fill(0).map((e, i) =&gt; n - i );
-                          };
-                        <br>
+                        return Array(n).fill(0).map((e, i) =&gt; n - i );
+                        };
+                        <br><span class="other">
                         const reverseSeq = n =&gt; {
-                            if (n	&lt;2) return [n]
-                            return [n].concat(reverseSeq(n-1));
-                          };
-
+                        if (n &lt;2) return [n]
+                        return [n].concat(reverseSeq(n-1));
+                        };
+                    </span>
                         <br>
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
-                        I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for your help. P.S. Each array includes only integer numbers. Output is a number too.
+                        I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their
+                        elements. I'll appreciate for your help. P.S. Each array includes only integer numbers. Output
+                        is a number too.
                     </div>
                     <div class="solution">
-                        <span>
-                            function arrayPlusArray(arr1, arr2) { let res1=0; let res2=0; for(let i= 0;i&lt;arr1.length;i++){ res1+=arr1[i];} for (let i=0;i&lt;arr2.length;i++){ res2+=arr2[i];} return res1 + res2; //something went wrong }
+                        <span class="mine">
+                            function arrayPlusArray(arr1, arr2) { let res1=0; let res2=0; for(let i=
+                            0;i&lt;arr1.length;i++){ res1+=arr1[i];} for (let i=0;i&lt;arr2.length;i++){ res2+=arr2[i];}
+                            return res1 + res2; //something went wrong }
                         </span>
                         <br>
-                        function arrayPlusArray(arr1, arr2) { return arr1.concat(arr2).reduce((acc, cur) = &gt; acc + cur); }
-                        <br>
-                        function arrayPlusArray(arr1, arr2) { let arr = [...arr1, ...arr2]; return arr.reduce((a, b) = &gt; a + b); }
-                        <br>
+                        function arrayPlusArray(arr1, arr2) { return arr1.concat(arr2).reduce((acc, cur) = &gt; acc +
+                        cur); }
+                        <br><span class="other">
+                        function arrayPlusArray(arr1, arr2) { let arr = [...arr1, ...arr2]; return arr.reduce((a, b) =
+                        &gt; a + b); }
+                        <br></span>
                     </div>
                 </div>
                 <div class="task timmy">
                     <div class="question">
-                        You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+                        You're writing code to control your town's traffic lights. You need a function to handle each
+                        change from green, to yellow, to red, and then to green again.
 
-                        Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
-                        
+                        Complete the function that takes a string as an argument representing the current state of the
+                        light and returns a string representing the state the light should change to.
+
                         For example, update_light('green') should return 'yellow'.
-                        
+
                         Note: Use "" instead of '' in C++.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function updateLight(current) {
-                                if(current=="green"){return "yellow";}
-                                else if(current=="yellow"){return "red";}
-                                else if(current=="red"){return "green";}
-                                else return undefined;
-                              
-                              
-                              }
+                            if(current=="green"){return "yellow";}
+                            else if(current=="yellow"){return "red";}
+                            else if(current=="red"){return "green";}
+                            else return undefined;
+
+
+                            }
                         </span>
                         <br>
                         function updateLight(current) {
-  
-                            return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
-                          
-                          }
-                        <br>
-                        const updateLight = current => ({
-                            green: 'yellow',
-                            yellow: 'red',
-                            red: 'green',
-                          })[current]
 
+                        return current === 'yellow' ? 'red' : current === 'green' ? 'yellow' : 'green';
+
+                        }
+                        <br><span class="other">
+                        const updateLight = current => ({
+                        green: 'yellow',
+                        yellow: 'red',
+                        red: 'green',
+                        })[current]
+                    </span>
                         <br>
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
-                        In this kata you will create a function that takes in a list and returns a list with the reverse order.
+                        In this kata you will create a function that takes in a list and returns a list with the reverse
+                        order.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function reverseList(list) {
-                                return list.reverse();
-                              }
+                            return list.reverse();
+                            }
                         </span>
                         <br>
                         const reverseList = list => list.reverse();
-                        <br>
+                        <br><span class="other">
                         function reverseList(list) {
-                            return list.slice().reverse();
-                          }
-
+                        return list.slice().reverse();
+                        }
+                    </span>
                         <br>
                     </div>
                 </div>
                 <div class="task timmy">
                     <div class="question">
                         Story:
-You are going to make toast fast, you think that you should make multiple pieces of toasts and once. So, you try to make 6 pieces of toast.
+                        You are going to make toast fast, you think that you should make multiple pieces of toasts and
+                        once. So, you try to make 6 pieces of toast.
 
-Problem:
-You forgot to count the number of toast you put into there, you don't know if you put exactly six pieces of toast into the toasters.
+                        Problem:
+                        You forgot to count the number of toast you put into there, you don't know if you put exactly
+                        six pieces of toast into the toasters.
 
-Define a function that counts how many more (or less) pieces of toast you need in the toasters. Even though you need more or less, the number will still be positive, not negative.
+                        Define a function that counts how many more (or less) pieces of toast you need in the toasters.
+                        Even though you need more or less, the number will still be positive, not negative.
 
-Examples:
-You must return the number of toast the you need to put in (or to take out). In case of 5 you can still put 1 toast in:
+                        Examples:
+                        You must return the number of toast the you need to put in (or to take out). In case of 5 you
+                        can still put 1 toast in:
 
-six_toast(5) == 1
-And in case of 12 you need 6 toasts less (but not -6):
+                        six_toast(5) == 1
+                        And in case of 12 you need 6 toasts less (but not -6):
 
-six_toast(12) == 6
+                        six_toast(12) == 6
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function sixToast(num) {
-                                if (num &lt; 6){
-                                return 6 - num
-                                } else 
-                                return num -6; 
-                              }
+                            if (num &lt; 6){
+                            return 6 - num
+                            } else
+                            return num -6;
+                            }
                         </span>
                         <br>
                         function sixToast(num) {
-  
-                            return num &gt;= 6 ? num - 6 : num;
-                          }
-                        <br>
-                        const sixToast = n =&gt; Math.abs(6 - n);
 
+                        return num &gt;= 6 ? num - 6 : num;
+                        }
+                        <br><span class="other">
+                        const sixToast = n =&gt; Math.abs(6 - n);
+                    </span>
                         <br>
                     </div>
                 </div>
@@ -539,123 +558,206 @@ six_toast(12) == 6
                     <div class="question">
                         Description:
                         Say hello!
-                        
-                        Write a function to greet a person. Function will take name as input and greet the person by saying hello. Return null/nil/None if input is empty string or null/nil/None.
+
+                        Write a function to greet a person. Function will take name as input and greet the person by
+                        saying hello. Return null/nil/None if input is empty string or null/nil/None.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function greet(name) {
-                                if (name===""|| name===null){return null}
-                                 else return "hello "+name+"!"
-                                }
+                            if (name===""|| name===null){return null}
+                            else return "hello "+name+"!"
+                            }
                         </span>
                         <br>
                         function greet(name) {
-                            return name ? 'hello ' + name + '!' : null;
-                          }
-                        <br>
+                        return name ? 'hello ' + name + '!' : null;
+                        }
+                        <br><span class="other">
                         function greet(name) {
-                            return name === null || name === "" ? null : "hello " + name + "!";
-                          }
-
+                        return name === null || name === "" ? null : "hello " + name + "!";
+                        }
+                    </span>
                         <br>
                     </div>
                 </div>
                 <div class="task timmy">
                     <div class="question">
                         There was a test in your class and you passed it. Congratulations!
-But you're an ambitious person. You want to know if you're better than the average student in your class.
+                        But you're an ambitious person. You want to know if you're better than the average student in
+                        your class.
 
-You receive an array with your peers' test scores. Now calculate the average and compare your score!
+                        You receive an array with your peers' test scores. Now calculate the average and compare your
+                        score!
 
-Return True if you're better, else False!
+                        Return True if you're better, else False!
 
-Note:
-Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+                        Note:
+                        Your points are not included in the array of your class's points. For calculating the average
+                        point you may add your point to the given array!
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function betterThanAverage(classPoints, yourPoints) {
-                                let med = classPoints.reduce(function( a,b ) {return a+b;})
-                                let gt= med/classPoints.length;
-                                if (gt>yourPoints){return false;}
-                                return true;
-                              }
+                            let med = classPoints.reduce(function( a,b ) {return a+b;})
+                            let gt= med/classPoints.length;
+                            if (gt>yourPoints){return false;}
+                            return true;
+                            }
                         </span>
                         <br>
                         function betterThanAverage(classPoints, yourPoints) {
-                            return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
-                          }
-                        <br>
+                        return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length;
+                        }
+                        <br><span class="other">
                         function betterThanAverage(classPoints, yourPoints) {
-                            return yourPoints > classPoints.reduce(function(sum, x){return sum + x},yourPoints)/(classPoints.length+1)
-                          }
-
+                        return yourPoints > classPoints.reduce(function(sum, x){return sum +
+                        x},yourPoints)/(classPoints.length+1)
+                        }
+                    </span>
                         <br>
                     </div>
                 </div>
-                <div class="task timmy"> 
+                <div class="task timmy">
                     <div class="question">
                         For every good kata idea there seem to be quite a few bad ones!
 
-In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'.
+                        In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'.
+                        If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell
+                        a series!'. If there are no good ideas, as is often the case, return 'Fail!'.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function well(x){
-                                let sk= x.filter(el=> el === 'good')
-                                if (sk.length&lt;1){return 'Fail!';}
-                                  else if (sk.length==1 ||sk.length==2){return 'Publish!';}
-                                  else return 'I smell a series!';
-                                }
+                            let sk= x.filter(el=> el === 'good')
+                            if (sk.length&lt;1){return 'Fail!';}
+                            else if (sk.length==1 ||sk.length==2){return 'Publish!';}
+                            else return 'I smell a series!';
+                            }
                         </span>
                         <br>
                         const well = x => {
-                            const good_count = x.filter(x => x == 'good').length;
-                            return good_count &lt; 1 ? 'Fail!' : 
-                                   good_count &lt; 3 ? 'Publish!' : 'I smell a series!';
-                          }
-                        <br>
+                        const good_count = x.filter(x => x == 'good').length;
+                        return good_count &lt; 1 ? 'Fail!' :
+                        good_count &lt; 3 ? 'Publish!' : 'I smell a series!';
+                        }
+                        <br><span class="other">
                         function well(x) {
-                            const count = x.reduce((s, v) => s + (v == 'good'), 0);
-                            return count ? count &lt; 2 ? 'I smell a series!' : 'Publish!' : 'Fail!';
-                          }
-
+                        const count = x.reduce((s, v) => s + (v == 'good'), 0);
+                        return count ? count &lt; 2 ? 'I smell a series!' : 'Publish!' : 'Fail!';
+                        }
+                    </span>
                         <br>
                     </div>
                 </div>
-                <div class="task"> 
+                <div class="task">
                     <div class="question">
                         Write a function which calculates the average of the numbers in a given list.
                     </div>
                     <div class="solution">
-                        <span>
+                        <span class="mine">
                             function find_average(array) {
-                                if(array.length&lt;1){return 0}
-                                else{
-                                let mid = array.reduce(function(a,b){return a+b})
-                                let so = mid/array.length
-                                
-                                
-                              return so}
-                              }
+                            if(array.length&lt;1){return 0}
+                            else{
+                            let mid = array.reduce(function(a,b){return a+b})
+                            let so = mid/array.length
+
+
+                            return so}
+                            }
                         </span>
                         <br>
-                        var find_average = (array) => {  
-                            return array.length === 0 ? 0 : array.reduce((acc, ind)=> acc + ind, 0)/array.length
-                          }
-                        <br>
+                        var find_average = (array) => {
+                        return array.length === 0 ? 0 : array.reduce((acc, ind)=> acc + ind, 0)/array.length
+                        }
+                        <br><span class="other">
                         function find_average(array) {
-                            if (array.length === 0) {
-                            return 0;
-                            }
-                            var result = 0;
-                            for (i=0; i&lt;array.length; i++) {
-                              result +=array[i];
-                            }
-                            return result/array.length;
-                          }
+                        if (array.length === 0) {
+                        return 0;
+                        }
+                        var result = 0;
+                        for (i=0; i&lt;array.length; i++) {
+                        result +=array[i];
+                        }
+                        return result/array.length;
+                        }
+                    </span>
+                        <br>
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        Consider an array/list of sheep where some sheep may be missing from their place. We need a
+                        function that counts the number of sheep present in the array (true means present).
 
+                        For example,
+
+                        [true, true, true, false,
+                        true, true, true, true ,
+                        true, false, true, false,
+                        true, false, false, true ,
+                        true, true, true, true ,
+                        false, false, true, true]
+                        The correct answer would be 17.
+
+                        Hint: Don't forget to check for bad values like null/undefined
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function countSheeps(arrayOfSheep) {
+                            let as=arrayOfSheep.filter(function (sh) {return sh===true})
+                            let res = as.length
+                            return res
+                            }
+                        </span>
+                        <br>
+                        function countSheeps(arrayOfSheeps) {
+                        return arrayOfSheeps.filter(Boolean).length;
+                        }
+                        <br><span class="other">
+                        function countSheeps(arrayOfSheep) {
+                        // TODO May the force be with you
+                        var num = 0;
+
+                        for(var i = 0; i &lt; arrayOfSheep.length; i++)
+                        if(arrayOfSheep[i] == true)
+                        num++;
+
+                        return num;
+                        }
+                    </span>
+                        <br>
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        Complete the square sum function so that it squares each number passed into it and then sums the
+                        results together.
+
+                        For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function squareSum(numbers){
+                            if (numbers.length&lt;1){return 0} else{ let sq=numbers.map(function (n) {return n*n}) let
+                            res=sq.reduce(function(a,b) {return a+b}) return res } } </span>
+                        <br>
+                        function squareSum(numbers){
+                        return numbers.reduce(function(sum, n){
+                        return (n*n) + sum;
+                        }, 0)
+                        }
+                        <br><span class="other">
+                        function squareSum(numbers)
+                        {
+                        var totalSum = 0;
+                        for (i=0;i&lt;numbers.length;i++)
+                        {
+                        totalSum += Math.pow(numbers[i], 2);
+                        }
+                        return totalSum;
+                        }
+                    </span>
                         <br>
                     </div>
                 </div>
@@ -663,7 +765,7 @@ In this kata you need to check the provided array (x) for good ideas 'good' and 
         </div>
 
     </div>
-    
+
 
 </body>
 
