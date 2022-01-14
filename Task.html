@@ -761,6 +761,29 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function invert(array) {
+                                return array.map(a=> a*-1) ;
+                             } </span>
+                        <br>
+                        const invert = array => array.map(num => -num);
+                        <br><span class="other">
+                            function invert(array) {
+                                var newArr = [];
+                                for(var i = 0; i &lt; array.length; i++){
+                                  newArr.push(-array[i]);
+                                }
+                                 return newArr;
+                              }
+                    </span>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
