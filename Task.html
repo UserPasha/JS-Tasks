@@ -784,6 +784,31 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Write a function generateIntegers/generate_integers that accepts a single argument n/$n and generates an array containing the integers from 0 to n/$n inclusive.
+
+For example, generateIntegers(3)/generate_integers(3) should return [0, 1, 2, 3].
+
+n/$n can be any integer greater than or equal to 0.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function generateIntegers(n) {
+                                let arr = []
+                                for(let i=0; i&lt;n+1; i++){
+                                  arr.push(i)
+                                  }
+                                return arr
+                              } </span>
+                        <br>
+                        let generateIntegers = (n) => [...Array(n+1).keys()]
+                        <br><span class="other">
+                            var generateIntegers = n => Array(n+1).fill(0).map((x,y)=>x+y)
+                    </span>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
