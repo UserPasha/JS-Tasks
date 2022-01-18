@@ -35,7 +35,7 @@ background-color: #0a0a22;
 }
 .wrapper .free-code{
     width: 800px;
-    height: 8000px;
+    height: 8800px;
 background-color: #fff;
 }
 /*.wrapper .free-code .task{
@@ -45,7 +45,7 @@ background-color: #fff;
 .wrapper .code-wars{
     font-family: 'Lato', sans-serif;
     width: 800px;
-    height: 8000px;
+    height: 8800px;
     background-color: #303133;
     margin-left: 20px;
     padding: 10px 20px;
@@ -141,11 +141,11 @@ ul li.new{
     .wrapper .free-code,
     .wrapper .code-wars{
         width: 100%;
-    height: 5100px;
+        height: 20100px;
     }
     .wrapper .free-code {
        
-        margin-top: 7600px;
+        margin-top: 11890px;
         }
     
     .wrapper .free-code .camp-block,
