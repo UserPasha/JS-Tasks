@@ -91,6 +91,22 @@
                     <li>Comparisons with the Logical And Operator</li>
                     <li>Comparisons with the Logical Or Operator</li>
                     <li>Introducing Else Statements</li>
+                    <li>Introducing Else If Statements</li>
+                    <li>Logical Order in If Else Statements</li>
+                    <li>Chaining If Else Statements</li>
+                    <li>Golf Code</li>
+                    <li>Selecting from Many Options with Switch Statements</li>
+                    <li>Adding a Default Option in Switch Statements</li>
+                    <li>Multiple Identical Options in Switch Statements</li>
+                    <li>Replacing If Else Chains with Switch</li>
+                    <li>Returning Boolean Values from Functions</li>
+                    <li>Return Early Pattern for Functions</li>
+                    <li>Build JavaScript Objects</li>
+                    <li>Accessing Object Properties with Dot Notation</li>
+                    <li>Accessing Object Properties with Bracket Notation</li>
+                    <li>Updating Object Properties</li>
+                    <li>Add New Properties to a JavaScript Object</li>
+                    <li>Delete Properties from a JavaScript Object</li>
                     <li class="new">New Taska</li>
                     <li class="new">Another New Taska</li>
                 </ul>
@@ -806,6 +822,68 @@ n/$n can be any integer greater than or equal to 0.
                         <br><span class="other">
                             var generateIntegers = n => Array(n+1).fill(0).map((x,y)=>x+y)
                     </span>
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Two red beads are placed between every two blue beads. There are N blue beads. After looking at the arrangement
+                        below work out the number of red beads.
+                
+                        0 X X 0 X X 0 X X 0 X X 0
+                
+                        Implement count_red_beads(n) (in PHP count_red_beads($n); in Java, Javascript, TypeScript, C, C++
+                        countRedBeads(n)) so that it returns the number of red beads.
+                        If there are less than 2 blue beads return 0.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function countRedBeads(n) {
+                            if (n&lt;2){return 0}
+                            else {return n+n-2}
+                            } </span>
+                        <br>
+                        const countRedBeads = n => ((n || 1)-1)*2
+                        <br><span class="other">
+                            function countRedBeads(n) {
+                            return n &lt; 2 ? 0 : 2 * n - 2;
+                            }
+                        </span>
+                        <br>
+                        const countRedBeads = n =>
+                        n && --n * 2;
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
+
+You can assume all values in the array are numbers.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function smallEnough(a, limit){
+                                if(a.length<1){return false}else{
+                              let y=0;
+                                for(let i=0; i&lt;a.length; i++){
+                                  if ( a[i]>y){
+                                    y=a[i]}
+                                  }
+                                if(limit>=y){
+                                  return true}
+                                else{return false}
+                                  }
+                              } </span>
+                        <br>
+                        function smallEnough(a, limit){
+                            return Math.max(...a) &lt;= limit
+                          }
+                        <br><span class="other">
+                            function smallEnough(a, limit){
+                                return a.every(x => x &lt;= limit);
+                              }
+                        </span>
                         <br>
                     </div>
                 </div>
