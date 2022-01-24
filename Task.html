@@ -911,6 +911,74 @@ You can assume all values in the array are numbers.
                         <br>
                     </div>
                 </div>
+                <div class="task timmy">
+                    <div class="question">
+                        Let's play! You have to return which player won! In case of a draw return Draw!.
+
+Examples:
+
+rps('scissors','paper') // Player 1 won!
+rps('scissors','rock') // Player 2 won!
+rps('paper','paper') // Draw!
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            const rps = (p1, p2) => {
+                                if (p1== 'rock' && p2 == 'scissors' || 
+                                    p1 == 'scissors' && p2 == 'paper' ||
+                                    p1 == 'paper' && p2 == 'rock')
+                                {  return 'Player 1 won!'}
+                                else if (p2== 'rock' && p1 == 'scissors' || 
+                                    p2 == 'scissors' && p1 == 'paper' ||
+                                    p2 == 'paper' && p1 == 'rock')
+                                {  return 'Player 2 won!'}
+                                else {return 'Draw!'}
+                              }; </span>
+                        <br>
+                        const rps = (p1, p2) => {
+                            if (p1 === p2) return "Draw!";
+                            var rules = {rock: "scissors", paper: "rock", scissors: "paper"};
+                            if (p2 === rules[p1]) {
+                              return "Player 1 won!";
+                            }
+                            else {
+                              return "Player 2 won!";
+                            }
+                          };
+                        <br><span class="other">
+                            rps=(a,b)=>a==b?'Draw!':`Player ${/rp|ps|sr/.test(a[0]+b[0])?2:1} won!`;
+                        </span>
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Your function takes two arguments:
+
+                        current father's age (years)
+                        current age of his son (years)
+                        Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function twiceAsOld(dadYearsOld, sonYearsOld) {
+                                let diff=dadYearsOld - sonYearsOld;
+                                let it= sonYearsOld - diff;
+                                if(it&lt;0){return it*-1}
+                                else return it;
+                              } </span>
+                        <br>
+                        function twiceAsOld(dadYearsOld, sonYearsOld) {
+                            return Math.abs(dadYearsOld - 2 * sonYearsOld);
+                          }
+                        <br><span class="other">
+                            function twiceAsOld(a, b) {
+  return a>2*b ? a-2*b : 2*b-a;
+}
+                        </span>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
