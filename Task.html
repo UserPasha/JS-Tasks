@@ -1276,6 +1276,34 @@ If the input array is empty or null, return an empty array.
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given an array of integers your solution should find the smallest integer.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            class SmallestIntegerFinder {
+                                findSmallestInt(args) {
+                return Math.min.apply(null, args)
+                                }
+                              }</span>
+                        <br>
+                        class SmallestIntegerFinder {
+                            findSmallestInt(args) {
+                              return Math.min(...args)
+                            }
+                          }
+                        <br><span class="other">
+                            class SmallestIntegerFinder {
+                                findSmallestInt(args) {
+                                  return args.sort((a,b)=>a-b)[0];
+                                }
+                              }
+
+                        </span>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
