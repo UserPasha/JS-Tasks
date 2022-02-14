@@ -1253,13 +1253,17 @@ If the input array is empty or null, return an empty array.
                     </div>
                     <div class="solution">
                         <span class="mine">
-                            function aspectRatio(x,y){
-                                let hq=y*16/9
-                                let lq=Math.ceil(hq)
-                                
-                                return [lq,y]
-                                  
-                                } </span>
+                            function countPositivesSumNegatives(input) {
+                                if(input===null||input.length===0){
+                                  return []}
+                               
+                                let pos= input.filter(f=> f>0)
+                                  let neg = input.filter(f=> f<0)
+                                  let sumPos= pos.length
+                                  let sumNeg= neg.reduce((a,b) =>a+b)
+                                  let res=[sumPos, sumNeg]
+                                  return res
+                              }</span>
                         <br>
                         function countPositivesSumNegatives(input) {
                             return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
