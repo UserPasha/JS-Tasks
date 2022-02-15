@@ -1308,6 +1308,64 @@ If the input array is empty or null, return an empty array.
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function digitize(n) {
+                                let x = String(n)
+                              let listN = x.split("")
+                               let ml=listN.map(m=> Number (m))
+                              
+                               let neeS= ml.reverse();
+                               
+                               
+                                  return neeS;
+                              }</span>
+                        <br>
+                        function digitize(n) {
+                            return String(n).split('').map(Number).reverse()
+                          }
+                        <br><span class="other">
+                            const digitize = (x) => {
+                                x = `${x}`.split('').reverse();
+                                let a = []
+                                for(let i = 0; i &lt; x.length; i++){
+                                  a.push(+x[i])
+                                }
+                                return a
+                              }
+
+                        </span>
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function sumStr(a,b) {
+                                let x= Number(a)
+                                let y= Number(b)
+                                return String (x+y)
+                              }</span>
+                        <br>
+                        function sumStr(a,b) {
+                            return (+a+ +b)+''  
+                          }
+                        <br><span class="other">
+                            function sumStr(a, b) {
+                                return ((parseInt(a) || 0) + (parseInt(b) || 0)).toString();
+                              }
+
+                        </span>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
