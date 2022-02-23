@@ -135,6 +135,46 @@
                     <li class="new">Another New Taska</li>
                 </ul>
             </div>
+            <div class="logo wars">
+                <img class="wars-img" src="images/codewars_logo.png" alt="codewars_logo">
+            </div>
+            <div class="wars-task">
+                <div class="task">
+                    <div class="question">
+                        Write a function that accepts two integers and returns the remainder of dividing the larger
+                        value by the
+                        smaller
+                        value.
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function remainder(a, b){
+                            if (a&gt;b) { return a%b}; return b%a;
+                            }
+                        </span>
+                        <br>
+
+                        function remainder(a, b){
+                        return a &gt; b ? a % b : b % a;
+                        }
+                        <br>
+                        <span class="other">
+
+                            function remainder(a, b){
+
+                            if(b&gt;a)
+                            return b%a;
+                            else
+                            return a%b;
+                            }
+                        </span>
+                        <br>
+                        function remainder(a, b){ return Math.max(a,b) % Math.min(a,b); }
+
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="code-wars">
             <div class="logo wars">
@@ -1217,27 +1257,33 @@
                 </div>
                 <div class="task timmy">
                     <div class="question">
-                        The aspect ratio of an image describes the proportional relationship between its width and its height. Most video shown on the internet uses a 16:9 aspect ratio, which means that for every pixel in the Y, there are roughly 1.77 pixels in the X (where 1.77 ~= 16/9). As an example, 1080p video with an aspect ratio of 16:9 would have an X resolution of 1920, however 1080p video with an aspect ratio of 4:3 would have an X resolution of 1440.
+                        The aspect ratio of an image describes the proportional relationship between its width and its
+                        height. Most video shown on the internet uses a 16:9 aspect ratio, which means that for every
+                        pixel in the Y, there are roughly 1.77 pixels in the X (where 1.77 ~= 16/9). As an example,
+                        1080p video with an aspect ratio of 16:9 would have an X resolution of 1920, however 1080p video
+                        with an aspect ratio of 4:3 would have an X resolution of 1440.
 
-                        Write a function that accepts arbitrary X and Y resolutions and converts them into resolutions with a 16:9 aspect ratio that maintain equal height. Round your answers up to the nearest integer.
+                        Write a function that accepts arbitrary X and Y resolutions and converts them into resolutions
+                        with a 16:9 aspect ratio that maintain equal height. Round your answers up to the nearest
+                        integer.
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function aspectRatio(x,y){
-                                let hq=y*16/9
-                                let lq=Math.ceil(hq)
-                                
-                                return [lq,y]
-                                  
-                                } </span>
+                            let hq=y*16/9
+                            let lq=Math.ceil(hq)
+
+                            return [lq,y]
+
+                            } </span>
                         <br>
                         const aspectRatio = (x, y) => [Math.ceil(16 * y / 9), y];
                         <br><span class="other">
                             function aspectRatio(x,y){
-                                let a=y/9
-                                let width=Math.ceil(a*16)
-                                return [width,y]
-                              }
+                            let a=y/9
+                            let width=Math.ceil(a*16)
+                            return [width,y]
+                            }
 
                         </span>
                         <br>
@@ -1247,37 +1293,37 @@
                     <div class="question">
                         Given an array of integers.
 
-Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+                        Return an array, where the first element is the count of positives numbers and the second
+                        element is sum of negative numbers. 0 is neither positive nor negative.
 
-If the input array is empty or null, return an empty array.
+                        If the input array is empty or null, return an empty array.
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function countPositivesSumNegatives(input) {
-                                if(input===null||input.length===0){
-                                  return []}
-                               
-                                let pos= input.filter(f=> f>0)
-                                  let neg = input.filter(f=> f<0)
-                                  let sumPos= pos.length
-                                  let sumNeg= neg.reduce((a,b) =>a+b)
-                                  let res=[sumPos, sumNeg]
-                                  return res
-                              }</span>
+                            if(input===null||input.length===0){
+                            return []}
+
+                            let pos= input.filter(f=> f>0)
+                            let neg = input.filter(f=> f<0) let sumPos=pos.length let sumNeg=neg.reduce((a,b)=>a+b)
+                                let res=[sumPos, sumNeg]
+                                return res
+                                }</span>
                         <br>
                         function countPositivesSumNegatives(input) {
-                            return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
-                        }
-                        <br><span class="other">
-                            function countPositivesSumNegatives(input) {
+                        return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n <
+                            0).reduce((a, b)=> a + b, 0)] : [];
+                            }
+                            <br><span class="other">
+                                function countPositivesSumNegatives(input) {
                                 if (!input || input.length == 0) return [];
                                 var sum = 0, count = 0;
                                 input.forEach(function(el){ if (el > 0) count++; else sum+=el});
                                 return [count, sum];
-                              }
+                                }
 
-                        </span>
-                        <br>
+                            </span>
+                            <br>
                     </div>
                 </div>
                 <div class="task">
@@ -1287,22 +1333,22 @@ If the input array is empty or null, return an empty array.
                     <div class="solution">
                         <span class="mine">
                             class SmallestIntegerFinder {
-                                findSmallestInt(args) {
-                return Math.min.apply(null, args)
-                                }
-                              }</span>
+                            findSmallestInt(args) {
+                            return Math.min.apply(null, args)
+                            }
+                            }</span>
                         <br>
                         class SmallestIntegerFinder {
-                            findSmallestInt(args) {
-                              return Math.min(...args)
-                            }
-                          }
+                        findSmallestInt(args) {
+                        return Math.min(...args)
+                        }
+                        }
                         <br><span class="other">
                             class SmallestIntegerFinder {
-                                findSmallestInt(args) {
-                                  return args.sort((a,b)=>a-b)[0];
-                                }
-                              }
+                            findSmallestInt(args) {
+                            return args.sort((a,b)=>a-b)[0];
+                            }
+                            }
 
                         </span>
                         <br>
@@ -1310,33 +1356,34 @@ If the input array is empty or null, return an empty array.
                 </div>
                 <div class="task">
                     <div class="question">
-                        Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+                        Given a random non-negative number, you have to return the digits of this number within an array
+                        in reverse order.
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function digitize(n) {
-                                let x = String(n)
-                              let listN = x.split("")
-                               let ml=listN.map(m=> Number (m))
-                              
-                               let neeS= ml.reverse();
-                               
-                               
-                                  return neeS;
-                              }</span>
+                            let x = String(n)
+                            let listN = x.split("")
+                            let ml=listN.map(m=> Number (m))
+
+                            let neeS= ml.reverse();
+
+
+                            return neeS;
+                            }</span>
                         <br>
                         function digitize(n) {
-                            return String(n).split('').map(Number).reverse()
-                          }
+                        return String(n).split('').map(Number).reverse()
+                        }
                         <br><span class="other">
                             const digitize = (x) => {
-                                x = `${x}`.split('').reverse();
-                                let a = []
-                                for(let i = 0; i &lt; x.length; i++){
-                                  a.push(+x[i])
-                                }
-                                return a
-                              }
+                            x = `${x}`.split('').reverse();
+                            let a = []
+                            for(let i = 0; i &lt; x.length; i++){
+                            a.push(+x[i])
+                            }
+                            return a
+                            }
 
                         </span>
                         <br>
@@ -1344,23 +1391,24 @@ If the input array is empty or null, return an empty array.
                 </div>
                 <div class="task">
                     <div class="question">
-                        Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+                        Create a function that takes 2 integers in form of a string as an input, and outputs the sum
+                        (also as a string):
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function sumStr(a,b) {
-                                let x= Number(a)
-                                let y= Number(b)
-                                return String (x+y)
-                              }</span>
+                            let x= Number(a)
+                            let y= Number(b)
+                            return String (x+y)
+                            }</span>
                         <br>
                         function sumStr(a,b) {
-                            return (+a+ +b)+''  
-                          }
+                        return (+a+ +b)+''
+                        }
                         <br><span class="other">
                             function sumStr(a, b) {
-                                return ((parseInt(a) || 0) + (parseInt(b) || 0)).toString();
-                              }
+                            return ((parseInt(a) || 0) + (parseInt(b) || 0)).toString();
+                            }
 
                         </span>
                         <br>
@@ -1368,21 +1416,100 @@ If the input array is empty or null, return an empty array.
                 </div>
                 <div class="task timmy">
                     <div class="question">
-                        You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left. Considering these factors, write a function that tells you if it is possible to get to the pump or not. Function should return true (1 in Prolog and NASM) if it is possible and false (0 in Prolog and NASM) if not. The input values are always positive.
+                        You were camping with your friends far away from home, but when it's time to go back, you
+                        realize that your fuel is running out and the nearest pump is 50 miles away! You know that on
+                        average, your car runs on about 25 miles per gallon. There are 2 gallons left. Considering these
+                        factors, write a function that tells you if it is possible to get to the pump or not. Function
+                        should return true (1 in Prolog and NASM) if it is possible and false (0 in Prolog and NASM) if
+                        not. The input values are always positive.
                     </div>
                     <div class="solution">
                         <span class="mine">
                             const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-                                return distanceToPump&lt;=mpg*fuelLeft?true:false
-                               };</span>
+                            return distanceToPump&lt;=mpg*fuelLeft?true:false
+                            };</span>
                         <br>
                         const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-                            return distanceToPump/mpg &lt;= fuelLeft
-                          };
+                        return distanceToPump/mpg &lt;= fuelLeft
+                        };
                         <br><span class="other">
                             const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-                                return (fuelLeft*mpg>=distanceToPump);
-                              };
+                            return (fuelLeft*mpg>=distanceToPump);
+                            };
+
+                        </span>
+                        <br>
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would
+                        like your help with an application form that will tell prospective members which category they
+                        will be placed.
+
+                        To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In
+                        this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function openOrSenior(data){
+                            return data.map(f=>(f[0]>54&&f[1]>7)?"Senior":"Open")
+                            }</span>
+                        <br>
+                        function openOrSenior(data){
+                        var rez=[];
+                        for(var i=0;i<data.length;i++){ if(data[i][0]>=55&&data[i][1]>7){rez.push("Senior");}else
+                            rez.push("Open");
+                            }
+                            return rez;
+                            }
+                            <br><span class="other">
+                                function openOrSenior(data){
+                                function determineMembership(member){
+                                return (member[0] >= 55 && member[1] > 7) ? 'Senior' : 'Open';
+                                }
+                                return data.map(determineMembership);
+                                }
+
+                            </span>
+                            <br>
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        Create a function that returns the sum of the two lowest positive numbers given an array of
+                        minimum 4 positive integers. No floats or non-positive integers will be passed.
+
+                        For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function sumTwoSmallestNumbers(numbers) {
+                            let numSort= numbers.sort((a,b)=> a-b)
+                            let x= numSort[0]+numSort[1]
+                            return x
+                            }</span>
+                        <br>
+                        const sumTwoSmallestNumbers = numbers => numbers.sort((x, y) => x - y).slice(0, 2).reduce((x, y)
+                        => x + y);
+                        <br><span class="other">
+                            function sumTwoSmallestNumbers(numbers) {
+                            var min = Number.MAX_SAFE_INTEGER;
+                            var secondMin = Number.MAX_SAFE_INTEGER;
+
+                            var n;
+                            for (i = 0; i &lt; numbers.length; i++) {
+                            n = numbers[i];
+                            if(n &lt; min) {
+                            secondMin = min;
+                            min = n;
+                            } else if( n &lt; secondMin ) {
+                            secondMin = n;
+                            }
+                            }
+
+                            return min + secondMin;
+                            }
 
                         </span>
                         <br>
