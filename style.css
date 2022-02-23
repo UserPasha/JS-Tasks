@@ -38,10 +38,7 @@ background-color: #0a0a22;
     height: 16200px;
 background-color: #fff;
 }
-/*.wrapper .free-code .task{
-    color: black;
-    background-color: #f5f6f7;
-} */
+
 .wrapper .code-wars{
     font-family: 'Lato', sans-serif;
     width: 800px;
@@ -90,7 +87,7 @@ background-color: #fff;
 .wrapper .task .question{
     padding-left: 20px;
     font-weight: bold;
-    border-bottom: chartreuse 1px solid;
+    border-bottom: chartreuse 2px solid;
     
 }
 .wrapper .task .solution{
@@ -134,6 +131,25 @@ ul li.new{
 .wrapper .free-code .wars-task .task{
     color: rgb(63, 63, 70);
     background-color: rgb(253, 253, 253);
+}
+.wrapper .free-code .wars-task .task .question{
+    padding-left: 20px;
+    font-weight: bold;
+    border-bottom: rgb(38, 39, 41) 1px double;
+}
+.wrapper .free-code .wars-task .task .solution{
+    padding-top: 15px;
+    background-color: rgb(212, 212, 216);
+} 
+.wrapper .free-code .wars-task .task .solution span.other{
+    font-weight: bold;
+    background-color: rgb(253, 253, 253);
+    color:rgb(69, 24, 128);
+}
+.wrapper .free-code .wars-task .task .solution span.mine{
+    font-weight: bold;
+    background-color: rgb(253, 253, 253);
+    color:rgb(45, 24, 73);
 }
 @media (max-width: 1080px)
 {
