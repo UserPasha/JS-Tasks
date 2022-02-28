@@ -13,11 +13,12 @@ body{
     display: flex;
     justify-content: center;
     margin: 0 auto;
+
 }
 
 .wrapper .logo img{
     max-width: 500px;
-    margin-left: 50px;;
+    margin-left: 150px;
 
 }
 
@@ -86,10 +87,16 @@ ul.free-tasks{
 .wrapper .big{
     height:550px;
 }
+.wrapper .bigger{
+    height:650px;
+}
 
 .wrapper .task .question{
     padding-left: 20px;
     font-weight: bold;    
+}
+.wrapper .large{
+    height: 380px;
 }
 .wrapper .task .solution{
     margin-top: 30px;
