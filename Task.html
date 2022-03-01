@@ -295,25 +295,48 @@
 
                     </div>
                 </div>
-                <div class="task">
+                <div class="task dogs">
                     <div class="question">
-                        tesk task
+                        In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+                        Example: highAndLow("1 2 -3 4 5"); // return "5 -3"
                     </div>
                     <div class="solution">
 
                         <span class="mine">
-                            tesk task
+                            function highAndLow(numbers){
+                                let arr=numbers.split(" ")
+                                let arrS=arr.sort((a,b)=>a-b)
+                                let mxn=arrS[arrS.length-1]
+                                let mnn=arrS[0]
+                                return ""+mxn+" "+mnn+""
+                              }
                         </span>
                         <br>
 
-                        tesk task
+                        function highAndLow(numbers){
+                            numbers = numbers.split(' ').map(Number);
+                            return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+                          }
                         <br>
                         <span class="other">
 
-                            tesk task
+                            function highAndLow(numbers) {
+                                var low, high, data = numbers.split(" ");
+                                for (var i = 0, length = data.length; i &lt; length; i++) {
+                                  var num = +data[i];
+                                  if (low === undefined || num &lt; low) low = num;
+                                  if (high === undefined || num > high) high = num;
+                                }
+                                return high + " " + low;
+                              }
                         </span>
                         <br>
-                        tesk task
+                        function highAndLow(numbers){
+                            var arr = numbers.split(" ").map( (x) => parseInt(x) );
+                            var max = arr.reduce((p, c) => p > c ? p : c );
+                            var min = arr.reduce((p, c) => p &lt; c ? p : c );
+                            return max+" "+min;
+                          }
 
                     </div>
                 </div>
