@@ -297,46 +297,135 @@
                 </div>
                 <div class="task dogs">
                     <div class="question">
-                        In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+                        In this little assignment you are given a string of space separated numbers, and have to return
+                        the highest and lowest number.
                         Example: highAndLow("1 2 -3 4 5"); // return "5 -3"
                     </div>
                     <div class="solution">
 
                         <span class="mine">
                             function highAndLow(numbers){
-                                let arr=numbers.split(" ")
-                                let arrS=arr.sort((a,b)=>a-b)
-                                let mxn=arrS[arrS.length-1]
-                                let mnn=arrS[0]
-                                return ""+mxn+" "+mnn+""
-                              }
+                            let arr=numbers.split(" ")
+                            let arrS=arr.sort((a,b)=>a-b)
+                            let mxn=arrS[arrS.length-1]
+                            let mnn=arrS[0]
+                            return ""+mxn+" "+mnn+""
+                            }
                         </span>
                         <br>
 
                         function highAndLow(numbers){
-                            numbers = numbers.split(' ').map(Number);
-                            return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
-                          }
+                        numbers = numbers.split(' ').map(Number);
+                        return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+                        }
                         <br>
                         <span class="other">
 
                             function highAndLow(numbers) {
-                                var low, high, data = numbers.split(" ");
-                                for (var i = 0, length = data.length; i &lt; length; i++) {
-                                  var num = +data[i];
-                                  if (low === undefined || num &lt; low) low = num;
-                                  if (high === undefined || num > high) high = num;
-                                }
-                                return high + " " + low;
-                              }
+                            var low, high, data = numbers.split(" ");
+                            for (var i = 0, length = data.length; i &lt; length; i++) {
+                            var num = +data[i];
+                            if (low === undefined || num &lt; low) low = num;
+                            if (high === undefined || num > high) high = num;
+                            }
+                            return high + " " + low;
+                            }
                         </span>
                         <br>
                         function highAndLow(numbers){
-                            var arr = numbers.split(" ").map( (x) => parseInt(x) );
-                            var max = arr.reduce((p, c) => p > c ? p : c );
-                            var min = arr.reduce((p, c) => p &lt; c ? p : c );
-                            return max+" "+min;
+                        var arr = numbers.split(" ").map( (x) => parseInt(x) );
+                        var max = arr.reduce((p, c) => p > c ? p : c );
+                        var min = arr.reduce((p, c) => p &lt; c ? p : c );
+                        return max+" "+min;
+                        }
+
+                    </div>
+                </div>
+                <div class="task dogs">
+                    <div class="question">
+                        Your task is to make a function that can take any non-negative integer
+                        as an argument and return it with its digits in descending order.
+                        Essentially, rearrange the digits to create the highest possible number.
+                        Example: Input: 123456789 Output: 987654321
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function descendingOrder(n){
+                            return Number(n.toString().split("").sort((a,b)=>b-a).join(""))
+                            }
+                        </span>
+                        <br>
+
+                        function descendingOrder(n){
+                        return parseInt(n.toString(10).split('').sort(function(a, b){
+                        return b - a;
+                        }).join(''));
+                        }
+                        <br>
+                        <span class="other">
+
+                            function descendingOrder(n){
+                            var length = n.toString().length;
+                            var userString = n.toString();
+                            var changed = true;
+                            while (changed) {
+                            changed = false;
+                            for (var i = 0; i &lt; length - 1; i++) {
+                            if (userString[i] &lt; userString[i+1]) {
+                            userString = userString.substring(0, i) + userString[i+1] + userString[i] +
+                            userString.substring(i + 2, length);
+                            changed = true;
+                            }
+                            }
+                            }
+                            return parseInt(userString);
+                            }
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4
+                        digits or exactly 6 digits.
+
+                        If the function is passed a valid PIN string, return true, else return false. Example: "1234"
+                        --> true || "a234" --> false
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function validatePIN (pin) {
+                            let a = pin.split("")
+                            let c = a.filter(f=>f==1||f==2||f==3||f==4||f==5||f==6||
+                            f==7||f==8||f==9||f==0&&f!=="
+                            "&&f!=="\n")
+                            if(a.length==4||a.length==6)
+                            {return c.length==a.length}else{return false}
+
+                            }
+                        </span>
+                        <br>
+
+                        function validatePIN(pin) {
+                            return /^(\d{4}|\d{6})$/.test(pin)
                           }
+                        <br>
+                        <span class="other">
+                            function validatePIN (pin) {
+                                //return true or false
+                                var n = pin.length;
+                                if( n != 4 && n != 6)
+                                    return false;
+                                for (var i in pin)
+                                    if (pin[i] > '9' || pin[i] &lt; '0')
+                                        return false;
+                                return true;
+                              }
+                              
+                              }
+                        </span>
 
                     </div>
                 </div>
