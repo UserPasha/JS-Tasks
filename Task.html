@@ -409,36 +409,39 @@
                         <br>
 
                         function validatePIN(pin) {
-                            return /^(\d{4}|\d{6})$/.test(pin)
-                          }
+                        return /^(\d{4}|\d{6})$/.test(pin)
+                        }
                         <br>
                         <span class="other">
                             function validatePIN (pin) {
-                                //return true or false
-                                var n = pin.length;
-                                if( n != 4 && n != 6)
-                                    return false;
-                                for (var i in pin)
-                                    if (pin[i] > '9' || pin[i] &lt; '0')
-                                        return false;
-                                return true;
-                              }
-                              
-                              }
+                            //return true or false
+                            var n = pin.length;
+                            if( n != 4 && n != 6)
+                            return false;
+                            for (var i in pin)
+                            if (pin[i] > '9' || pin[i] &lt; '0')
+                            return false;
+                            return true;
+                            }
+
+                            }
                         </span>
 
                     </div>
                 </div>
                 <div class="task dogs">
                     <div class="question">
-                        A child is playing with a ball on the nth floor of a tall building. The height of this floor, h, is known.
+                        A child is playing with a ball on the nth floor of a tall building. The height of this floor, h,
+                        is known.
 
-                        He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
-                        
+                        He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height
+                        (a bounce of 0.66).
+
                         His mother looks out of a window 1.5 meters from the ground.
-                        
-                        How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing?
-                        
+
+                        How many times will the mother see the ball pass in front of her window (including when it's
+                        falling and bouncing?
+
                         Three conditions must be met for a valid experiment:
                         Float parameter "h" in meters must be greater than 0
                         Float parameter "bounce" must be greater than 0 and less than 1
@@ -449,23 +452,67 @@
                     <div class="solution">
 
                         <span class="mine">
-                            function bouncingBall(h,  b,  w) {
-                                if(h<0||b<=0||b>=1||h<w){
-                                  return -1} else{let i =0
-                                  while(h>w){
-                                    h=h*b 
+                            function bouncingBall(h, b, w) {
+                            if(h<0||b<=0||b>=1||h<w){ return -1} else{let i=0 while(h>w){
+                                    h=h*b
                                     i++}
-                                                  return i*2-1
-                                                  }
-                               }
+                                    return i*2-1
+                                    }
+                                    }
                         </span>
                         <br>
 
-                        const bouncingBall = (h, b, w) => (h &lt;= 0 || b &lt;= 0 || b >= 1 || w >= h) ? -1 : 2 + bouncingBall(h*b, b, w);
+                        const bouncingBall = (h, b, w) => (h &lt;= 0 || b &lt;= 0 || b >= 1 || w >= h) ? -1 : 2 +
+                        bouncingBall(h*b, b, w);
                         <br>
                         <span class="other">
                             const bouncingBall = (h, b, w, M=Math) =>
                             b &lt; 1 ? -1 - 2 * M.floor( M.log2(h / w)/M.log2(b) ) || -1 : -1;
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task dogs">
+                    <div class="question">
+                        Create a function that takes an integer argument of seconds and converts the value into a string
+                        describing how many hours and minutes comprise that many seconds.
+
+                        Any remaining seconds left over are ignored.
+
+        
+
+                        For example:
+
+                        3600 --> "1 hour(s) and 0 minute(s)"
+                        3601 --> "1 hour(s) and 0 minute(s)"
+                        3500 --> "0 hour(s) and 58 minute(s)"
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function toTime(seconds) {
+                            let min = Math.floor(seconds/60)
+                            let hours= Math.floor(min/60)
+                            let minO= Math.floor((seconds-hours*3600)/60)
+                            if (seconds&lt;3600){return "0 hour(s) and "+min+" minute(s)"}
+                            else {return ""+hours+" hour(s) and "+minO+" minute(s)"}
+                            }
+                        </span>
+                        <br>
+
+                        const toTime = ( $ ) => `${Math.floor($/3600)} hour(s) and ${Math.floor($/60) % 60} minute(s)`
+                        <br>
+                        <span class="other">
+                            function toTime(seconds) {
+                                let minutes = Math.trunc(seconds / 60);
+                                if (minutes >= 60) {
+                                  let hours = Math.trunc(minutes / 60);
+                                  let m = minutes - (60 * hours);
+                                  return hours + ' hour(s) and ' + m + ' minute(s)';
+                                } else {
+                                  return '0 hour(s) and ' + minutes + ' minute(s)';
+                                }
+                              }
                         </span>
 
                     </div>
