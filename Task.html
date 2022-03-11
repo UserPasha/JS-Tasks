@@ -517,6 +517,137 @@
 
                     </div>
                 </div>
+                <div class="task dogs">
+                    <div class="question">
+                        Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+
+                        Task
+                        Write a function that returns both the minimum and maximum number of the given list/array.
+                        
+                        Example:
+                        minMax([1,2,3,4,5])   == [1,5]
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function minMax(arr){
+                                let a=[]
+                                let b= arr.sort((a,b)=>a-b)
+                                let c= a.push(b[0], b[b.length-1])
+                                return a
+                              }
+                        </span>
+                        <br>
+
+                        function minMax(arr){
+                            return [Math.min(...arr), Math.max(...arr)];
+                          }
+                        <br>
+                        <span class="other">
+                            function minMax(arr){
+                                var max = arr[0], min = arr[0];
+                                for(var i=0; i<arr.length; i++) {
+                                  if(arr[i]>max) max = arr[i];
+                                  if(arr[i]&lt;min) min = arr[i];
+                                }
+                                return [min,max];
+                              }
+                        </span><br>
+                        <span>
+                            function minMax(arr){
+                                return arr.reduce(function(p, e){
+                                  return [p[0] &lt; e ? p[0] : e, p[1] > e ? p[1] : e];
+                                },[arr[0], arr[0]]);
+                              }
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        You have read the title: you must guess a sequence. It will have something to do with the number given.
+
+                        Example:
+                        x = 16
+                        
+                        result = [1, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5, 6, 7, 8, 9]
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function sequence(x) {
+                                let a=[]
+                                let i=0
+                                while (x>0){
+                                  x=x-1;
+                                  i++;
+                                  a.push(i)
+                                  }
+                                 return a.sort()
+                               }
+                        </span>
+                        <br>
+
+                        const R = require('ramda')
+                        const sequence = R.pipe(R.inc, R.range(1), R.sort(R.ascend(String)))
+                        <br>
+                        <span class="other">
+                            function sequence(x) {
+                                let array = [];
+                                for (let i = 1; i &lt;= x; i++) array.push(i);
+                                return array.sort();
+                            }
+                        </span><br>
+                        <span>
+                            const sequence = ($) => Array.from({length: $}, (_,i)=> i+1).sort();
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        Given a 2D ( nested ) list ( array, vector, .. ) of size m * n, your task is to find the sum of the minimum values in each row.
+
+                        For Example:
+                        
+                        [ [ 1, 2, 3, 4, 5 ]        #  minimum value of row is 1
+                        , [ 5, 6, 7, 8, 9 ]        #  minimum value of row is 5
+                        , [ 20, 21, 34, 56, 100 ]  #  minimum value of row is 20
+                        ]
+                        So the function should return 26 because the sum of the minimums is 1 + 5 + 20 = 26.
+                        
+                        Note: You will always be given a non-empty list containing positive values.
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function sumOfMinimums(arr) {
+ 
+                                let a = arr.map(m=>m.sort((a,b)=>a-b))
+                                let c = a.map(m=>m[0])
+                                return c.reduce((a,b)=>a+b)
+                               }
+                        </span>
+                        <br>
+
+                        function sumOfMinimums(arr) {
+                            return arr.reduce((p, c) => p + Math.min(...c), 0);
+                          }
+                        <br>
+                        <span class="other">
+                            function sumOfMinimums(arr) {
+                                let total = 0;
+                                
+                                for (let i = 0; i &lt; arr.length; i++){
+                                 total += Math.min(...arr[i])
+                                }
+                                
+                                return total;
+                              }
+                        </span><br>
+                       
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
@@ -1863,7 +1994,7 @@
 
     </div>
 
-
+    <script src="./JS/functions.js"></script>
 </body>
 
 </html>
