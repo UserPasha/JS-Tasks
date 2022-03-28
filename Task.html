@@ -723,6 +723,118 @@ const max = (list) => Math.max(...list);
                        
                     </div>
                 </div>
+                <div class="task big">
+                    <div class="question">
+                        You are given two sorted arrays that both only contain integers. Your task is to find a way to merge them into a single one, sorted in asc order. Complete the function mergeArrays(arr1, arr2), where arr1 and arr2 are the original sorted arrays.
+
+You don't need to worry about validation, since arr1 and arr2 must be arrays with 0 or more Integers. If both arr1 and arr2 are empty, then just return an empty array.
+
+Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. Remove duplicated in the returned result.
+
+Example: [1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12] -> [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function mergeArrays(arr1, arr2) {
+                                let a= arr1.concat(arr2)
+                                let b= a.sort((a,b)=>a-b)
+                                let c=new Set(b)
+                                return [...c]
+                              }
+                        </span>
+                        <br>
+
+                        function mergeArrays(a, b) {
+                            return [...new Set(a.concat(b))].sort((a,b)=>a-b)
+                          }
+                        <br>
+                        <span class="other">
+                            function mergeArrays(arr1, arr2){
+                                var newArray = [];
+                                newArray = newArray.concat(arr1);
+                                for (var i = 0; i&lt;  arr2.length; i++) {
+                                  if (newArray.indexOf(arr2[i]) === -1){
+                                  newArray.push(arr2[i]);
+                                  }
+                                }
+                                return newArray.sort(function(a,b){
+                                  return a-b;
+                                });
+                              }
+                        </span><br>
+                       
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Given an array of integers, return a new array with each value doubled.
+For example:
+[1, 2, 3] --> [2, 4, 6]
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function maps(x){
+                                return x.map(m=>m*2)
+                            }
+                        </span>
+                        <br>
+
+                        with (require('ramda'))
+  var maps = map(multiply`2`)
+                        <br>
+                        <span class="other">
+                            function maps(x){
+
+                                var newArr = [];
+                                
+                                x.map(function(y){
+                                  newArr.push(y*2);
+                              });
+                              
+                              return newArr;
+                              }
+                        </span><br>
+                       
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        Complete the function that takes a non-negative integer n as input, and returns a list of all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
+
+                        Example: n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function powersOfTwo(n){
+                                let a=[]
+                                for(let i=0; i&lt;n+1;i++){
+                                  a.push(Math.pow(2,i))
+                                  }
+                                return a
+                              }
+                        </span>
+                        <br>
+
+                        function powersOfTwo(n) {
+                            return Array.from({length: n + 1}, (v, k) => 2 ** k);
+                          }
+                        <br>
+                        <span class="other">
+                            function powersOfTwo(n) { let result = [];
+  
+                                for (let pow = BigInt(1); n-- >= 0; pow &lt;&lt;= BigInt(1)) {
+                                  result.push(Number(pow));
+                                }
+                                
+                                return result;
+                              }
+                        </span><br>
+                       
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
