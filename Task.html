@@ -835,6 +835,75 @@ For example:
                        
                     </div>
                 </div>
+                <div class="task timmy">
+                    <div class="question">
+                        You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
+
+However, sometimes, you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+
+Task
+Given an integral number, determine if it's a square number. Example: 0  =>  true
+3  =>  false
+4  =>  true
+                    
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            var isSquare = function(n){
+                                let a = Math.sqrt(n)
+                                if(a%1===0) {return true}
+                                 else {return false}
+                               }
+                        </span>
+                        <br>
+
+                        function isSquare(n) {
+                            return Math.sqrt(n) % 1 === 0;
+                          }
+                        <br>
+                        <span class="other">
+                            const isSquare = n => Number.isInteger(Math.sqrt(n));
+                        </span><br>
+                       
+                    </div>
+                </div>
+                <div class="task timmy">
+                    <div class="question">
+                        Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive.
+                         The string can contain any char. Example: XO("xooxx") => false
+                         XO("ooxXm") => true
+3  =>  false
+4  =>  true
+                    
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function XO(str) {
+                                let a= str.toLowerCase()
+                                let b=a.split("")
+                                let c= b.filter(f=>f==="x")
+                                let d = b.filter(f=>f==="o")
+                                if (c.length ===d.length){
+                                  return true} else {return false}
+                            }
+                        </span>
+                        <br>
+
+                        const XO = str => {
+                            str = str.toLowerCase().split('');
+                            return str.filter(x => x === 'x').length === str.filter(x => x === 'o').length;
+                          }
+                        <br>
+                        <span class="other">
+                            function XO(str) {
+                                return str.replace(/o/ig, '').length == str.replace(/x/ig, '').length
+                              }
+                        </span><br>
+                       
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
