@@ -8,7 +8,7 @@ body{
 }
 .wrapper{
     width: 1600px;
-    height: 100vh;
+    min-height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     justify-content: center;
@@ -37,14 +37,14 @@ align-items: center;
 }
 .wrapper .free-code{
     width: 1000px;
-    height: 14000px;
-background-color: #fff;
+    min-height: 100vh;
+    background-color: #fff;
 }
 
 .wrapper .code-wars{
     font-family: 'Lato', sans-serif;
     width: 1000px;
-    height: 14000px;
+    min-height: 100vh;
     background-color: #303133;
     margin-left: 20px;
     padding: 10px 20px;
@@ -64,11 +64,11 @@ background-color: #fff;
 .wrapper .task{
         
     width: 720px;
-    height:260px;
+    min-height:200px;
     border-radius: 15px;
     box-shadow: 2px 2px 2px #262729;
     margin-top: 20px;
-    padding: 10px 30px;
+    padding: 20px 30px;
     letter-spacing: 2px;
     
 }
@@ -76,31 +76,14 @@ ul.free-tasks{
     width: 90%;
     margin-left: 45px;
 }
-.wrapper .timmy{
-    
-    height:350px;
-   
-}
-.wrapper .dogs{
-    height:450px;
-}
-.wrapper .big{
-    height:550px;
-}
-.wrapper .bigger{
-    height:650px;
-}
 
 .wrapper .task .question{
-    padding-left: 20px;
+    padding: 5px 10px;
     font-weight: bold;    
 }
-.wrapper .large{
-    height: 380px;
-}
+
 .wrapper .task .solution{
-    margin-top: 30px;
-    padding-top: 10px;
+    padding-top: 15px;
     background-color: #262729;
     border-top: chartreuse 2px solid;
 }
@@ -108,11 +91,15 @@ ul.free-tasks{
     border-top: rgb(168, 168, 168) 2px solid;
 }
 .wrapper .task .solution span.other{
+    display: block;
+    margin-top: 10px;
     font-weight: bold;
     background-color: rgb(174, 216, 132);
     color:rgb(69, 24, 128);
 }
 .wrapper .task .solution span.mine{
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
     background-color: rgb(151, 231, 71);
     color:rgb(45, 24, 73);
@@ -177,12 +164,9 @@ ul li.new{
     .wrapper .free-code,
     .wrapper .code-wars{
         width: 100%;
-        height: 20100px;
+        min-height: 100vh;
     }
-    .wrapper .free-code {
-       
-        margin-top: 24302px;
-        }
+  
     
     .wrapper .free-code .camp-block,
     .wrapper .code-wars .wars-task
