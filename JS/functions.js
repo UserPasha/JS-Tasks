@@ -12,15 +12,21 @@ function sequence(x) {
 const num = 8
 console.log(sequence(8))
 
+function dateTest(y,m,d){
+const a = new Date(y, m-1, d)
+const b = new Date()
+let days = `your are ${Math.floor((b.getTime()-a.getTime())/ (1000*60*60*24))} days`
+let hours = `your are ${Math.floor((b.getTime()-a.getTime())/ (1000*60*60))} hours`
+let minutes = `your are ${Math.floor((b.getTime()-a.getTime())/ (1000*60))} minutes`
+return minutes
+}
 
+console.log(dateTest(1981, 4, 8))
 
 
 //console.log(b)
 
-// timmy
-// dogs
-// big
-// bigger
+
 
 // &lt;      (<)
 
@@ -35,7 +41,7 @@ let importantSi = [
 
 let importantMi = [
   {
-    counter: "are counter is ready?",
+    withReact: "work with project. add nav or structure or css",
     brouser: "claer one tab",
     react: "kabzda like easy",
     native: "lesson native",
@@ -47,6 +53,7 @@ let importantJu = [
   {
     codewars: "Solve task on CodeWars",
     instagramm: "Check some saves",
+    css: "play a css game",
   }
 ]
 let testArr = [
@@ -56,7 +63,7 @@ let testArr = [
 let a = testArr.length
 let b = Math.round(Math.random() * 3)
 let c = Math.round(Math.random() * 4)
-let d = Math.round(Math.random())
+let d = Math.round(Math.random()* 2)
 
 let arrayOfValuesFromImoptanSi = Object.values(importantSi[0]) //array
 let randomOfImportantSi = arrayOfValuesFromImoptanSi[b]
@@ -78,4 +85,3 @@ function testFunction() {
 }
 
 testFunction();
-

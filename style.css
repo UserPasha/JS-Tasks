@@ -104,6 +104,9 @@ ul.free-tasks{
     background-color: rgb(151, 231, 71);
     color:rgb(45, 24, 73);
 }
+code{
+    font-size: 16px;
+}
 ul{
     width: 100%;
     list-style-image: url(images/gal.png);
