@@ -938,6 +938,57 @@ longest(a, b) -> "abcdefklmopqwxy"
 
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given a number return the closest number to it that is divisible by 10.
+
+                        Example input:
+                        
+                        22
+                        25
+                        37
+                        Expected output:
+                        
+                        20
+                        30
+                        40
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">const closestMultiple10 = num => {
+                            return Math.round(num/10)*10;
+                          };
+                        </span>
+                        <br>
+                        const closestMultiple10 = num => {
+                            let a = Math.trunc(num / 10);
+                            let b = Math.trunc(num % 10); 
+                            if (b &lt;  5 && b > 0) {
+                              while (b > 0) {
+                                b -= 1;
+                              }
+                            } else if (b >= 5) {
+                              while (b &lt;  10) {
+                                b += 1;
+                              }
+                            }
+                            return a * 10 + b;
+                          };
+                        <br>
+                        <span class="other">const closestMultiple10 = num => {
+                            let b = num % 10
+                            if (b &lt;  5) {
+                              num -= b
+                            } else {
+                              num += 10 - b
+                            }
+                            return num
+                          };
+                        </span>
+                        
+
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
