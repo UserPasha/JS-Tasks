@@ -1051,6 +1051,72 @@
                             </span>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Write a method, that will get an integer array as parameter and will process every number from
+                        this array.
+
+                        Return a new array with processing every number of the input-array like this:
+
+                        If the number has an integer square root, take this, otherwise square the number.
+
+                        Example
+                        [4,3,9,7,2,1] -> [2,9,3,49,4,1]
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function squareOrSquareRoot(array) {
+                            let a = []
+                            for (let i = 0; i &lt; array.length; i++) {
+                            if (Math.floor(Math.sqrt(array[i])) === Math.sqrt(array[i])) {
+                            a.push(Math.sqrt(array[i]))
+                            } else {
+                            a.push(Math.pow(array[i], 2))
+                            }
+                            }
+                            return a
+                            }
+                            <br>
+                            <span class="other">
+                                const squareOrSquareRoot = $ => $.map(el => el**.5 % 1 ? el*el : el**.5)
+                            </span>
+                            <br><span>
+                                function squareOrSquareRoot(array) {
+                                return array.map(x => {
+                                const r = Math.sqrt(x);
+                                return (r % 1 == 0) ? r : (x*x);
+                                });
+                                }
+                                <br>
+                            </span>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Write a function that returns a string in which firstname is swapped with last name.
+
+                        nameShuffler('john McClane'); => "McClane john"
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function nameShuffler(str){
+                            let a= str.split(" ")
+                            let b = a.reverse().join(" ")
+                            return b
+                            }
+                            <br>
+                            <span class="other">
+                                function nameSuffle(str){
+                                    return str.split(' ').reverse().join(' ')
+                                  }
+                            </span>
+                            <br><span>
+                                const nameShuffler = str =>
+                                str.replace(/([^\s]+) ([^\s]+)/, `$2 $1`);
+                                <br>
+                            </span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
@@ -2474,116 +2540,131 @@
                 </div>
                 <div class="task">
                     <div class="question">
-                        You are the "computer expert" of a local Athletic Association (C.A.A.). Many teams of runners come to compete. Each time you get a string of all race results of every team who has run. For example here is a string showing the individual results of a team of 5 runners:
+                        You are the "computer expert" of a local Athletic Association (C.A.A.). Many teams of runners
+                        come to compete. Each time you get a string of all race results of every team who has run. For
+                        example here is a string showing the individual results of a team of 5 runners:
 
                         "01|15|59, 1|47|6, 01|17|20, 1|32|34, 2|3|17"
-                        
-                        Each part of the string is of the form: h|m|s where h, m, s (h for hour, m for minutes, s for seconds) are positive or null integer (represented as strings) with one or two digits. Substrings in the input string are separated by , or ,.
-                        
-                        To compare the results of the teams you are asked for giving three statistics; range, average and median.
-                        
-                        Range : difference between the lowest and highest values. In {4, 6, 9, 3, 7} the lowest value is 3, and the highest is 9, so the range is 9 − 3 = 6.
-                        
-                        Mean or Average : To calculate mean, add together all of the numbers in a set and then divide the sum by the total count of numbers.
-                        
-                        Median : In statistics, the median is the number separating the higher half of a data sample from the lower half. The median of a finite list of numbers can be found by arranging all the observations from lowest value to highest value and picking the middle one (e.g., the median of {3, 3, 5, 9, 11} is 5) when there is an odd number of observations. If there is an even number of observations, then there is no single middle value; the median is then defined to be the mean of the two middle values (the median of {3, 5, 6, 9} is (5 + 6) / 2 = 5.5).
-                        
-                        Your task is to return a string giving these 3 values. For the example given above, the string result will be
-                        
+
+                        Each part of the string is of the form: h|m|s where h, m, s (h for hour, m for minutes, s for
+                        seconds) are positive or null integer (represented as strings) with one or two digits.
+                        Substrings in the input string are separated by , or ,.
+
+                        To compare the results of the teams you are asked for giving three statistics; range, average
+                        and median.
+
+                        Range : difference between the lowest and highest values. In {4, 6, 9, 3, 7} the lowest value is
+                        3, and the highest is 9, so the range is 9 − 3 = 6.
+
+                        Mean or Average : To calculate mean, add together all of the numbers in a set and then divide
+                        the sum by the total count of numbers.
+
+                        Median : In statistics, the median is the number separating the higher half of a data sample
+                        from the lower half. The median of a finite list of numbers can be found by arranging all the
+                        observations from lowest value to highest value and picking the middle one (e.g., the median of
+                        {3, 3, 5, 9, 11} is 5) when there is an odd number of observations. If there is an even number
+                        of observations, then there is no single middle value; the median is then defined to be the mean
+                        of the two middle values (the median of {3, 5, 6, 9} is (5 + 6) / 2 = 5.5).
+
+                        Your task is to return a string giving these 3 values. For the example given above, the string
+                        result will be
+
                         "Range: 00|47|18 Average: 01|35|15 Median: 01|32|34"
-                        
+
                         of the form: "Range: hh|mm|ss Average: hh|mm|ss Median: hh|mm|ss"`
-                        
+
                         where hh, mm, ss are integers (represented by strings) with each 2 digits.
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function stat(strg) {
-                                if(strg===""){
-                                  return ""
-                                }
-                                 let a = strg.split(",")
-                                let b = a.map(m => m.split("|"))
-                                let c = b.map(b => (+b[0] * 3600) + (+b[1] * 60) + (+b[2]))
-                                let d = c.sort((a,b)=>a-b)
-                                let e = Math.floor((d[d.length - 1] - d[0]) / 3600)
-                                e&lt; 10? e="0"+e+"":e;
-                                let f = Math.floor(((d[d.length - 1] - d[0]) % 3600) / 60)
-                                f&lt; 10? f="0"+f+"":f;
-                                let g = ((d[d.length - 1] - d[0]) % 3600) % 60
-                                g&lt; 10? g="0"+g+"":g;
-                                let range = "" + e + "|" + f + "|" + g + ""
-                                let h = d.reduce((a, b) => a + b) / d.length 
-                                let i = Math.floor(h / 3600)
-                                i&lt; 10? i="0"+i+"":i;
-                                let l = Math.floor(h % 3600 / 60)
-                                l&lt; 10? l="0"+l+"":l;
-                                let k = Math.floor(h % 3600 % 60)
-                                k&lt; 10? k="0"+k+"":k;
-                                let Average = "" + i + "|" + l + "|" + k + ""
-                                let m
-                                if (d.length % 2 > 0) {
-                                  m = d[(d.length-1) / 2]
-                                }else {
-                                  m= (d[d.length / 2]+d[Math.floor((d.length-1) / 2)])/2
-                                }
-                                let n = Math.floor(m / 3600)
-                                let y = m-n*3600
-                                n&lt; 10? n="0"+n+"":n;
-                                let x = Math.floor(y / 60)
-                                x&lt; 10? x="0"+x+"":x;
-                                y&lt; 10? y="0"+y+"":y;
-                                 let z = Math.floor(y-x*60)
-                                z&lt; 10? z="0"+z+"":z;
-                                let median = "" + n + "|" + x + "|" + z + ""
-                                return "Range: "+range+" Average: "+Average+" Median: "+median+""
-                              }</span>
+                            if(strg===""){
+                            return ""
+                            }
+                            let a = strg.split(",")
+                            let b = a.map(m => m.split("|"))
+                            let c = b.map(b => (+b[0] * 3600) + (+b[1] * 60) + (+b[2]))
+                            let d = c.sort((a,b)=>a-b)
+                            let e = Math.floor((d[d.length - 1] - d[0]) / 3600)
+                            e&lt; 10? e="0"+e+"":e;
+                            let f = Math.floor(((d[d.length - 1] - d[0]) % 3600) / 60)
+                            f&lt; 10? f="0"+f+"":f;
+                            let g = ((d[d.length - 1] - d[0]) % 3600) % 60
+                            g&lt; 10? g="0"+g+"":g;
+                            let range = "" + e + "|" + f + "|" + g + ""
+                            let h = d.reduce((a, b) => a + b) / d.length
+                            let i = Math.floor(h / 3600)
+                            i&lt; 10? i="0"+i+"":i;
+                            let l = Math.floor(h % 3600 / 60)
+                            l&lt; 10? l="0"+l+"":l;
+                            let k = Math.floor(h % 3600 % 60)
+                            k&lt; 10? k="0"+k+"":k;
+                            let Average = "" + i + "|" + l + "|" + k + ""
+                            let m
+                            if (d.length % 2 > 0) {
+                            m = d[(d.length-1) / 2]
+                            }else {
+                            m= (d[d.length / 2]+d[Math.floor((d.length-1) / 2)])/2
+                            }
+                            let n = Math.floor(m / 3600)
+                            let y = m-n*3600
+                            n&lt; 10? n="0"+n+"":n;
+                            let x = Math.floor(y / 60)
+                            x&lt; 10? x="0"+x+"":x;
+                            y&lt; 10? y="0"+y+"":y;
+                            let z = Math.floor(y-x*60)
+                            z&lt; 10? z="0"+z+"":z;
+                            let median = "" + n + "|" + x + "|" + z + ""
+                            return "Range: "+range+" Average: "+Average+" Median: "+median+""
+                            }</span>
                         <br>
                         function stat( str ) {
 
-                            if ( !str ) return '';
-                        
-                            var arr = str
-                                        .split( ', ' )
-                                        .map( s => s.split( '|' ).reduce( (sum, c, i ) => sum + c * Math.pow( 60, 2 - i ), 0 ) )
-                                        .sort( ( a, b ) => a - b );
-                        
-                            var range = arr[ arr.length - 1 ] - arr[ 0 ];
-                            var average = arr.reduce( ( sum, n ) => sum + n ) / arr.length ^ 0;
-                            var median = ( arr[ arr.length >> 1 ] + arr[ ( arr.length >> 1 ) - !( arr.length % 2 ) ] ) >> 1;
-                        
-                            return `Range: ${ format( range ) } Average: ${ format( average ) } Median: ${ format( median ) }`;
+                        if ( !str ) return '';
+
+                        var arr = str
+                        .split( ', ' )
+                        .map( s => s.split( '|' ).reduce( (sum, c, i ) => sum + c * Math.pow( 60, 2 - i ), 0 ) )
+                        .sort( ( a, b ) => a - b );
+
+                        var range = arr[ arr.length - 1 ] - arr[ 0 ];
+                        var average = arr.reduce( ( sum, n ) => sum + n ) / arr.length ^ 0;
+                        var median = ( arr[ arr.length >> 1 ] + arr[ ( arr.length >> 1 ) - !( arr.length % 2 ) ] ) >> 1;
+
+                        return `Range: ${ format( range ) } Average: ${ format( average ) } Median: ${ format( median )
+                        }`;
                         }
-                        
+
                         function format( n ) {
-                        
-                            const f = n => ( n > 9 ? '' : '0' ) + n;
-                        
-                            return [ n / 3600 ^ 0, n / 60 % 60 ^ 0, n % 60 ].map( n => f( n ) ).join( '|' );        
+
+                        const f = n => ( n > 9 ? '' : '0' ) + n;
+
+                        return [ n / 3600 ^ 0, n / 60 % 60 ^ 0, n % 60 ].map( n => f( n ) ).join( '|' );
                         }
                         <br><span class="other">
                             function f2sec(s) {
-                                var T = s.split('|').map(n=>parseInt(n))
-                                return 3600*T[0] + 60*T[1] + T[2];
-                              }
-                              
-                              function sec2f(t){
-                                var h = t/3600;
-                                t = t % 3600;
-                                var min = t/60;
-                                var sec = t % 60;
-                                return [h, min, sec].map(Math.floor);
-                              }
-                              
-                              function stat(s) {
-                                if (!s.length) return '';
-                                T = s.split(', ').map(f2sec).sort((a, b)=>a-b)
-                                var l = T.length
-                                var rng = Math.max(...T)-Math.min(...T)
-                                var avg = T.reduce((a, b)=>a+b)/T.length
-                                var med = l%2 ? T[~~(l/2)] : ~~((T[l/2]+T[l/2-1])/2);
-                                var r = [rng, avg, med].map(sec2f).map(e=>e.map(f=>f.toString().padStart(2, '0')).join('|'));
-                                return `Range: ${r[0]} Average: ${r[1]} Median: ${r[2]}`
+                            var T = s.split('|').map(n=>parseInt(n))
+                            return 3600*T[0] + 60*T[1] + T[2];
+                            }
+
+                            function sec2f(t){
+                            var h = t/3600;
+                            t = t % 3600;
+                            var min = t/60;
+                            var sec = t % 60;
+                            return [h, min, sec].map(Math.floor);
+                            }
+
+                            function stat(s) {
+                            if (!s.length) return '';
+                            T = s.split(', ').map(f2sec).sort((a, b)=>a-b)
+                            var l = T.length
+                            var rng = Math.max(...T)-Math.min(...T)
+                            var avg = T.reduce((a, b)=>a+b)/T.length
+                            var med = l%2 ? T[~~(l/2)] : ~~((T[l/2]+T[l/2-1])/2);
+                            var r = [rng, avg, med].map(sec2f).map(e=>e.map(f=>f.toString().padStart(2,
+                            '0')).join('|'));
+                            return `Range: ${r[0]} Average: ${r[1]} Median: ${r[2]}`
                         </span>
                         <br>
                     </div>
