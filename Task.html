@@ -1117,6 +1117,51 @@
                             </span>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Your task is to determine how many files of the copy queue you will be able to save into your Hard Disk Drive.
+                         The files must be saved in the order they appear in the queue.
+                         save([4,4,4,3,3], 12) -> 3
+                         # 4+4+4 &lt;= 12, but 4+4+4+3 > 12
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function save(sizes, hd) {
+                            let a=[]
+                            let d=[]
+                            for(let i=0;i<sizes.length;i++){
+                            
+                              let b= a.reduce((a,b)=>a+b,0)
+                              let c =hd-b;
+                              if(sizes[i]>c) break;
+                              a.push(sizes[i])
+                            }
+                              return a.length
+                            }
+                            <br>
+                            <span class="other">
+                                function save(sizes, hd) {
+                                    let i = -1;
+                                    while (hd >=0) {
+                                      hd -= sizes.shift();
+                                      i++;
+                                    }
+                                    return i;
+                                  }
+                            </span>
+                            <br><span>
+                                function save(sizes, hd) {
+                                    let result = 0;
+                                    sizes.reduce((acc, curr) => {
+                                      if ((acc += curr) &lt;= hd) result += 1;
+                                      return acc;
+                                    }, 0);
+                                    return result;
+                                  }
+                                <br>
+                            </span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
