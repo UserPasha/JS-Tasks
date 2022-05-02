@@ -1,3 +1,8 @@
+:root{
+    --color-One:rgba(221, 90, 60, 0.8);
+    --color-Two: rgba(169, 61, 41, 0.8);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -61,7 +66,19 @@ align-items: center;
     padding: 10px 30px;
     letter-spacing: 2px;
 }
-.wrapper .task{
+.wrapper .wars-task .task{
+        
+    width: 720px;
+    min-height:200px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px var(--color-Two);
+    margin-top: 20px;
+    padding: 20px 30px;
+    letter-spacing: 2px;
+    
+}
+
+.wrapper .free-code .task{
         
     width: 720px;
     min-height:200px;
@@ -85,24 +102,24 @@ ul.free-tasks{
 .wrapper .task .solution{
     padding-top: 15px;
     background-color: #262729;
-    border-top: chartreuse 2px solid;
+    border-top: var(--color-Two) 2px solid;
 }
 .wrapper .free-code .task .solution{
-    border-top: rgb(168, 168, 168) 2px solid;
+    border-top: var(--color-Two) 2px solid;
 }
 .wrapper .task .solution span.other{
     display: block;
     margin-top: 10px;
     font-weight: bold;
-    background-color: rgb(174, 216, 132);
-    color:rgb(69, 24, 128);
+    background-color: var(--color-One);
+    color:rgb(247, 244, 252);
 }
 .wrapper .task .solution span.mine{
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    background-color: rgb(151, 231, 71);
-    color:rgb(45, 24, 73);
+    background-color: var(--color-Two);
+    color:rgb(246, 245, 248);
 }
 code{
     font-size: 16px;
@@ -146,13 +163,13 @@ ul li.new{
 } 
 .wrapper .free-code .wars-task .task .solution span.other{
     font-weight: bold;
-    background-color: rgb(253, 253, 253);
-    color:rgb(69, 24, 128);
+    background-color: var(--color-One);
+    color:rgb(237, 234, 241);
 }
 .wrapper .free-code .wars-task .task .solution span.mine{
     font-weight: bold;
-    background-color: rgb(253, 253, 253);
-    color:rgb(45, 24, 73);
+    background-color: var(--color-Two);
+    color:rgb(242, 239, 247);
 }
 @media (max-width: 1080px)
 {
