@@ -1032,23 +1032,23 @@
                             b=Math.abs(b-1);
                             b&lt; 10? b="0"+b+"":b;
                             return ""+b+":"+c+""}
+                            }</span>
+                        <br>
+                        let WhatIsTheTime = t => {
+                        let [h, m] = t.split(':');
+                        h = (+m ? 11 : 12) - h % 12 || 12;
+                        m = (60 - m) % 60;
+                        return [h, m].map(e => e > 9 ? e : '0' + e).join(':');
+                        }
+
+                        <br><span class="other">
+                            function WhatIsTheTime(tm){
+                            return tm.replace(/(\d+):(\d+)/,(_,v1,v2)=>{
+                            return ('0'+(12-(+v2?+v1+1:v1)%12)).slice(-2)+':'+('0'+(60-v2)%60).slice(-2)
+                            })
                             }
                             <br>
-                            <span class="other">let WhatIsTheTime = t => {
-                                let [h, m] = t.split(':');
-                                h = (+m ? 11 : 12) - h % 12 || 12;
-                                m = (60 - m) % 60;
-                                return [h, m].map(e => e > 9 ? e : '0' + e).join(':');
-                                }
-                            </span>
-                            <br><span>
-                                function WhatIsTheTime(tm){
-                                return tm.replace(/(\d+):(\d+)/,(_,v1,v2)=>{
-                                return ('0'+(12-(+v2?+v1+1:v1)%12)).slice(-2)+':'+('0'+(60-v2)%60).slice(-2)
-                                })
-                                }
-                                <br>
-                            </span>
+                        </span>
                     </div>
                 </div>
                 <div class="task">
@@ -1075,20 +1075,20 @@
                             }
                             }
                             return a
+                            }</span>
+                        <br>
+                        <span>
+                            const squareOrSquareRoot = $ => $.map(el => el**.5 % 1 ? el*el : el**.5)
+                        </span>
+                        <br><span class="other">
+                            function squareOrSquareRoot(array) {
+                            return array.map(x => {
+                            const r = Math.sqrt(x);
+                            return (r % 1 == 0) ? r : (x*x);
+                            });
                             }
                             <br>
-                            <span class="other">
-                                const squareOrSquareRoot = $ => $.map(el => el**.5 % 1 ? el*el : el**.5)
-                            </span>
-                            <br><span>
-                                function squareOrSquareRoot(array) {
-                                return array.map(x => {
-                                const r = Math.sqrt(x);
-                                return (r % 1 == 0) ? r : (x*x);
-                                });
-                                }
-                                <br>
-                            </span>
+                        </span>
                     </div>
                 </div>
                 <div class="task">
@@ -1103,63 +1103,126 @@
                             let a= str.split(" ")
                             let b = a.reverse().join(" ")
                             return b
+                            }</span>
+                        <br>
+                        <span>
+                            function nameSuffle(str){
+                            return str.split(' ').reverse().join(' ')
                             }
+                        </span>
+                        <br><span class="other">
+                            const nameShuffler = str =>
+                            str.replace(/([^\s]+) ([^\s]+)/, `$2 $1`);
                             <br>
-                            <span class="other">
-                                function nameSuffle(str){
-                                    return str.split(' ').reverse().join(' ')
-                                  }
-                            </span>
-                            <br><span>
-                                const nameShuffler = str =>
-                                str.replace(/([^\s]+) ([^\s]+)/, `$2 $1`);
-                                <br>
-                            </span>
+                        </span>
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
-                        Your task is to determine how many files of the copy queue you will be able to save into your Hard Disk Drive.
-                         The files must be saved in the order they appear in the queue.
-                         save([4,4,4,3,3], 12) -> 3
-                         # 4+4+4 &lt;= 12, but 4+4+4+3 > 12
+                        Your task is to determine how many files of the copy queue you will be able to save into your
+                        Hard Disk Drive.
+                        The files must be saved in the order they appear in the queue.
+                        save([4,4,4,3,3], 12) -> 3
+                        # 4+4+4 &lt;= 12, but 4+4+4+3 > 12
                     </div>
                     <div class="solution">
 
                         <span class="mine">function save(sizes, hd) {
                             let a=[]
                             let d=[]
-                            for(let i=0;i<sizes.length;i++){
-                            
-                              let b= a.reduce((a,b)=>a+b,0)
-                              let c =hd-b;
-                              if(sizes[i]>c) break;
-                              a.push(sizes[i])
+                            for(let i=0;i<sizes.length;i++){ let b=a.reduce((a,b)=>a+b,0)
+                                let c =hd-b;
+                                if(sizes[i]>c) break;
+                                a.push(sizes[i])
+                                }
+                                return a.length
+                                }</span>
+                        <br>
+                        <span>
+                            function save(sizes, hd) {
+                            let i = -1;
+                            while (hd >=0) {
+                            hd -= sizes.shift();
+                            i++;
                             }
-                              return a.length
+                            return i;
+                            }
+                        </span>
+                        <br><span class="other">
+                            function save(sizes, hd) {
+                            let result = 0;
+                            sizes.reduce((acc, curr) => {
+                            if ((acc += curr) &lt;= hd) result += 1;
+                            return acc;
+                            }, 0);
+                            return result;
                             }
                             <br>
-                            <span class="other">
-                                function save(sizes, hd) {
-                                    let i = -1;
-                                    while (hd >=0) {
-                                      hd -= sizes.shift();
-                                      i++;
-                                    }
-                                    return i;
-                                  }
-                            </span>
-                            <br><span>
-                                function save(sizes, hd) {
-                                    let result = 0;
-                                    sizes.reduce((acc, curr) => {
-                                      if ((acc += curr) &lt;= hd) result += 1;
-                                      return acc;
-                                    }, 0);
-                                    return result;
-                                  }
-                                <br>
-                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        In this Kata, you will be given a string and your task will be to return a list of ints
+                        detailing the count of uppercase letters, lowercase, numbers and special characters, as follows.
+
+                        Solve("*'&ABCDabcde12345") = [4,5,5,3].
+                        --the order is: uppercase letters, lowercase, numbers and special characters.
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function solve(s){
+                            let a = s.replace(/[A-Z]/g, "A")
+                            let b = a.split("").filter(f=>f==="A")
+                            let c = s.split("").sort((a,b)=>a-b)
+                            let d = s.replace(/[a-z]/g, "a")
+                            let e = d.split("").filter(f=>f==="a")
+                            let f = s.replace(/[0-9]/g, 1)
+                            let g = f.split("").filter(f=>f==="1")
+                            let h = c.length-(b.length+e.length+g.length)
+                            return [b.length, e.length, g.length, h]
+                            }</span>
+                        <br>
+                        <span>
+                            const solve = (str) => (
+                            [/[A-Z]/, /[a-z]/, /\d/, /[\W]/].map(rgx => str.split(rgx).length - 1)
+                            );
+                        </span>
+                        <br><span class="other">
+                            const solve = (s) => {
+                            let result = [0, 0, 0, 0];
+                            for (let i = 0; i &lt; s.length; i += 1) {
+                            if (s[i].toLowerCase() > s[i]) {
+                            result[0] += 1;
+                            } else if (s[i].toUpperCase() &lt; s[i]) {
+                            result[1] += 1;
+                            } else if (s[i] >= 0 && s[i] &lt;= 9) {
+                            result[2] += 1;
+                            } else {
+                            result[3] += 1;
+                            }
+                            }
+                            return result;
+                            };
+                            <br>
+                        </span>
+                        <span>
+                            const solve = (string) => (
+                            Object.values([...string].reduce((acc, char) => {
+                            if (/[A-Z]/.test(char)) {
+                            acc.upper++;
+                            } else if (/[a-z]/.test(char)) {
+                            acc.lower++;
+                            } else if (/[0-9]/.test(char)) {
+                            acc.number++;
+                            } else {
+                            acc.other++;
+                            }
+                            return acc;
+                            }, { upper: 0, lower: 0, number: 0, other: 0 }))
+                            );
+                        </span>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -2710,6 +2773,52 @@
                             var r = [rng, avg, med].map(sec2f).map(e=>e.map(f=>f.toString().padStart(2,
                             '0')).join('|'));
                             return `Range: ${r[0]} Average: ${r[1]} Median: ${r[2]}`
+                        </span>
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Finish the solution so that it sorts the passed in array of numbers. If the function passes in
+                        an empty array or null/nil value then it should return an empty array.
+
+                        For example:
+
+                        solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
+                        solution(null); // should return []
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function solution(nums){
+                            if (nums=== null){return []}
+                            else{ return nums.sort((a,b)=>a-b)
+                            }
+                            }</span>
+                        <br>
+                        function solution(nums){
+                        return nums !== null ? nums.sort(function(a,b){return a-b}) : [];
+                        }
+                        <br><span class="other">
+                            function solution(nums){
+
+                            if(nums === null || nums === []){
+                            return []
+                            }
+
+                            var j = 0;
+
+                            while(j &lt; nums.length){
+                            for(var i = 0; i &lt; nums.length; i++){
+                            if(nums[i] > nums[i + 1]){
+                            var temp = nums[i + 1];
+                            nums[i + 1] = nums[i];
+                            nums[i] = temp
+                            }
+                            }
+                            j++
+                            }
+
+                            return nums
                         </span>
                         <br>
                     </div>

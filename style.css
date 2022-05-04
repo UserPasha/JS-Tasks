@@ -150,7 +150,7 @@ ul li.new{
 }
 .wrapper .free-code .wars-task .task{
     color: rgb(63, 63, 70);
-    background-color: rgb(253, 253, 253);
+    background-color: rgba(212, 212, 216);
 }
 .wrapper .free-code .wars-task .task .question{
     padding-left: 20px;
@@ -159,7 +159,7 @@ ul li.new{
 }
 .wrapper .free-code .wars-task .task .solution{
     padding-top: 15px;
-    background-color: rgb(212, 212, 216);
+    background-color: rgba(212, 212, 216);
 } 
 .wrapper .free-code .wars-task .task .solution span.other{
     font-weight: bold;
