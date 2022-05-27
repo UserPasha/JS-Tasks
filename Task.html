@@ -1225,6 +1225,71 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Simple, remove the spaces from the string, then return the resultant string.
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function noSpace(x){
+                            return x.split(" ").join("")
+                            }</span>
+                        <br>
+                        <span>
+                            function noSpace(x){
+                            return x.replace(/\s/g, '');
+                            }
+                        </span>
+                        <br><span class="other">
+                            function noSpace(x){
+                            var result = ""
+                            for(var index = 0; index &lt; x.length; index++){
+                            if(x[index] !== " "){
+                            result += x[index];
+                            }
+                            }
+                            return result;
+                            }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        our boss decided to save money by purchasing some cut-rate optical character recognition
+                        software for scanning in the text of old novels to your database.
+                        At first it seems to capture words okay, but you quickly notice that it throws in a lot of
+                        numbers at random places in the text.
+
+                        Examples (input -> output)
+                        '! !' -> '! !'
+                        '123456789' -> ''
+                        'This looks5 grea8t!' -> 'This looks great!'
+
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function stringClean(s){
+                            return s.replace(/[0-9]/g, "")
+                            }</span>
+                        <br>
+                        <span>
+                            function stringClean(s){
+                                return s.replace(/\d/g, "");
+                              }
+                        </span>
+                        <br><span class="other">
+                            function stringClean(s){
+                                return s.split('').filter((n) => n != parseInt(n)).join('');
+                              }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
