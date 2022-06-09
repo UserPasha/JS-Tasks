@@ -2888,6 +2888,32 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+                        Example:
+                        * "String"      -> "SSttrriinngg"
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function doubleChar(str) {
+                                let a= str.split("")
+                               let b=[]
+                               for(let i=0; i&lt;a.length;i++){
+                                 b.push(a[i]+a[i])
+                               }
+                               return b.join("")
+                             }</span>
+                        <br>
+                        const doubleChar = (str) => str.split("").map(c => c + c).join("");
+                        <br><span class="other">
+                            function doubleChar(str) {
+                                return str.replace(/(.)/g, "$1$1")
+                              }
+                        </span>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
 
