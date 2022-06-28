@@ -2914,6 +2914,59 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        The code provided is supposed replace all the dots . in the specified String str with dashes -
+                        Example:
+                        * "one.two.three"      -> "one-two-three"
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            var replaceDots = function(str) {
+                                return str.replace(/[.]/g, '-');
+                              }</span>
+                        <br>
+                        var replaceDots = function(str) {
+                            return str.replace(/\./g,'-');
+                          }
+                        <br><span class="other">
+                            var replaceDots = s=>s.split('.').join('-')
+                        </span>
+                        <br>
+                        var replaceDots = function(str) {
+                            let answer = "";
+                            for (let i = 0; i &lt;  str.length; i++) {
+                              answer += (str[i] !== ".") ? str[i] : "-";
+                            }
+                            return answer;
+                          }
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Create a method to see whether the string is ALL CAPS.
+                        Example:
+                        "hello I AM DONALD" -> False
+                        "HELLO I AM DONALD" -> True
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            String.prototype.isUpperCase = function() {
+                                return this.toUpperCase() === this.toString();
+                              }</span>
+                        <br>
+                        String.prototype.isUpperCase = function () {
+                            return !/[a-z]/.test(this);
+                          };
+                        <br><span class="other">
+                            String.prototype.isUpperCase  = function(_str){
+                                return this.split("").every(function(c){return c === c.toUpperCase();});
+                              }
+                        </span>
+                    
+                    </div>
+                </div>
             </div>
         </div>
 
