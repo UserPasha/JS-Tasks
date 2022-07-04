@@ -171,6 +171,8 @@ ul li.new{
     background-color: var(--color-Two);
     color:rgb(242, 239, 247);
 }
+
+
 @media (max-width: 1080px)
 {
    
