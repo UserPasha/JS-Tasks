@@ -1330,6 +1330,45 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        DESCRIPTION:
+Trolls are attacking your comment section!
+
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel.
+
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function disemvowel(str) {
+                            return str.replace(/[aeiouAEIOU]/g, "") 
+                           }</span>
+                        <br>
+                        <span>
+                            function disemvowel(str) {
+                                var vowels = ['a', 'e', 'i', 'o', 'u'];
+                                
+                                return str.split('').filter(function(el) {
+                                  return vowels.indexOf(el.toLowerCase()) == -1;
+                                }).join('');
+                              }
+                        </span>
+                        <br><span class="other">
+                            function disemvowel(str) {
+                                return str.replace(/[aeiou]/gi, '');
+                              }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
@@ -3105,6 +3144,41 @@ Output: 9.2
                             function sum (numbers) {
                                 return numbers.length == 0 ? 0 : numbers.shift() + sum(numbers);
                             };
+                        </span>
+                    
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+                        For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+                        
+                        Note: The function accepts an integer and returns an integer
+                         Example
+Input: 9119
+Output: 811181
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function squareDigits(num){
+                                let a = num.toString().split("")
+                              return Number(a.map(m=>m*m).join(""));
+                              }</span>
+                        <br>
+                        function squareDigits(num){
+                           
+                            var numS = num.toString();
+                            var output = "";
+                            for (var i = 0; i &lt;  numS.length; i++) {
+                              output += parseInt(numS[i]) * parseInt(numS[i]);
+                            }
+                            return parseInt(output);
+                          }
+                        <br><span class="other">
+                            function squareDigits(num){
+                                return +(num+'').split('').map(a=>a*a).join('');
+                              }
                         </span>
                     
                     </div>
