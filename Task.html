@@ -1369,6 +1369,36 @@ Note: for this kata y isn't considered a vowel.
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given the triangle of consecutive odd numbers.
+                        Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
+                        1 -->  1
+                        2 --> 3 + 5 = 8
+
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function rowSumOddNumbers(n) {
+                            return n*n*n
+                          }</span>
+                        <br>
+                        <span>
+                            function rowSumOddNumbers(n) {
+                                return Math.pow(n, 3);
+                              }
+                        </span>
+                        <br><span class="other">
+                            function rowSumOddNumbers(n) {
+                                const out = Array.from( {length: n*(n+1)/2}, (_,i) => i * 2 + 1 );
+                                return out.slice( out.length - n ).reduce((a, b) => a + b, 0)
+                              }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
@@ -3178,6 +3208,44 @@ Output: 811181
                         <br><span class="other">
                             function squareDigits(num){
                                 return +(num+'').split('').map(a=>a*a).join('');
+                              }
+                        </span>
+                    
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Count the number of divisors of a positive integer n.
+                         Examples
+                         4 --> 3 (1, 2, 4)
+                         5 --> 2 (1, 5)
+                         12 --> 6 (1, 2, 3, 4, 6, 12)
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function getDivisorsCnt(n){
+                                let a = []
+                               for(let i=1; i&lt;=n; i++){
+                                 if(n%i===0){
+                             a.push(i)
+                                 }
+                               }
+                              return a.length
+                             }</span>
+                        <br>
+                        const getDivisorsCnt = n =>
+                        [...Array(n / 2 ^ 0)].reduce((pre, _, idx) => n % ++idx ? pre : ++pre, 1);
+                        <br><span class="other">
+                            const getDivisorsCnt = function( $ ){
+                                let [i, num] = [0, 0];
+                                
+                                do{
+                                  if ( $ % i === 0 ) {
+                                    num += 1;
+                                  }
+                                }while( $ >= ++i )
+                                
+                                return num;
                               }
                         </span>
                     
