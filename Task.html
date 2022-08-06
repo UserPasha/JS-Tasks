@@ -1399,6 +1399,48 @@ Note: for this kata y isn't considered a vowel.
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given a list of digits, return the smallest number that could be formed from these digits,
+                         using the digits only once (ignore duplicates).
+                         minValue({5, 7, 5, 9, 7})  ==> return (579)
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function minValue(values){
+                            let a = values.sort((a,b)=>a-b)
+                            let b = new Set(a)
+                            return  +(c = [...b].join(""))
+                            }
+                          }</span>
+                        <br>
+                        <span>
+                            function minValue(values){
+                                let arr = Array.from(new Set(values))
+                                return parseInt(arr.sort().join(''))
+                              }
+                        </span>
+                        <br><span class="other">
+                            function minValue(values){
+                                var result = [];
+                                values.forEach(function(n){
+                                  if (result.indexOf(n) &lt; 0) {
+                                    result.push(n);
+                                  }
+                                  return result;
+                                });
+                                var str = ""
+                                result.sort().forEach(function(n){
+                                  str = str + n;
+                                  return str;
+                                });return Number(str);
+                              }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
@@ -3246,6 +3288,33 @@ Output: 811181
                                 }while( $ >= ++i )
                                 
                                 return num;
+                              }
+                        </span>
+                    
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Complete the solution so that it returns true
+                         if the first argument(string) passed in ends with the 2nd argument (also a string).
+                         solution('abc', 'bc') // returns true
+                            solution('abc', 'd') // returns false
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function solution(str, ending){
+                                if (ending === ""){
+                                  return true
+                                }
+                              let a = ending.length
+                              let b = str.slice(-a)
+                              return ending === b
+                              }</span>
+                        <br>
+                        const solution = (str, ending) => str.endsWith(ending);
+                        <br><span class="other">
+                            function solution(str, ending){
+                                return str.substr(-ending.length) == ending;
                               }
                         </span>
                     
