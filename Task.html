@@ -1441,6 +1441,55 @@ Note: for this kata y isn't considered a vowel.
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Usually when you buy something, you're asked whether your credit card number, 
+                        phone number or answer to your most secret question is still correct. However, 
+                        since someone could look over your shoulder,
+                         you don't want that shown on your screen. Instead, we mask it.
+
+                        Your task is to write a function maskify, which changes all but
+                         the last four characters into '#'.
+                         Examples:
+                         "64607935616" -->      "#######5616"
+                         "Skippy" --> "##ippy"
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">function maskify(cc) {
+                            let result
+                            if(cc.length&lt; =4){
+                              result = cc
+                            }else{
+                              let a = cc.slice(-4)
+                              let b = cc.slice(0, cc.length-4)
+                              let c = b.replace( /[A-Za-z0-9]/g, "#")
+                              result = c.concat(a)
+                            }
+                            return result
+                            }</span>
+                        <br>
+                        <span>
+                            function maskify(cc) {
+                                return cc.replace(/.(?=....)/g, '#');
+                              }
+                        </span>
+                        <br><span class="other">
+                            function maskify(cc) {
+                                cc = cc.split("");
+                                for(var i = 0; i &lt;   cc.length - 4; i++){
+                                  cc[i] = "#";
+                              }
+                              
+                              cc = cc.join("");
+                              return cc
+                              }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
@@ -3315,6 +3364,32 @@ Output: 811181
                         <br><span class="other">
                             function solution(str, ending){
                                 return str.substr(-ending.length) == ending;
+                              }
+                        </span>
+                    
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Given a list of integers, determine whether the sum of its elements is odd or even.
+
+                        Give your answer as a string matching "odd" or "even".
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function oddOrEven(array) {
+                                return array.reduce((a,b)=>a+b,0)%2 ===0 ? "even": "odd"
+                              }</span>
+                        <br>
+                        const oddOrEven=arr=>["even","odd"][Math.abs(arr.reduce((a,b)=>a+b,0))%2];
+                        <br><span class="other">
+                            function oddOrEven(array) {
+                                var result = 0;
+                                for (var i = 0; i &lt;  array.length; i++)
+                                {result+=array[i];}
+                                if (result%2 == 0)
+                                {return "even";}
+                                else{return "odd";}
                               }
                         </span>
                     
