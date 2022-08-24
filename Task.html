@@ -3395,6 +3395,88 @@ Output: 811181
                     
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Given a Divisor and a Bound , Find the largest integer N , Such That ,
+
+                        Conditions :
+                        N is divisible by divisor
+                        
+                        N is less than or equal to bound
+                        
+                        N is greater than 0.
+                        
+                        Notes
+                        The parameters (divisor, bound) passed to the function are only positive values .
+                        It's guaranteed that a divisor is Found .
+                        Input >> Output Examples
+                        maxMultiple (2,7) ==> return (6)
+                        maxMultiple (10,50)  ==> return (50)
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function maxMultiple(divisor, bound){
+                                if(bound%divisor===0){
+                                return bound
+                               }else{
+                                return bound-bound%divisor
+                               }
+                              }</span>
+                        <br>
+                        function maxMultiple(divisor, bound){
+                            return bound-bound%divisor
+                          }
+                        <br><span class="other">
+                            function maxMultiple(divisor, bound){
+                                var max = 0;
+                                for(let j = divisor; j &lt; = bound; j++) {
+                                  if(j % divisor == 0 && j > max) {
+                                   max = j;
+                                  }
+                                }
+                                  return max;
+                              }
+                        </span>
+                    
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        You might know some pretty large perfect squares. But what about the NEXT one?
+
+                        Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+                        
+                        If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
+                        
+                        Examples:(Input --> Output)
+                        
+                        121 --> 144
+                        625 --> 676
+                        114 --> -1 since 114 is not a perfect square
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function findNextSquare(sq){
+                                if(Math.sqrt(sq)%1!==0){
+                                  return -1;
+                                }else{
+                                  let a = Math.sqrt(sq)
+                                  return Math.pow(a+1, 2)}
+                              }</span>
+                        <br>
+                        function findNextSquare(sq) {
+                            return Math.sqrt(sq)%1? -1 : Math.pow(Math.sqrt(sq)+1,2);
+                          }
+                        <br><span class="other">
+                            function findNextSquare(sq) {
+                                let numbSq = Math.sqrt(sq);
+                                if (Math.floor(numbSq) &lt;  numbSq) return -1;
+                                return (numbSq + 1) * (numbSq + 1);
+                              }
+                        </span>
+                    
+                    </div>
+                </div>
             </div>
         </div>
 
