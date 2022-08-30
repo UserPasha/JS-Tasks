@@ -1490,6 +1490,79 @@ Note: for this kata y isn't considered a vowel.
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Simple, given a string of words, return the length of the shortest word(s).
+
+                        String will never be empty and you do not need to account for different data types.
+                    
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function findShort(s){
+                                let a = s.split(" ").reduce((a,b)=>a.length&lt;b.length? a: b )
+                              return a.length
+                              }
+                        </span>
+                        <br>
+                        <span>
+                            function findShort(s){
+                                return Math.min.apply(null, s.split(' ').map(w => w.length));
+                              }
+                        </span>
+                        <br><span class="other">
+                            function findShort(s){
+                                var arr = s.split(' ');
+                                var smallest = arr[0];
+                                for (var i = 0; i &lt; arr.length; i++) {
+                                  if(arr[i].length &lt; smallest.length){
+                                    smallest = arr[i];
+                                  }
+                                }
+                                return smallest.length;
+                              }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Given an integer as input, can you round it to the next (meaning, "greater than or equal") multiple of 5?
+                        Examples:
+                        2    ->   5
+                        3    ->   5
+                        12   ->   15
+                        21   ->   25                        
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function roundToNext5(n){
+                                if(n%5===0){
+                                  return n
+                                 } else {
+                                  return Math.floor(n/5)*5+5
+                                 }
+                                }
+                        </span>
+                        <br>
+                        <span>
+                            function roundToNext5(n){
+                                return Math.ceil(n/5)*5;
+                              }
+                        </span>
+                        <br><span class="other">
+                            const roundToNext5 = n =>
+                            n - n % 5 + (n % 5 > 0 ? 5 : 0)
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
