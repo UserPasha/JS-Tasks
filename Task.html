@@ -1563,6 +1563,74 @@ Note: for this kata y isn't considered a vowel.
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+
+                        Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+                        
+                        The following are examples of expected output values:
+                        Examples:
+                        rgb(255, 255, 255) // returns FFFFFF
+                        rgb(255, 255, 300) // returns FFFFFF
+                        rgb(0,0,0) // returns 000000
+                        rgb(148, 0, 211) // returns 9400D3                
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function rgb(r, g, b){
+                                let arr = [r, g, b]
+                                 let earr = []
+                                 let aa = 0
+                                 let cc = 0
+                                 let ee = 0
+                                 let dd = 0
+                                 let array = [0,1,2,3,4,5,6,7,8,9,`A`,`B`,`C`,`D`,`E`,`F`]
+                               for(let i=0; i <arr.length; i++){
+                               if(arr[i]&lt; 0){
+                                 ee = 0
+                                 dd = 0
+                                 earr.push(ee, dd)
+                               }else if(arr[i]>255){
+                                 ee = `F`
+                                 dd = `F`
+                                 earr.push(ee, dd)
+                               }else{
+                                 aa = Math.floor(arr[i]/16) 
+                                 cc = arr[i] - aa*16
+                                 ee = array[aa]
+                                 dd = array[cc]
+                                 earr.push(ee, dd)
+                               }
+                               }return earr.join("")
+                               }
+                        </span>
+                        <br>
+                        <span>
+                            function rgb(r, g, b){
+                                return toHex(r)+toHex(g)+toHex(b);
+                              }
+                              
+                              function toHex(d) {
+                                  if(d &lt;  0 ) {return "00";}
+                                  if(d > 255 ) {return "FF";}
+                                  return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
+                              }
+                        </span>
+                        <br><span class="other">
+                            const rgb = (...arg) => arg
+                            .map(it => Math.max(Math.min(it, 255), 0)
+                              .toString(16)
+                              .padStart(2, '0')
+                              .toUpperCase()
+                             ).join('');
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
