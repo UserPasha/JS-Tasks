@@ -1277,13 +1277,13 @@
                         <br>
                         <span>
                             function stringClean(s){
-                                return s.replace(/\d/g, "");
-                              }
+                            return s.replace(/\d/g, "");
+                            }
                         </span>
                         <br><span class="other">
                             function stringClean(s){
-                                return s.split('').filter((n) => n != parseInt(n)).join('');
-                              }
+                            return s.split('').filter((n) => n != parseInt(n)).join('');
+                            }
                             <br>
                         </span>
 
@@ -1292,38 +1292,40 @@
                 </div>
                 <div class="task">
                     <div class="question">
-                        In a small town the population is p0 = 1000 at the beginning of a year. 
-                        The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. 
-                        How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+                        In a small town the population is p0 = 1000 at the beginning of a year.
+                        The population regularly increases by 2 percent per year and moreover 50 new inhabitants per
+                        year come to live in the town.
+                        How many years does the town need to see its population greater or equal to p = 1200
+                        inhabitants?
 
                     </div>
                     <div class="solution">
 
                         <span class="mine">function nbYear(p0, percent, aug, p) {
                             let result = 0;
-                         while(p0 &lt; p){
-                           p0 += Math.floor(p0 * percent / 100 + aug);
-                           result++;
-                         }
-                         return result;
-                       }</span>
+                            while(p0 &lt; p){
+                            p0 += Math.floor(p0 * percent / 100 + aug);
+                            result++;
+                            }
+                            return result;
+                            }</span>
                         <br>
                         <span>
                             function nbYear(p0, percent, aug, p) {
-                                p0 =  Math.floor(p0*(1+percent/100)+aug)
-                                if (p0>=p)
-                                   return 1
-                                return nbYear(p0,percent,aug,p)+1
-                              }
+                            p0 = Math.floor(p0*(1+percent/100)+aug)
+                            if (p0>=p)
+                            return 1
+                            return nbYear(p0,percent,aug,p)+1
+                            }
                         </span>
                         <br><span class="other">
                             function nbYear(p0, percent, aug, p) {
-    
-                                for (var years = 0; p0 &lt; p; years++) {
-                                  p0 = Math.floor(p0 + p0 * percent / 100 + aug);
-                                }
-                                return years
-                              }
+
+                            for (var years = 0; p0 &lt; p; years++) {
+                            p0 = Math.floor(p0 + p0 * percent / 100 + aug);
+                            }
+                            return years
+                            }
                             <br>
                         </span>
 
@@ -1333,36 +1335,38 @@
                 <div class="task">
                     <div class="question">
                         DESCRIPTION:
-Trolls are attacking your comment section!
+                        Trolls are attacking your comment section!
 
-A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+                        A common way to deal with this situation is to remove all of the vowels from the trolls'
+                        comments, neutralizing the threat.
 
-Your task is to write a function that takes a string and return a new string with all vowels removed.
+                        Your task is to write a function that takes a string and return a new string with all vowels
+                        removed.
 
-For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+                        For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
 
-Note: for this kata y isn't considered a vowel.
+                        Note: for this kata y isn't considered a vowel.
 
                     </div>
                     <div class="solution">
 
                         <span class="mine">function disemvowel(str) {
-                            return str.replace(/[aeiouAEIOU]/g, "") 
-                           }</span>
+                            return str.replace(/[aeiouAEIOU]/g, "")
+                            }</span>
                         <br>
                         <span>
                             function disemvowel(str) {
-                                var vowels = ['a', 'e', 'i', 'o', 'u'];
-                                
-                                return str.split('').filter(function(el) {
-                                  return vowels.indexOf(el.toLowerCase()) == -1;
-                                }).join('');
-                              }
+                            var vowels = ['a', 'e', 'i', 'o', 'u'];
+
+                            return str.split('').filter(function(el) {
+                            return vowels.indexOf(el.toLowerCase()) == -1;
+                            }).join('');
+                            }
                         </span>
                         <br><span class="other">
                             function disemvowel(str) {
-                                return str.replace(/[aeiou]/gi, '');
-                              }
+                            return str.replace(/[aeiou]/gi, '');
+                            }
                             <br>
                         </span>
 
@@ -1372,8 +1376,9 @@ Note: for this kata y isn't considered a vowel.
                 <div class="task">
                     <div class="question">
                         Given the triangle of consecutive odd numbers.
-                        Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
-                        1 -->  1
+                        Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.:
+                        (Input --> Output)
+                        1 --> 1
                         2 --> 3 + 5 = 8
 
                     </div>
@@ -1381,18 +1386,18 @@ Note: for this kata y isn't considered a vowel.
 
                         <span class="mine">function rowSumOddNumbers(n) {
                             return n*n*n
-                          }</span>
+                            }</span>
                         <br>
                         <span>
                             function rowSumOddNumbers(n) {
-                                return Math.pow(n, 3);
-                              }
+                            return Math.pow(n, 3);
+                            }
                         </span>
                         <br><span class="other">
                             function rowSumOddNumbers(n) {
-                                const out = Array.from( {length: n*(n+1)/2}, (_,i) => i * 2 + 1 );
-                                return out.slice( out.length - n ).reduce((a, b) => a + b, 0)
-                              }
+                            const out = Array.from( {length: n*(n+1)/2}, (_,i) => i * 2 + 1 );
+                            return out.slice( out.length - n ).reduce((a, b) => a + b, 0)
+                            }
                             <br>
                         </span>
 
@@ -1402,39 +1407,39 @@ Note: for this kata y isn't considered a vowel.
                 <div class="task">
                     <div class="question">
                         Given a list of digits, return the smallest number that could be formed from these digits,
-                         using the digits only once (ignore duplicates).
-                         minValue({5, 7, 5, 9, 7})  ==> return (579)
+                        using the digits only once (ignore duplicates).
+                        minValue({5, 7, 5, 9, 7}) ==> return (579)
                     </div>
                     <div class="solution">
 
                         <span class="mine">function minValue(values){
                             let a = values.sort((a,b)=>a-b)
                             let b = new Set(a)
-                            return  +(c = [...b].join(""))
+                            return +(c = [...b].join(""))
                             }
-                          }</span>
+                            }</span>
                         <br>
                         <span>
                             function minValue(values){
-                                let arr = Array.from(new Set(values))
-                                return parseInt(arr.sort().join(''))
-                              }
+                            let arr = Array.from(new Set(values))
+                            return parseInt(arr.sort().join(''))
+                            }
                         </span>
                         <br><span class="other">
                             function minValue(values){
-                                var result = [];
-                                values.forEach(function(n){
-                                  if (result.indexOf(n) &lt; 0) {
-                                    result.push(n);
-                                  }
-                                  return result;
-                                });
-                                var str = ""
-                                result.sort().forEach(function(n){
-                                  str = str + n;
-                                  return str;
-                                });return Number(str);
-                              }
+                            var result = [];
+                            values.forEach(function(n){
+                            if (result.indexOf(n) &lt; 0) {
+                            result.push(n);
+                            }
+                            return result;
+                            });
+                            var str = ""
+                            result.sort().forEach(function(n){
+                            str = str + n;
+                            return str;
+                            });return Number(str);
+                            }
                             <br>
                         </span>
 
@@ -1443,47 +1448,47 @@ Note: for this kata y isn't considered a vowel.
                 </div>
                 <div class="task">
                     <div class="question">
-                        Usually when you buy something, you're asked whether your credit card number, 
-                        phone number or answer to your most secret question is still correct. However, 
+                        Usually when you buy something, you're asked whether your credit card number,
+                        phone number or answer to your most secret question is still correct. However,
                         since someone could look over your shoulder,
-                         you don't want that shown on your screen. Instead, we mask it.
+                        you don't want that shown on your screen. Instead, we mask it.
 
                         Your task is to write a function maskify, which changes all but
-                         the last four characters into '#'.
-                         Examples:
-                         "64607935616" -->      "#######5616"
-                         "Skippy" --> "##ippy"
+                        the last four characters into '#'.
+                        Examples:
+                        "64607935616" --> "#######5616"
+                        "Skippy" --> "##ippy"
                     </div>
                     <div class="solution">
 
                         <span class="mine">function maskify(cc) {
                             let result
                             if(cc.length&lt; =4){
-                              result = cc
+                            result = cc
                             }else{
-                              let a = cc.slice(-4)
-                              let b = cc.slice(0, cc.length-4)
-                              let c = b.replace( /[A-Za-z0-9]/g, "#")
-                              result = c.concat(a)
+                            let a = cc.slice(-4)
+                            let b = cc.slice(0, cc.length-4)
+                            let c = b.replace( /[A-Za-z0-9]/g, "#")
+                            result = c.concat(a)
                             }
                             return result
                             }</span>
                         <br>
                         <span>
                             function maskify(cc) {
-                                return cc.replace(/.(?=....)/g, '#');
-                              }
+                            return cc.replace(/.(?=....)/g, '#');
+                            }
                         </span>
                         <br><span class="other">
                             function maskify(cc) {
-                                cc = cc.split("");
-                                for(var i = 0; i &lt;   cc.length - 4; i++){
-                                  cc[i] = "#";
-                              }
-                              
-                              cc = cc.join("");
-                              return cc
-                              }
+                            cc = cc.split("");
+                            for(var i = 0; i &lt; cc.length - 4; i++){
+                            cc[i] = "#";
+                            }
+
+                            cc = cc.join("");
+                            return cc
+                            }
                             <br>
                         </span>
 
@@ -1495,33 +1500,33 @@ Note: for this kata y isn't considered a vowel.
                         Simple, given a string of words, return the length of the shortest word(s).
 
                         String will never be empty and you do not need to account for different data types.
-                    
+
                     </div>
                     <div class="solution">
 
                         <span class="mine">
                             function findShort(s){
-                                let a = s.split(" ").reduce((a,b)=>a.length&lt;b.length? a: b )
-                              return a.length
-                              }
+                            let a = s.split(" ").reduce((a,b)=>a.length&lt;b.length? a: b )
+                            return a.length
+                            }
                         </span>
                         <br>
                         <span>
                             function findShort(s){
-                                return Math.min.apply(null, s.split(' ').map(w => w.length));
-                              }
+                            return Math.min.apply(null, s.split(' ').map(w => w.length));
+                            }
                         </span>
                         <br><span class="other">
                             function findShort(s){
-                                var arr = s.split(' ');
-                                var smallest = arr[0];
-                                for (var i = 0; i &lt; arr.length; i++) {
-                                  if(arr[i].length &lt; smallest.length){
-                                    smallest = arr[i];
-                                  }
-                                }
-                                return smallest.length;
-                              }
+                            var arr = s.split(' ');
+                            var smallest = arr[0];
+                            for (var i = 0; i &lt; arr.length; i++) {
+                            if(arr[i].length &lt; smallest.length){
+                            smallest = arr[i];
+                            }
+                            }
+                            return smallest.length;
+                            }
                             <br>
                         </span>
 
@@ -1530,29 +1535,30 @@ Note: for this kata y isn't considered a vowel.
                 </div>
                 <div class="task">
                     <div class="question">
-                        Given an integer as input, can you round it to the next (meaning, "greater than or equal") multiple of 5?
+                        Given an integer as input, can you round it to the next (meaning, "greater than or equal")
+                        multiple of 5?
                         Examples:
-                        2    ->   5
-                        3    ->   5
-                        12   ->   15
-                        21   ->   25                        
+                        2 -> 5
+                        3 -> 5
+                        12 -> 15
+                        21 -> 25
                     </div>
                     <div class="solution">
 
                         <span class="mine">
                             function roundToNext5(n){
-                                if(n%5===0){
-                                  return n
-                                 } else {
-                                  return Math.floor(n/5)*5+5
-                                 }
-                                }
+                            if(n%5===0){
+                            return n
+                            } else {
+                            return Math.floor(n/5)*5+5
+                            }
+                            }
                         </span>
                         <br>
                         <span>
                             function roundToNext5(n){
-                                return Math.ceil(n/5)*5;
-                              }
+                            return Math.ceil(n/5)*5;
+                            }
                         </span>
                         <br><span class="other">
                             const roundToNext5 = n =>
@@ -1565,66 +1571,64 @@ Note: for this kata y isn't considered a vowel.
                 </div>
                 <div class="task">
                     <div class="question">
-                        The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+                        The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in
+                        a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any
+                        values that fall out of that range must be rounded to the closest valid value.
 
                         Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
-                        
+
                         The following are examples of expected output values:
                         Examples:
                         rgb(255, 255, 255) // returns FFFFFF
                         rgb(255, 255, 300) // returns FFFFFF
                         rgb(0,0,0) // returns 000000
-                        rgb(148, 0, 211) // returns 9400D3                
+                        rgb(148, 0, 211) // returns 9400D3
                     </div>
                     <div class="solution">
 
                         <span class="mine">
                             function rgb(r, g, b){
-                                let arr = [r, g, b]
-                                 let earr = []
-                                 let aa = 0
-                                 let cc = 0
-                                 let ee = 0
-                                 let dd = 0
-                                 let array = [0,1,2,3,4,5,6,7,8,9,`A`,`B`,`C`,`D`,`E`,`F`]
-                               for(let i=0; i <arr.length; i++){
-                               if(arr[i]&lt; 0){
-                                 ee = 0
-                                 dd = 0
-                                 earr.push(ee, dd)
-                               }else if(arr[i]>255){
-                                 ee = `F`
-                                 dd = `F`
-                                 earr.push(ee, dd)
-                               }else{
-                                 aa = Math.floor(arr[i]/16) 
-                                 cc = arr[i] - aa*16
-                                 ee = array[aa]
-                                 dd = array[cc]
-                                 earr.push(ee, dd)
-                               }
-                               }return earr.join("")
-                               }
+                            let arr = [r, g, b]
+                            let earr = []
+                            let aa = 0
+                            let cc = 0
+                            let ee = 0
+                            let dd = 0
+                            let array = [0,1,2,3,4,5,6,7,8,9,`A`,`B`,`C`,`D`,`E`,`F`]
+                            for(let i=0; i <arr.length; i++){ if(arr[i]&lt; 0){ ee=0 dd=0 earr.push(ee, dd) }else
+                                if(arr[i]>255){
+                                ee = `F`
+                                dd = `F`
+                                earr.push(ee, dd)
+                                }else{
+                                aa = Math.floor(arr[i]/16)
+                                cc = arr[i] - aa*16
+                                ee = array[aa]
+                                dd = array[cc]
+                                earr.push(ee, dd)
+                                }
+                                }return earr.join("")
+                                }
                         </span>
                         <br>
                         <span>
                             function rgb(r, g, b){
-                                return toHex(r)+toHex(g)+toHex(b);
-                              }
-                              
-                              function toHex(d) {
-                                  if(d &lt;  0 ) {return "00";}
-                                  if(d > 255 ) {return "FF";}
-                                  return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
-                              }
+                            return toHex(r)+toHex(g)+toHex(b);
+                            }
+
+                            function toHex(d) {
+                            if(d &lt; 0 ) {return "00";}
+                            if(d > 255 ) {return "FF";}
+                            return ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
+                            }
                         </span>
                         <br><span class="other">
                             const rgb = (...arg) => arg
                             .map(it => Math.max(Math.min(it, 255), 0)
-                              .toString(16)
-                              .padStart(2, '0')
-                              .toUpperCase()
-                             ).join('');
+                            .toString(16)
+                            .padStart(2, '0')
+                            .toUpperCase()
+                            ).join('');
                             <br>
                         </span>
 
@@ -3231,26 +3235,27 @@ Note: for this kata y isn't considered a vowel.
                 </div>
                 <div class="task">
                     <div class="question">
-                        Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+                        Given a string, you have to return a string in which each character (case-sensitive) is repeated
+                        once.
                         Example:
-                        * "String"      -> "SSttrriinngg"
+                        * "String" -> "SSttrriinngg"
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function doubleChar(str) {
-                                let a= str.split("")
-                               let b=[]
-                               for(let i=0; i&lt;a.length;i++){
-                                 b.push(a[i]+a[i])
-                               }
-                               return b.join("")
-                             }</span>
+                            let a= str.split("")
+                            let b=[]
+                            for(let i=0; i&lt;a.length;i++){
+                            b.push(a[i]+a[i])
+                            }
+                            return b.join("")
+                            }</span>
                         <br>
                         const doubleChar = (str) => str.split("").map(c => c + c).join("");
                         <br><span class="other">
                             function doubleChar(str) {
-                                return str.replace(/(.)/g, "$1$1")
-                              }
+                            return str.replace(/(.)/g, "$1$1")
+                            }
                         </span>
                         <br>
                     </div>
@@ -3259,28 +3264,28 @@ Note: for this kata y isn't considered a vowel.
                     <div class="question">
                         The code provided is supposed replace all the dots . in the specified String str with dashes -
                         Example:
-                        * "one.two.three"      -> "one-two-three"
+                        * "one.two.three" -> "one-two-three"
                     </div>
                     <div class="solution">
                         <span class="mine">
                             var replaceDots = function(str) {
-                                return str.replace(/[.]/g, '-');
-                              }</span>
+                            return str.replace(/[.]/g, '-');
+                            }</span>
                         <br>
                         var replaceDots = function(str) {
-                            return str.replace(/\./g,'-');
-                          }
+                        return str.replace(/\./g,'-');
+                        }
                         <br><span class="other">
                             var replaceDots = s=>s.split('.').join('-')
                         </span>
                         <br>
                         var replaceDots = function(str) {
-                            let answer = "";
-                            for (let i = 0; i &lt;  str.length; i++) {
-                              answer += (str[i] !== ".") ? str[i] : "-";
-                            }
-                            return answer;
-                          }
+                        let answer = "";
+                        for (let i = 0; i &lt; str.length; i++) {
+                        answer += (str[i] !== ".") ? str[i] : "-";
+                        }
+                        return answer;
+                        }
                         <br>
                     </div>
                 </div>
@@ -3294,24 +3299,24 @@ Note: for this kata y isn't considered a vowel.
                     <div class="solution">
                         <span class="mine">
                             String.prototype.isUpperCase = function() {
-                                return this.toUpperCase() === this.toString();
-                              }</span>
+                            return this.toUpperCase() === this.toString();
+                            }</span>
                         <br>
                         String.prototype.isUpperCase = function () {
-                            return !/[a-z]/.test(this);
-                          };
+                        return !/[a-z]/.test(this);
+                        };
                         <br><span class="other">
-                            String.prototype.isUpperCase  = function(_str){
-                                return this.split("").every(function(c){return c === c.toUpperCase();});
-                              }
+                            String.prototype.isUpperCase = function(_str){
+                            return this.split("").every(function(c){return c === c.toUpperCase();});
+                            }
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
-                        The function should return true if you are employed and not on vacation 
-                        (because these are the circumstances under which you need to set an alarm). 
+                        The function should return true if you are employed and not on vacation
+                        (because these are the circumstances under which you need to set an alarm).
                         It should return false otherwise. Examples:
                         setAlarm(false, true) -> false;
                         setAlarm(true, false) -> true
@@ -3319,195 +3324,194 @@ Note: for this kata y isn't considered a vowel.
                     <div class="solution">
                         <span class="mine">
                             function setAlarm(employed, vacation){
-                                if (employed ===  true && vacation === false)  {
-                                  return true }
-                                  else{
-                                    return false
-                                  }
-                                
-                                }</span>
+                            if (employed === true && vacation === false) {
+                            return true }
+                            else{
+                            return false
+                            }
+
+                            }</span>
                         <br>
                         const setAlarm = (employed, vacation) => employed && !vacation;
                         <br><span class="other">
                             function setAlarm(employed, vacation){
-                                return employed !== vacation && employed ? true : false; 
-                              }
+                            return employed !== vacation && employed ? true : false;
+                            }
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
-                        Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection.
+                        Our football team finished the championship. The result of each match look like "x:y". Results
+                        of all matches are recorded in the collection.
 
-For example: ["3:1", "2:2", "0:1", ...]
+                        For example: ["3:1", "2:2", "0:1", ...]
 
-Write a function that takes such collection and counts the points of our team in the championship. Rules for counting points for each match:
+                        Write a function that takes such collection and counts the points of our team in the
+                        championship. Rules for counting points for each match:
 
-if x > y: 3 points
-if x &lt; y: 0 point
-if x = y: 1 point
-Notes:
+                        if x > y: 3 points
+                        if x &lt; y: 0 point
+                        if x = y: 1 point
+                        Notes:
 
-there are 10 matches in the championship
+                        there are 10 matches in the championship
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function points(games) {
-                                var sum=0;
-                                for (var i=0; i<games.length; ++i)
-                                {
-                                  if (games[i][0]>games[i][2])
-                                    sum+=3;
-                                  if (games[i][0]==games[i][2])
-                                    sum+=1;
+                            var sum=0;
+                            for (var i=0; i<games.length; ++i) { if (games[i][0]>games[i][2])
+                                sum+=3;
+                                if (games[i][0]==games[i][2])
+                                sum+=1;
                                 }
                                 return sum;
-                              }</span>
+                                }</span>
                         <br>
                         const points = g => g.reduce((a, [x, _, y]) => a + (x > y ? 3 : x == y), 0)
                         <br><span class="other">
                             const points = games => games
-  .map(str => str.split(':').map(Number))      // parse
-  .map(([x, y]) => x > y ? 3 : x &lt;   y ? 0 : 1)  // determine points
-  .reduce((sum, points) => sum + points, 0);   // sum points
+                            .map(str => str.split(':').map(Number)) // parse
+                            .map(([x, y]) => x > y ? 3 : x &lt; y ? 0 : 1) // determine points
+                            .reduce((sum, points) => sum + points, 0); // sum points
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
-                        Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer.
-                         If the array does not contain any numbers then you should return 0.
-                         Example
-Input: [1, 5.2, 4, 0, -1]
-Output: 9.2
+                        Write a function that takes an array of numbers and returns the sum of the numbers. The numbers
+                        can be negative or non-integer.
+                        If the array does not contain any numbers then you should return 0.
+                        Example
+                        Input: [1, 5.2, 4, 0, -1]
+                        Output: 9.2
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function sum (numbers) {
-  
-                                if (numbers.length<1){
-                                  return 0
-                                }else{
-                                  return numbers.reduce((a,b)=>a+b)
-                                  }
-                              };</span>
+
+                            if (numbers.length<1){ return 0 }else{ return numbers.reduce((a,b)=>a+b)
+                                }
+                                };</span>
                         <br>
                         sum = function (numbers) {
-                            "use strict";
-                            var total = 0;
-                            for(var i = 0; i &lt; numbers.length; i++) {
-                              total += numbers[i];
-                            }
-                            return total;
-                          };
+                        "use strict";
+                        var total = 0;
+                        for(var i = 0; i &lt; numbers.length; i++) {
+                        total += numbers[i];
+                        }
+                        return total;
+                        };
                         <br><span class="other">
                             function sum (numbers) {
-                                return numbers.length == 0 ? 0 : numbers.shift() + sum(numbers);
+                            return numbers.length == 0 ? 0 : numbers.shift() + sum(numbers);
                             };
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
                         Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
 
-                        For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
-                        
+                        For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12
+                        is 1.
+
                         Note: The function accepts an integer and returns an integer
-                         Example
-Input: 9119
-Output: 811181
+                        Example
+                        Input: 9119
+                        Output: 811181
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function squareDigits(num){
-                                let a = num.toString().split("")
-                              return Number(a.map(m=>m*m).join(""));
-                              }</span>
+                            let a = num.toString().split("")
+                            return Number(a.map(m=>m*m).join(""));
+                            }</span>
                         <br>
                         function squareDigits(num){
-                           
-                            var numS = num.toString();
-                            var output = "";
-                            for (var i = 0; i &lt;  numS.length; i++) {
-                              output += parseInt(numS[i]) * parseInt(numS[i]);
-                            }
-                            return parseInt(output);
-                          }
+
+                        var numS = num.toString();
+                        var output = "";
+                        for (var i = 0; i &lt; numS.length; i++) {
+                        output += parseInt(numS[i]) * parseInt(numS[i]);
+                        }
+                        return parseInt(output);
+                        }
                         <br><span class="other">
                             function squareDigits(num){
-                                return +(num+'').split('').map(a=>a*a).join('');
-                              }
+                            return +(num+'').split('').map(a=>a*a).join('');
+                            }
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
                         Count the number of divisors of a positive integer n.
-                         Examples
-                         4 --> 3 (1, 2, 4)
-                         5 --> 2 (1, 5)
-                         12 --> 6 (1, 2, 3, 4, 6, 12)
+                        Examples
+                        4 --> 3 (1, 2, 4)
+                        5 --> 2 (1, 5)
+                        12 --> 6 (1, 2, 3, 4, 6, 12)
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function getDivisorsCnt(n){
-                                let a = []
-                               for(let i=1; i&lt;=n; i++){
-                                 if(n%i===0){
-                             a.push(i)
-                                 }
-                               }
-                              return a.length
-                             }</span>
+                            let a = []
+                            for(let i=1; i&lt;=n; i++){
+                            if(n%i===0){
+                            a.push(i)
+                            }
+                            }
+                            return a.length
+                            }</span>
                         <br>
                         const getDivisorsCnt = n =>
                         [...Array(n / 2 ^ 0)].reduce((pre, _, idx) => n % ++idx ? pre : ++pre, 1);
                         <br><span class="other">
                             const getDivisorsCnt = function( $ ){
-                                let [i, num] = [0, 0];
-                                
-                                do{
-                                  if ( $ % i === 0 ) {
-                                    num += 1;
-                                  }
-                                }while( $ >= ++i )
-                                
-                                return num;
-                              }
+                            let [i, num] = [0, 0];
+
+                            do{
+                            if ( $ % i === 0 ) {
+                            num += 1;
+                            }
+                            }while( $ >= ++i )
+
+                            return num;
+                            }
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
                         Complete the solution so that it returns true
-                         if the first argument(string) passed in ends with the 2nd argument (also a string).
-                         solution('abc', 'bc') // returns true
-                            solution('abc', 'd') // returns false
+                        if the first argument(string) passed in ends with the 2nd argument (also a string).
+                        solution('abc', 'bc') // returns true
+                        solution('abc', 'd') // returns false
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function solution(str, ending){
-                                if (ending === ""){
-                                  return true
-                                }
-                              let a = ending.length
-                              let b = str.slice(-a)
-                              return ending === b
-                              }</span>
+                            if (ending === ""){
+                            return true
+                            }
+                            let a = ending.length
+                            let b = str.slice(-a)
+                            return ending === b
+                            }</span>
                         <br>
                         const solution = (str, ending) => str.endsWith(ending);
                         <br><span class="other">
                             function solution(str, ending){
-                                return str.substr(-ending.length) == ending;
-                              }
+                            return str.substr(-ending.length) == ending;
+                            }
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
@@ -3519,21 +3523,21 @@ Output: 811181
                     <div class="solution">
                         <span class="mine">
                             function oddOrEven(array) {
-                                return array.reduce((a,b)=>a+b,0)%2 ===0 ? "even": "odd"
-                              }</span>
+                            return array.reduce((a,b)=>a+b,0)%2 ===0 ? "even": "odd"
+                            }</span>
                         <br>
                         const oddOrEven=arr=>["even","odd"][Math.abs(arr.reduce((a,b)=>a+b,0))%2];
                         <br><span class="other">
                             function oddOrEven(array) {
-                                var result = 0;
-                                for (var i = 0; i &lt;  array.length; i++)
-                                {result+=array[i];}
-                                if (result%2 == 0)
-                                {return "even";}
-                                else{return "odd";}
-                              }
+                            var result = 0;
+                            for (var i = 0; i &lt; array.length; i++)
+                            {result+=array[i];}
+                            if (result%2 == 0)
+                            {return "even";}
+                            else{return "odd";}
+                            }
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
@@ -3542,55 +3546,58 @@ Output: 811181
 
                         Conditions :
                         N is divisible by divisor
-                        
+
                         N is less than or equal to bound
-                        
+
                         N is greater than 0.
-                        
+
                         Notes
                         The parameters (divisor, bound) passed to the function are only positive values .
                         It's guaranteed that a divisor is Found .
                         Input >> Output Examples
                         maxMultiple (2,7) ==> return (6)
-                        maxMultiple (10,50)  ==> return (50)
+                        maxMultiple (10,50) ==> return (50)
                     </div>
                     <div class="solution">
                         <span class="mine">
                             function maxMultiple(divisor, bound){
-                                if(bound%divisor===0){
-                                return bound
-                               }else{
-                                return bound-bound%divisor
-                               }
-                              }</span>
+                            if(bound%divisor===0){
+                            return bound
+                            }else{
+                            return bound-bound%divisor
+                            }
+                            }</span>
                         <br>
                         function maxMultiple(divisor, bound){
-                            return bound-bound%divisor
-                          }
+                        return bound-bound%divisor
+                        }
                         <br><span class="other">
                             function maxMultiple(divisor, bound){
-                                var max = 0;
-                                for(let j = divisor; j &lt; = bound; j++) {
-                                  if(j % divisor == 0 && j > max) {
-                                   max = j;
-                                  }
-                                }
-                                  return max;
-                              }
+                            var max = 0;
+                            for(let j = divisor; j &lt; = bound; j++) {
+                            if(j % divisor == 0 && j > max) {
+                            max = j;
+                            }
+                            }
+                            return max;
+                            }
                         </span>
-                    
+
                     </div>
                 </div>
                 <div class="task">
                     <div class="question">
                         You might know some pretty large perfect squares. But what about the NEXT one?
 
-                        Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
-                        
-                        If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
-                        
+                        Complete the findNextSquare method that finds the next integral perfect square after the one
+                        passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n)
+                        is also an integer.
+
+                        If the parameter is itself not a perfect square then -1 should be returned. You may assume the
+                        parameter is non-negative.
+
                         Examples:(Input --> Output)
-                        
+
                         121 --> 144
                         625 --> 676
                         114 --> -1 since 114 is not a perfect square
@@ -3598,24 +3605,106 @@ Output: 811181
                     <div class="solution">
                         <span class="mine">
                             function findNextSquare(sq){
-                                if(Math.sqrt(sq)%1!==0){
-                                  return -1;
-                                }else{
-                                  let a = Math.sqrt(sq)
-                                  return Math.pow(a+1, 2)}
-                              }</span>
+                            if(Math.sqrt(sq)%1!==0){
+                            return -1;
+                            }else{
+                            let a = Math.sqrt(sq)
+                            return Math.pow(a+1, 2)}
+                            }</span>
                         <br>
                         function findNextSquare(sq) {
-                            return Math.sqrt(sq)%1? -1 : Math.pow(Math.sqrt(sq)+1,2);
-                          }
+                        return Math.sqrt(sq)%1? -1 : Math.pow(Math.sqrt(sq)+1,2);
+                        }
                         <br><span class="other">
                             function findNextSquare(sq) {
-                                let numbSq = Math.sqrt(sq);
-                                if (Math.floor(numbSq) &lt;  numbSq) return -1;
-                                return (numbSq + 1) * (numbSq + 1);
-                              }
+                            let numbSq = Math.sqrt(sq);
+                            if (Math.floor(numbSq) &lt; numbSq) return -1;
+                            return (numbSq + 1) * (numbSq + 1);
+                            }
                         </span>
-                    
+
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        System A : he buys a ticket (15 dollars) every time
+                        System B : he buys a card (500 dollars) and a first ticket for 0.90 times the ticket price,
+                        then for each additional ticket he pays 0.90 times the price paid for the previous ticket.
+
+                        Examples:(Input --> Output)
+
+                        movie(500, 15, 0.9) should return 43
+                        (with card the total price is 634, with tickets 645)
+                        movie(100, 10, 0.95) should return 24
+                        (with card the total price is 235, with tickets 240)
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function movie(card, ticket, perc) {
+                            let q = 1
+                            let c = card
+                            let t = ticket
+                            let a = ticket * q
+                            while (a &lt;= Math.round(c)) {
+                            t = t * perc
+                            c = c+t
+                            a = ticket * q
+                            q++
+                            }
+                            return q-1
+                            };</span>
+                        <br>
+                        function movie(card, ticket, perc) {
+                        for (var s=perc,n=1; Math.ceil(card+s*ticket)>=ticket*n; s+= Math.pow(perc,++n)) {}
+                        return n;
+                        };
+                        <br><span class="other">
+                            function movie(card, ticket, perc) {
+                            let a = 0,
+                            b = card,
+                            trips = 0;
+
+                            while (Math.ceil(a) &lt;= Math.ceil(b)) {
+                            ++trips;
+                            b += ticket * Math.pow(perc, trips);
+                            a += ticket;
+                            }
+
+                            return trips;
+                            };
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Create a function with two arguments that will return an array of the first n multiples of x.
+
+                        Assume both the given number and the number of times to count will be positive numbers greater than 0.
+
+                        Examples:(Input --> Output)
+
+                        countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
+                        countBy(2,5) === [2,4,6,8,10]
+                    </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function countBy(x, n) {
+                            let a = [];
+                            for (let i = 1; i &lt;= n; i++) {
+                            a.push(i*x)
+                            }
+                            return a
+                            }
+                        </span>
+                        <br>
+                        const countBy = (x, n) => Array.from({length: n}, (v, k) => (k + 1) * x)
+                        <br><span class="other">
+                            function countBy(x, n) {
+                            return n>1 ? countBy(x,n-1).concat([x*n]) : [x]
+                            }
+                        </span>
+
                     </div>
                 </div>
             </div>
@@ -3623,7 +3712,7 @@ Output: 811181
 
     </div>
 
-  
+
     <script src="./JS/functions.js"></script>
 </body>
 
