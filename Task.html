@@ -1635,6 +1635,82 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        Complete the function that returns an array of length n, starting with the given number x and the squares of the previous number.
+                         If n is negative or zero, return an empty array/list.
+                        Examples:
+                        2, 5  -->  [2, 4, 16, 256, 65536]
+                        3, 3  -->  [3, 9, 81]
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function getSumOfDigits(integer) {
+                            let a = integer.toString().split("")
+                            let sum = 0
+                            for (let i=0; i&lt;a.length; i++){
+                            sum += +(a[i])
+                            }
+                            return sum
+                            }
+                        </span>
+                        <br>
+                        <span>
+                            const getSumOfDigits = int => [...(int + '')].reduce((a, b) => a + +b, 0);
+                        </span>
+                        <br><span class="other">
+                            function getSumOfDigits(integer) {
+
+                            return Array.from(String(integer), Number).reduce((a,b) => a + b)
+                            }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Write function getSumOfDigits that takes positive integer to calculate sum of it's digits.
+                        Assume that argument is an integer.
+
+                        The following are examples of expected output values:
+                        Examples:
+                        123 => 6
+                        223 => 7
+                        1337 => 14
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function squares(x, n) {
+                            if(n&lt; 1){
+                            return []
+                            }
+                            let a = [x]
+                            for(let i=0; i&lt; n-1; i++){
+                            x= x*x
+                            a.push(x)
+                            }
+                            return a
+                            }
+                        </span>
+                        <br>
+                        <span>
+                            function squares(x, n) {
+                            return Array.from({length: n}, (v, k) => Math.pow(x, Math.pow(2, k)))
+                            }
+                        </span>
+                        <br><span class="other">
+                            const squares = (x, n) =>
+                            [...Array((n > 0) * n)].map((_, idx) => x ** 2 ** idx);
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
@@ -3680,7 +3756,8 @@
                     <div class="question">
                         Create a function with two arguments that will return an array of the first n multiples of x.
 
-                        Assume both the given number and the number of times to count will be positive numbers greater than 0.
+                        Assume both the given number and the number of times to count will be positive numbers greater
+                        than 0.
 
                         Examples:(Input --> Output)
 
@@ -3711,79 +3788,79 @@
                     <div class="question">
                         Create a function that returns the name of the winner in a fight between two fighters.
 
-                        Each fighter takes turns attacking the other and whoever kills the other first is victorious. Death is defined as having health <= 0.
-                        
-                        Each fighter will be a Fighter object/instance. See the Fighter class below in your chosen language.
-                        
-                        Both health and damagePerAttack (damage_per_attack for python) will be integers larger than 0. You can mutate the Fighter objects.
-                        
-                        Your function also receives a third argument, a string, with the name of the fighter that attacks first.
-                    </div>
-                    <div class="solution">
-                        <span class="mine">
-                            function declareWinner(fighter1, fighter2, firstAttacker) {
+                        Each fighter takes turns attacking the other and whoever kills the other first is victorious.
+                        Death is defined as having health <= 0. Each fighter will be a Fighter object/instance. See the
+                            Fighter class below in your chosen language. Both health and damagePerAttack
+                            (damage_per_attack for python) will be integers larger than 0. You can mutate the Fighter
+                            objects. Your function also receives a third argument, a string, with the name of the
+                            fighter that attacks first. </div>
+                            <div class="solution">
+                                <span class="mine">
+                                    function declareWinner(fighter1, fighter2, firstAttacker) {
 
-                                if (firstAttacker === fighter2.name) {
-                                  while (fighter1.health > 0 && fighter2.health > 0) {
+                                    if (firstAttacker === fighter2.name) {
+                                    while (fighter1.health > 0 && fighter2.health > 0) {
                                     fighter1.health = fighter1.health - fighter2.damagePerAttack
-                                    
+
                                     if(fighter1.health &lt;= 0 ){
-                                      return fighter2.name
+                                    return fighter2.name
                                     }
                                     else if(fighter2.health &lt;= 0 ){
-                                      return fighter1.name
+                                    return fighter1.name
                                     }
                                     fighter2.health = fighter2.health - fighter1.damagePerAttack
-                                  
-                                  }
+
+                                    }
+                                    } else {
+                                    while (fighter1.health > 0 && fighter2.health > 0) {
+                                    fighter2.health = fighter2.health - fighter1.damagePerAttack
+
+                                    if(fighter1.health &lt;= 0 ){
+                                    return fighter2.name
+                                    }
+                                    else if(fighter2.health &lt;= 0 ){
+                                    return fighter1.name
+                                    }
+                                    fighter1.health = fighter1.health - fighter2.damagePerAttack
+
+                                    }
+
+                                    }
+                                    }
+                                </span>
+                                <br>
+                                function declareWinner(fighter1, fighter2, firstAttacker) {
+                                var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
+                                var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
+                                if(fac1 &lt; fac2) {
+                                return fighter2.name;
+                                } else if(fac2 &lt; fac1) {
+                                return fighter1.name;
                                 } else {
-                                  while (fighter1.health > 0 && fighter2.health > 0) {
-                                    fighter2.health = fighter2.health - fighter1.damagePerAttack
-                                    
-                                    if(fighter1.health &lt;= 0 ){
-                                      return fighter2.name
-                                    }
-                                    else if(fighter2.health &lt;= 0 ){
-                                      return fighter1.name
-                                    }
-                                    fighter1.health = fighter1.health - fighter2.damagePerAttack
-                                    
-                                  }
-                              
+                                return firstAttacker;
                                 }
-                              }
-                        </span>
-                        <br>
-                        function declareWinner(fighter1, fighter2, firstAttacker) {
-                            var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
-                            var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
-                            if(fac1 &lt; fac2) {
-                              return fighter2.name;
-                            } else if(fac2 &lt; fac1) {
-                              return fighter1.name;
-                            } else {
-                              return firstAttacker;
-                            }
-                          }
-                        <br><span class="other">
-                            function declareWinner(fighter1, fighter2, firstAttacker) {
-                                if (fighter1.name !== firstAttacker) return declareWinner(fighter2, fighter1, fighter2.name)
-                                if (fighter1.health &lt;= 0) return fighter2.name
-                                if (fighter2.health &lt;= 0) return fighter1.name
-                              
-                                return declareWinner(new Fighter(fighter2.name, fighter2.health - fighter1.damagePerAttack, fighter2.damagePerAttack), fighter1, fighter2.name)
-                              }
-                        </span>
+                                }
+                                <br><span class="other">
+                                    function declareWinner(fighter1, fighter2, firstAttacker) {
+                                    if (fighter1.name !== firstAttacker) return declareWinner(fighter2, fighter1,
+                                    fighter2.name)
+                                    if (fighter1.health &lt;= 0) return fighter2.name
+                                    if (fighter2.health &lt;= 0) return fighter1.name
 
+                                    return declareWinner(new Fighter(fighter2.name, fighter2.health -
+                                    fighter1.damagePerAttack, fighter2.damagePerAttack), fighter1, fighter2.name)
+                                    }
+                                </span>
+
+                            </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
 
-
-    <script src="./JS/functions.js"></script>
+        <script src="./JS/functions.js"></script>
 </body>
 
 </html>
