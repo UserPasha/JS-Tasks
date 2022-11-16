@@ -1637,11 +1637,12 @@
                 </div>
                 <div class="task">
                     <div class="question">
-                        Complete the function that returns an array of length n, starting with the given number x and the squares of the previous number.
-                         If n is negative or zero, return an empty array/list.
+                        Complete the function that returns an array of length n, starting with the given number x and
+                        the squares of the previous number.
+                        If n is negative or zero, return an empty array/list.
                         Examples:
-                        2, 5  -->  [2, 4, 16, 256, 65536]
-                        3, 3  -->  [3, 9, 81]
+                        2, 5 --> [2, 4, 16, 256, 65536]
+                        3, 3 --> [3, 9, 81]
                     </div>
                     <div class="solution">
 
@@ -3789,78 +3790,180 @@
                         Create a function that returns the name of the winner in a fight between two fighters.
 
                         Each fighter takes turns attacking the other and whoever kills the other first is victorious.
-                        Death is defined as having health <= 0. Each fighter will be a Fighter object/instance. See the
-                            Fighter class below in your chosen language. Both health and damagePerAttack
-                            (damage_per_attack for python) will be integers larger than 0. You can mutate the Fighter
-                            objects. Your function also receives a third argument, a string, with the name of the
-                            fighter that attacks first. </div>
-                            <div class="solution">
-                                <span class="mine">
-                                    function declareWinner(fighter1, fighter2, firstAttacker) {
+                        Death is defined as having health &lt;= 0. Each fighter will be a Fighter object/instance. See
+                        the
+                        Fighter class below in your chosen language. Both health and damagePerAttack
+                        (damage_per_attack for python) will be integers larger than 0. You can mutate the Fighter
+                        objects. Your function also receives a third argument, a string, with the name of the
+                        fighter that attacks first. </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function declareWinner(fighter1, fighter2, firstAttacker) {
 
-                                    if (firstAttacker === fighter2.name) {
-                                    while (fighter1.health > 0 && fighter2.health > 0) {
-                                    fighter1.health = fighter1.health - fighter2.damagePerAttack
+                            if (firstAttacker === fighter2.name) {
+                            while (fighter1.health > 0 && fighter2.health > 0) {
+                            fighter1.health = fighter1.health - fighter2.damagePerAttack
 
-                                    if(fighter1.health &lt;= 0 ){
-                                    return fighter2.name
-                                    }
-                                    else if(fighter2.health &lt;= 0 ){
-                                    return fighter1.name
-                                    }
-                                    fighter2.health = fighter2.health - fighter1.damagePerAttack
+                            if(fighter1.health &lt;= 0 ){
+                            return fighter2.name
+                            }
+                            else if(fighter2.health &lt;= 0 ){
+                            return fighter1.name
+                            }
+                            fighter2.health = fighter2.health - fighter1.damagePerAttack
 
-                                    }
-                                    } else {
-                                    while (fighter1.health > 0 && fighter2.health > 0) {
-                                    fighter2.health = fighter2.health - fighter1.damagePerAttack
+                            }
+                            } else {
+                            while (fighter1.health > 0 && fighter2.health > 0) {
+                            fighter2.health = fighter2.health - fighter1.damagePerAttack
 
-                                    if(fighter1.health &lt;= 0 ){
-                                    return fighter2.name
-                                    }
-                                    else if(fighter2.health &lt;= 0 ){
-                                    return fighter1.name
-                                    }
-                                    fighter1.health = fighter1.health - fighter2.damagePerAttack
+                            if(fighter1.health &lt;= 0 ){
+                            return fighter2.name
+                            }
+                            else if(fighter2.health &lt;= 0 ){
+                            return fighter1.name
+                            }
+                            fighter1.health = fighter1.health - fighter2.damagePerAttack
 
-                                    }
+                            }
 
-                                    }
-                                    }
-                                </span>
-                                <br>
-                                function declareWinner(fighter1, fighter2, firstAttacker) {
-                                var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
-                                var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
-                                if(fac1 &lt; fac2) {
-                                return fighter2.name;
-                                } else if(fac2 &lt; fac1) {
-                                return fighter1.name;
-                                } else {
-                                return firstAttacker;
+                            }
+                            }
+                        </span>
+                        <br>
+                        function declareWinner(fighter1, fighter2, firstAttacker) {
+                        var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
+                        var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
+                        if(fac1 &lt; fac2) {
+                        return fighter2.name;
+                        } else if(fac2 &lt; fac1) {
+                        return fighter1.name;
+                        } else {
+                        return firstAttacker;
+                        }
+                        }
+                        <br><span class="other">
+                            function declareWinner(fighter1, fighter2, firstAttacker) {
+                            if (fighter1.name !== firstAttacker) return declareWinner(fighter2, fighter1,
+                            fighter2.name)
+                            if (fighter1.health &lt;= 0) return fighter2.name
+                            if (fighter2.health &lt;= 0) return fighter1.name
+
+                            return declareWinner(new Fighter(fighter2.name, fighter2.health -
+                            fighter1.damagePerAttack, fighter2.damagePerAttack), fighter1, fighter2.name)
+                            }
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Define String.prototype.toAlternatingCase (or a similar function/method such as
+                        to_alternating_case/toAlternatingCase/ToAlternatingCase in your selected language; see the
+                        initial solution for details) such that each lowercase letter becomes uppercase and each
+                        uppercase letter becomes lowercase. For example:
+                        "hello world".toAlternatingCase() === "HELLO WORLD"
+                        "HELLO WORLD".toAlternatingCase() === "hello world"
+                        "hello WORLD".toAlternatingCase() === "HELLO world" </div>
+                    <div class="solution">
+                        <span class="mine">
+                            String.prototype.toAlternatingCase = function () {
+                                return this.split("").map(a => a === a.toUpperCase()? a.toLowerCase(): a.toUpperCase()).join('')
+                            }
+                        </span>
+                        <br>
+                        String.prototype.toAlternatingCase = function () {
+                            new_str = "";
+                            for(var i = 0; i &lt; this.length; i++) {
+                              if(this[i] === this[i].toUpperCase()) {
+                                new_str += this[i].toLowerCase();
+                              }
+                              else {
+                                new_str += this[i].toUpperCase();
+                              }
+                            }
+                            return new_str;
+                          }
+                        <br><span class="other">
+                            String.prototype.toAlternatingCase = function () {
+                                return this.split('').map(function(x){
+                                  if(x >= 'A' && x &lt; = 'Z') return x.toLowerCase();
+                                  if(x >= 'a' && x &lt; = 'z') return x.toUpperCase();
+                                  return x;
+                                }).join(''); 
+                              }
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+                        [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+                     </div>
+                    <div class="solution">
+                        <span class="mine">
+                            const grow=x=> x.reduce((a,b) => a*b);
+                        </span>
+                        <br>
+                        const grow = x => {
+                            let res = 1;
+                            for (let i = 0; i &lt; x.length; i++) {
+                              res *= x[i];
+                            }
+                            return res;
+                          };
+                        <br><span class="other">
+                            const grow=x=>eval(x.join("*"))
+                        </span>
+
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
+
+Return the average of the given array rounded down to its nearest integer.
+
+The array will never be empty. Example: [1,2,3,4,5,] =>3
+                      
+                     </div>
+                    <div class="solution">
+                        <span class="mine">
+                            function getAverage(marks){
+                                return Math.floor(marks.reduce((a,b)=>a+b)/marks.length)
                                 }
-                                }
-                                <br><span class="other">
-                                    function declareWinner(fighter1, fighter2, firstAttacker) {
-                                    if (fighter1.name !== firstAttacker) return declareWinner(fighter2, fighter1,
-                                    fighter2.name)
-                                    if (fighter1.health &lt;= 0) return fighter2.name
-                                    if (fighter2.health &lt;= 0) return fighter1.name
+                        </span>
+                        <br>
+                        function getAverage(marks){
 
-                                    return declareWinner(new Fighter(fighter2.name, fighter2.health -
-                                    fighter1.damagePerAttack, fighter2.damagePerAttack), fighter1, fighter2.name)
-                                    }
-                                </span>
+                            var total = 0;
+                            for(var i = 0; i &lt; marks.length; i++){
+                              total += marks[i];
+                            }
+                            
+                            return Math.floor(total / marks.length);
+                          }
+                        <br><span class="other">
+                            function getAverage(marks){
+                                var sum = 0;
+                                
+                                for (var i in marks)
+                                  sum += marks[i];
+                                
+                                return parseInt(sum / marks.length);
+                              }
+                        </span>
 
-                            </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
+    </div>
 
-        <script src="./JS/functions.js"></script>
+
+    <script src="./JS/functions.js"></script>
 </body>
 
 </html>
