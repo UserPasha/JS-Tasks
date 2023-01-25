@@ -1758,6 +1758,60 @@
                         <br>
                     </div>
                 </div>
+                <div class="task">
+                    <div class="question">
+                        An infinite number of shelves are arranged one above the other in a staggered fashion.
+The cat can jump either one or three shelves at a time: from shelf i to shelf i+1 or i+3 (the cat cannot climb on the shelf directly above its head)
+Example
+Start 1, finish 5, then answer is 2 (1 => 4 => 5 or 1 => 2 => 5)
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function solution(start, finish) 
+{
+  let number = finish-start
+  let count
+  let addCount
+  if(number%3===0){
+    count = Math.ceil((finish-start)/3)
+  }
+  else{
+    let rest = Math.ceil((finish-start)/3)-Math.round(number/3)
+    if(rest === 1){
+      addCount = 1
+  
+    } else {
+      addCount = 2
+    }
+    count = Math.floor((finish-start)/3) + addCount
+  }
+  return count
+}
+                        </span>
+                        <br>
+                        <span>
+                            const solution = (start, finish, difference = finish - start) =>
+                            Math.floor(difference / 3) + difference % 3
+                        </span>
+                        <br><span class="other">
+                            function solution(start, finish) 
+                            {
+                              let jumps = 0;
+                              let iFinish = 0;
+                              for (let i = start; i &lt;  finish; i+=3) {
+                                jumps ++
+                                iFinish = i;
+                              }
+                              if ((iFinish+3) - finish === 1) {jumps++}
+                              return jumps;
+                            }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="code-wars">
