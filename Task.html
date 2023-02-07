@@ -1760,6 +1760,87 @@
                 </div>
                 <div class="task">
                     <div class="question">
+                        Write a function that returns the number of occurrences of an element in an array.
+
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            <pre>
+                                function occuriencies(arr, element){
+                                    let a = []
+                                    for(let i=0; i&lt; arr.length; i++){
+                                      if(arr[i]===element){
+                                        a.push(arr[i])
+                                      }
+                                    }
+                                    return a.length
+                                    }
+                            </pre>
+                        </span>
+                        <br>
+                       
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
+                        Write a program that outputs the top n elements from a list.
+
+Example:
+
+largest(2, [7,6,5,4,3,2,1])
+// => [6,7]
+
+                    </div>
+                    <div class="solution">
+
+                        <span class="mine">
+                            function largest(n, array) {
+                                let a = []
+                             for(i=0;i&lt;n; i++){
+                               let b = array.sort((a,b)=a-b);
+                               a.unshift(b[b.length-1])
+                               b.splice(b.length-1, 1)
+                             }
+                               return a
+                             }
+                        </span>
+                        <br>
+                        <span>
+                            function largest(n,xs){
+                                return xs.sort(function(a, b) {return a - b;}).slice(xs.length-n);
+                              }
+                        </span>
+                        <br><span class="other">
+                            function largest(n,xs){
+                                // Find the n highest elements in a list
+                                var len = xs.length;    
+                                // Basic bubble sort in O(n^2)
+                                for(var i = len ; i >= 0 ; --i){
+                                    for(var j = 0; j &lt; i ; j++){
+                                        if(xs[j] > xs[j + 1]){
+                                            // Swaping position n && n+1
+                                            var swap = xs[j];
+                                            xs[j] = xs[j+1];
+                                            xs[j + 1] = swap;            
+                                        }
+                                    }
+                                }
+                                
+                                
+                                return xs.slice(len - n)
+                                  
+                              }
+                            <br>
+                        </span>
+
+                        <br>
+                    </div>
+                </div>
+                <div class="task">
+                    <div class="question">
                         An infinite number of shelves are arranged one above the other in a staggered fashion.
 The cat can jump either one or three shelves at a time: from shelf i to shelf i+1 or i+3 (the cat cannot climb on the shelf directly above its head)
 Example
